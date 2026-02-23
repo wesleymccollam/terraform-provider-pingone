@@ -119,6 +119,6 @@ generateconnectorref: build
 	@echo "==> Generating connector docs & examples..."
 	rm -rf examples/davinci-connector-instances/*.tf || true
 	mkdir -p examples/davinci-connector-instances
-	cd dvgenerate && go run ./cmd/generate
+	cd tools/dvgenerate && go run ./cmd/generate
 
 .PHONY: build install generate docscategorycheck test testacc sweep vet fmtcheck depscheck lint golangci-lint importlint providerlint tflint terrafmt terrafmtcheck betatagscheck devcheck devchecknotest generateconnectorref
