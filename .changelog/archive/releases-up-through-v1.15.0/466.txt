@@ -1,3 +1,0 @@
-```release-note:new-resource
-pingone_key_rotation_policy
-```

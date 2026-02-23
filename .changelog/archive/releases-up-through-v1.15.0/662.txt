@@ -1,3 +1,0 @@
-```release-note:breaking-change
-`resource/pingone_identity_provider`: Changed the `facebook`, `google`, `linkedin`, `yahoo`, `amazon`, `twitter`, `apple`, `paypal`, `microsoft`, `github`, `openid_connect` and `saml` parameter data types.
-```

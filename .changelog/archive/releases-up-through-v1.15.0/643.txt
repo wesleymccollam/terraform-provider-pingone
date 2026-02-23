@@ -1,3 +1,0 @@
-```release-note:breaking-change
-`resource/pingone_environment`: Removed `timeouts` parameter block.
-```

@@ -1,3 +1,0 @@
-```release-note:bug
-`resource/pingone_environment`: Fixed ineffectual `timeouts` block configuration.
-```

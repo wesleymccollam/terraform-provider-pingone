@@ -1,3 +1,0 @@
-```release-note:bug
-`resource/pingone_agreement_localization_revision`: Fixed intermittent "The revision can not take effect in the past" error when leaving `effective_at` blank.
-```

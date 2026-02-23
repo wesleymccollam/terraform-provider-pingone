@@ -1,3 +1,0 @@
-```release-note:breaking-change
-`resource/pingone_mfa_policy`: Removal of deprecated parameters `platform` and `security_key`.  Use the `fido2` parameter going forward.
-```

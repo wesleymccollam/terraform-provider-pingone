@@ -1,3 +1,0 @@
-```release-note:note
-`resource/pingone_application_role_assignment`: Migrated to plugin framework.
-```

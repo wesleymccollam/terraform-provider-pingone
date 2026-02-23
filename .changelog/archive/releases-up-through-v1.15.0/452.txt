@@ -1,3 +1,0 @@
-```release-note:note
-Changed "Risk" documentation subcategory to "Protect", for the release of PingOne Protect.
-```

@@ -1,3 +1,0 @@
-```release-note:note
-`data-source/pingone_environment`: Optimised environment filtering by name.
-```

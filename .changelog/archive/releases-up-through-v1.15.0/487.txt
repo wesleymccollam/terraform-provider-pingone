@@ -1,3 +1,0 @@
-```release-note:note
-`data-source/pingone_population`: Optimised finding populations by name for environments with large numbers of populations present.
-```

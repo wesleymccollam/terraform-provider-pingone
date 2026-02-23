@@ -1,3 +1,0 @@
-```release-note:note
-`resource/pingone_notification_template_content`: Migrated to plugin framework.
-```

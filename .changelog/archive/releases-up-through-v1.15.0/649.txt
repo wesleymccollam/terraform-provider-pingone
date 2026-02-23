@@ -1,3 +1,0 @@
-```release-note:note
-`resource/pingone_identity_provider`: Migrated to plugin framework.
-```

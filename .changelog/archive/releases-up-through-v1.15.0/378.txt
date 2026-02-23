@@ -1,3 +1,0 @@
-```release-note:note
-`resource/pingone_risk_predictor`: Corrected custom map type documentation example.
-```

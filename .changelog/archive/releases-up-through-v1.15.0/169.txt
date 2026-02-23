@@ -1,3 +1,0 @@
-```release-note:note
-Documentation: Organised registry documentation into subcategories
-```

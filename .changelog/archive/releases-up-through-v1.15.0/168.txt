@@ -1,7 +1,0 @@
-```release-note:new-data-source
-pingone_user
-```
-
-```release-note:new-data-source
-pingone_users
-```

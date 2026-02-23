@@ -1,3 +1,0 @@
-```release-note:note
-`resource/pingone_user`: Corrected documentation HCL example.
-```

@@ -1,3 +1,0 @@
-```release-note:note
-`resource/pingone_sign_on_policy_action`: Fix potential "slice out of bounds" issues.
-```

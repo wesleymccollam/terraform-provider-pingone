@@ -1,3 +1,0 @@
-```release-note:bug
-`resource/pingone_custom_domain_verify`: Fix early verification failure of NXDOMAIN.
-```

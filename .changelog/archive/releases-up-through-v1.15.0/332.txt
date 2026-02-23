@@ -1,3 +1,0 @@
-```release-note:note
-`resource/pingone_webhook`: Added link to "Subscription Action Types" api reference for a full list of configurable action types.
-```

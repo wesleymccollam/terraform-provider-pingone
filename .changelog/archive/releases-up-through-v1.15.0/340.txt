@@ -1,3 +1,0 @@
-```release-note:note
-Updated the external documentation site link to `terraform.pingidentity.com` for the getting started guide on the index docs page.
-```

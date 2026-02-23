@@ -1,3 +1,0 @@
-```release-note:bug
-`resource/pingone_form`: Fix error "This attribute contains duplicate values of the same type" when configuring multiple form controls of the same type.
-```

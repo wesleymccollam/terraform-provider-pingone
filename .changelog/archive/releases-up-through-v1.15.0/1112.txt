@@ -1,3 +1,0 @@
-```release-note:bug
-`resource/pingone_resource_scope_pingone_api`: Fixed `Invalid Attribute Value Match` error when custom scope name attribute consists of valid characters
-```

@@ -1,4 +1,0 @@
-```release-note:new-data-source
-pingone_application
-```
-

@@ -1,3 +1,0 @@
-```release-note:bug
-`resource/pingone_sign_on_policy`: Corrected input validation regex for the sign on policy `name` attribute.
-```

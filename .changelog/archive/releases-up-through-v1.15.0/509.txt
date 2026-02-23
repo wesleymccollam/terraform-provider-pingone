@@ -1,3 +1,0 @@
-```release-note:note
-`resource/pingone_image`: Migrated to plugin framework.
-```

@@ -1,3 +1,0 @@
-```release-note:note
-Changed JSON fields to use custom JSON data type.
-```

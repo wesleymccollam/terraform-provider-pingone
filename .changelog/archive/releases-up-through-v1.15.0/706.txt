@@ -1,3 +1,0 @@
-```release-note:note
-`resource/pingone_environment`: Added ability to override `region` parameter validation with custom values.
-```

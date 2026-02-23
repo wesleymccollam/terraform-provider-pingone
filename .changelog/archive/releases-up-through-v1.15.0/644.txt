@@ -1,3 +1,0 @@
-```release-note:breaking-change
-`resource/pingone_mfa_application_push_credential`: Changed the `apns`, `fcm` and `hms` data types.
-```

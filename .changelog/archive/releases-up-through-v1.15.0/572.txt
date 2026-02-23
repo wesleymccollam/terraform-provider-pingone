@@ -1,3 +1,0 @@
-```release-note:note
-`resource/pingone_certificate`: Adjusted documentation for PEM certificate import.
-```

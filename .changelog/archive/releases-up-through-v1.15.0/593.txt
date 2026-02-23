@@ -1,3 +1,0 @@
-```release-note:note
-`data-source/pingone_trusted_email_domain`: Corrected documentation descriptions.
-```

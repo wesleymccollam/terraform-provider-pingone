@@ -1,3 +1,0 @@
-```release-note:note
-`resource/pingone_key`: Migrated to plugin framework.
-```

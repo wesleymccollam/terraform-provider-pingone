@@ -1,3 +1,0 @@
-```release-note:note
-bump Go v1.24.6 => v1.25.6
-```

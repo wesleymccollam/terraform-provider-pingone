@@ -1,3 +1,0 @@
-```release-note:new-resource
-pingone_branding_theme_default
-```

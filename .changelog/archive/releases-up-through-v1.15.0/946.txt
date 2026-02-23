@@ -1,3 +1,0 @@
-```release-note:note
-bump `golang.org/x/crypto` 0.26.0 => 0.31.0
-```

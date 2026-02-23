@@ -1,7 +1,0 @@
-```release-note:new-data-source
-pingone_application_sign_on_policy_assignments
-```
-
-```release-note:new-data-source
-pingone_application_flow_policy_assignments
-```

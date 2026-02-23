@@ -1,3 +1,0 @@
-```release-note:note
-`resource/pingone_application`: Update the documentation example for external link.
-```

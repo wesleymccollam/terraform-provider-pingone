@@ -1,3 +1,0 @@
-```release-note:note
-bump `github.com/hashicorp/go-getter` v1.6.2 => v1.7.0
-```

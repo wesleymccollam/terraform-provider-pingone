@@ -1,3 +1,0 @@
-```release-note:bug
-`resource/pingone_environment`: Fixed `Value Conversion Error` when attempting to create an environment using calculated (unknown) `service` blocks.
-```

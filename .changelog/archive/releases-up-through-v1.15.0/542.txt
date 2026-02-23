@@ -1,3 +1,0 @@
-```release-note:enhancement
-`resource/pingone_application`: Added support for whether `requestedAuthnContext` is taken into account in SAML application policy decision-making.
-```

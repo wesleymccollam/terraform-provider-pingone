@@ -1,3 +1,0 @@
-```release-note:note
-`data-source/pingone_role`: Migrated to plugin framework.
-```

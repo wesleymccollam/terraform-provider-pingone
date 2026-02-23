@@ -1,3 +1,0 @@
-```release-note:bug
-Fix HTTP/HTTPS URL validation on multiple resources. See issue ([#686](https://github.com/pingidentity/terraform-provider-pingone/issues/686)) for details.
-```

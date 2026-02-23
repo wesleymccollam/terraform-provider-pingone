@@ -1,3 +1,0 @@
-```release-note:breaking-change
-`resource/pingone_mfa_policies`: Removal of deprecated resource.
-```

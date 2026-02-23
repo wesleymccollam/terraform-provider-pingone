@@ -1,3 +1,0 @@
-```release-note:note
-Added a regexp validation to any schema attribute that represents a PingOne ID.  Applies to all resources and data sources.
-```

@@ -1,3 +1,0 @@
-```release-note:note
-new dependency `github.com/pingidentity/pingone-go-client` 0.2.0
-```

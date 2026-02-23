@@ -1,3 +1,0 @@
-```release-note:bug
-`resource/pingone_digital_wallet_application`: Correctly force replacement when the `application_id` attribute changes, to prevent potential resource not found errors during updates.
-```

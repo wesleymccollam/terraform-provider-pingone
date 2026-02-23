@@ -1,3 +1,0 @@
-```release-note:enhancement
-`resource/pingone_notification_template_content`: Added support for `credential_verification` and `new_device_paired` notification templates.
-```
