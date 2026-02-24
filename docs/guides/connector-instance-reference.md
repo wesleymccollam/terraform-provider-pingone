@@ -98,6 +98,9 @@ Properties (used under the `properties` block in the resource as a key in the JS
 
 * `accessKeyId` (string): The AWS Access Key. Console display name: "AWS Access Key".
 * `region` (string): The AWS Region. Console display name: "AWS Region".
+* `secondaryAccessKeyId` (string): Optional fallback AWS Access Key used if the primary call times out or cannot connect. Console display name: "Secondary AWS Access Key".
+* `secondaryRegion` (string): Optional fallback AWS Region used if the primary call times out or cannot connect. Console display name: "Secondary AWS Region".
+* `secondarySecretAccessKey` (string): Optional fallback AWS Access Secret used if the primary call times out or cannot connect. Console display name: "Secondary AWS Access Secret".
 * `secretAccessKey` (string): The AWS Access Secret. Console display name: "AWS Access Secret".
 
 
@@ -113,6 +116,9 @@ resource "pingone_davinci_connector_instance" "connectorAmazonAwsSecretsManager"
   properties = jsonencode({
     "accessKeyId" = var.connectoramazonawssecretsmanager_property_access_key_id
     "region" = "eu-west-1"
+    "secondaryAccessKeyId" = var.connectoramazonawssecretsmanager_property_secondary_access_key_id
+    "secondaryRegion" = var.connectoramazonawssecretsmanager_property_secondary_region
+    "secondarySecretAccessKey" = var.connectoramazonawssecretsmanager_property_secondary_secret_access_key
     "secretAccessKey" = var.connectoramazonawssecretsmanager_property_secret_access_key
   })
 }
@@ -198,6 +204,35 @@ resource "pingone_davinci_connector_instance" "connectorAcuant" {
 ```
 
 
+## Adobe Experience Manager
+
+Connector ID (`connector.id` in the resource): `adobeExperienceManagerConnector`
+
+Properties (used under the `properties` block in the resource as a key in the JSON object):
+
+* `clientId` (string): Public identifier for this connector application. Console display name: "Client ID".
+* `clientSecret` (string): Confidential password that authenticates this connector application. Console display name: "Client Secret".
+* `orgId` (string): Identifier for the Adobe Experience Cloud account. Console display name: "Organization ID".
+
+
+Example:
+```terraform
+resource "pingone_davinci_connector_instance" "adobeExperienceManagerConnector" {
+  environment_id = var.pingone_environment_id
+
+  connector = {
+    id = "adobeExperienceManagerConnector"
+  }
+  name = "My awesome adobeExperienceManagerConnector"
+  properties = jsonencode({
+    "clientId" = var.adobeexperiencemanagerconnector_property_client_id
+    "clientSecret" = var.adobeexperiencemanagerconnector_property_client_secret
+    "orgId" = var.adobeexperiencemanagerconnector_property_org_id
+  })
+}
+```
+
+
 ## Adobe Marketo
 
 Connector ID (`connector.id` in the resource): `adobemarketoConnector`
@@ -223,6 +258,26 @@ resource "pingone_davinci_connector_instance" "adobemarketoConnector" {
     "clientSecret" = var.adobemarketoconnector_property_client_secret
     "endpoint" = var.adobemarketoconnector_property_endpoint
   })
+}
+```
+
+
+## Akamai Account Protector
+
+Connector ID (`connector.id` in the resource): `akamaiApConnector`
+
+*No properties*
+
+
+Example:
+```terraform
+resource "pingone_davinci_connector_instance" "akamaiApConnector" {
+  environment_id = var.pingone_environment_id
+
+  connector = {
+    id = "akamaiApConnector"
+  }
+  name = "My awesome akamaiApConnector"
 }
 ```
 
@@ -517,6 +572,26 @@ resource "pingone_davinci_connector_instance" "appleConnector" {
 ```
 
 
+## Application Policy
+
+Connector ID (`connector.id` in the resource): `appPolicyConnector`
+
+*No properties*
+
+
+Example:
+```terraform
+resource "pingone_davinci_connector_instance" "appPolicyConnector" {
+  environment_id = var.pingone_environment_id
+
+  connector = {
+    id = "appPolicyConnector"
+  }
+  name = "My awesome appPolicyConnector"
+}
+```
+
+
 ## Argyle
 
 Connector ID (`connector.id` in the resource): `argyleConnector`
@@ -641,6 +716,26 @@ resource "pingone_davinci_connector_instance" "authenticIdConnector" {
 ```
 
 
+## Authentication
+
+Connector ID (`connector.id` in the resource): `pingOneSnodeSSOConnector`
+
+*No properties*
+
+
+Example:
+```terraform
+resource "pingone_davinci_connector_instance" "pingOneSnodeSSOConnector" {
+  environment_id = var.pingone_environment_id
+
+  connector = {
+    id = "pingOneSnodeSSOConnector"
+  }
+  name = "My awesome pingOneSnodeSSOConnector"
+}
+```
+
+
 ## Authomize API
 
 Connector ID (`connector.id` in the resource): `connector-oai-authomizeapireference`
@@ -717,6 +812,31 @@ resource "pingone_davinci_connector_instance" "azureUserManagementConnector" {
     "baseUrl" = var.azureusermanagementconnector_property_base_url
     "customApiUrl" = var.azureusermanagementconnector_property_custom_api_url
     "customAuth" = jsonencode({})
+  })
+}
+```
+
+
+## Babel Street
+
+Connector ID (`connector.id` in the resource): `babelStreetConnector`
+
+Properties (used under the `properties` block in the resource as a key in the JSON object):
+
+* `apiKey` (string): API Key from Babel Street tenant. Console display name: "API Key".
+
+
+Example:
+```terraform
+resource "pingone_davinci_connector_instance" "babelStreetConnector" {
+  environment_id = var.pingone_environment_id
+
+  connector = {
+    id = "babelStreetConnector"
+  }
+  name = "My awesome babelStreetConnector"
+  properties = jsonencode({
+    "apiKey" = var.babelstreetconnector_property_api_key
   })
 }
 ```
@@ -918,6 +1038,35 @@ resource "pingone_davinci_connector_instance" "connectorBTrs" {
     "clientID" = var.connectorbtrs_property_client_i_d
     "clientSecret" = var.connectorbtrs_property_client_secret
     "rsAPIurl" = var.rs_api_url
+  })
+}
+```
+
+
+## BeyondTrust PRA
+
+Connector ID (`connector.id` in the resource): `connectorBeyondtrustpra`
+
+Properties (used under the `properties` block in the resource as a key in the JSON object):
+
+* `clientID` (string): PRA API Client ID. Console display name: "Client ID".
+* `clientSecret` (string): PRA API Client Secret. Console display name: "Client Secret".
+* `prawebAPIaddress` (string): URL of PRA Appliance. Console display name: "PRA Web API URL".
+
+
+Example:
+```terraform
+resource "pingone_davinci_connector_instance" "connectorBeyondtrustpra" {
+  environment_id = var.pingone_environment_id
+
+  connector = {
+    id = "connectorBeyondtrustpra"
+  }
+  name = "My awesome connectorBeyondtrustpra"
+  properties = jsonencode({
+    "clientID" = var.connectorbeyondtrustpra_property_client_i_d
+    "clientSecret" = var.connectorbeyondtrustpra_property_client_secret
+    "prawebAPIaddress" = var.connectorbeyondtrustpra_property_praweb_a_p_iaddress
   })
 }
 ```
@@ -1220,6 +1369,37 @@ resource "pingone_davinci_connector_instance" "connectIdConnector" {
   name = "My awesome connectIdConnector"
   properties = jsonencode({
     "customAuth" = jsonencode({})
+  })
+}
+```
+
+
+## Constella
+
+Connector ID (`connector.id` in the resource): `constellaConnector`
+
+Properties (used under the `properties` block in the resource as a key in the JSON object):
+
+* `appToken` (string): Header for authorizing the use of the acquired services. Console display name: "X-AppToken".
+* `baseUrl` (string): Base URL from Constella tenant (Including https://). Console display name: "Base URL".
+* `token` (string): Header for authenticating the user. Console display name: "X-Token".
+* `username` (string): Hexadecimal string header for identifying the user. Console display name: "X-Username".
+
+
+Example:
+```terraform
+resource "pingone_davinci_connector_instance" "constellaConnector" {
+  environment_id = var.pingone_environment_id
+
+  connector = {
+    id = "constellaConnector"
+  }
+  name = "My awesome constellaConnector"
+  properties = jsonencode({
+    "appToken" = var.constellaconnector_property_app_token
+    "baseUrl" = var.constellaconnector_property_base_url
+    "token" = var.constellaconnector_property_token
+    "username" = var.constellaconnector_property_username
   })
 }
 ```
@@ -1602,6 +1782,26 @@ resource "pingone_davinci_connector_instance" "duoConnector" {
 ```
 
 
+## End Nodes
+
+Connector ID (`connector.id` in the resource): `flowCanvasToolsConnector`
+
+*No properties*
+
+
+Example:
+```terraform
+resource "pingone_davinci_connector_instance" "flowCanvasToolsConnector" {
+  environment_id = var.pingone_environment_id
+
+  connector = {
+    id = "flowCanvasToolsConnector"
+  }
+  name = "My awesome flowCanvasToolsConnector"
+}
+```
+
+
 ## Entrust
 
 Connector ID (`connector.id` in the resource): `entrustConnector`
@@ -1682,6 +1882,31 @@ resource "pingone_davinci_connector_instance" "errorConnector" {
     id = "errorConnector"
   }
   name = "My awesome errorConnector"
+}
+```
+
+
+## FAPI Baseline (mTLS)
+
+Connector ID (`connector.id` in the resource): `fapiConnector`
+
+Properties (used under the `properties` block in the resource as a key in the JSON object):
+
+* `customAuth` (json):  Console display name: "Custom Parameters".
+
+
+Example:
+```terraform
+resource "pingone_davinci_connector_instance" "fapiConnector" {
+  environment_id = var.pingone_environment_id
+
+  connector = {
+    id = "fapiConnector"
+  }
+  name = "My awesome fapiConnector"
+  properties = jsonencode({
+    "customAuth" = var.fapiconnector_property_custom_auth
+  })
 }
 ```
 
@@ -1945,6 +2170,26 @@ resource "pingone_davinci_connector_instance" "flowConnector" {
 ```
 
 
+## Form
+
+Connector ID (`connector.id` in the resource): `pingOneFormsConnector`
+
+*No properties*
+
+
+Example:
+```terraform
+resource "pingone_davinci_connector_instance" "pingOneFormsConnector" {
+  environment_id = var.pingone_environment_id
+
+  connector = {
+    id = "pingOneFormsConnector"
+  }
+  name = "My awesome pingOneFormsConnector"
+}
+```
+
+
 ## Forter
 
 Connector ID (`connector.id` in the resource): `forterConnector`
@@ -2135,33 +2380,6 @@ resource "pingone_davinci_connector_instance" "githubIdpConnector" {
 ```
 
 
-## Google Analytics (Universal Analytics)
-
-Connector ID (`connector.id` in the resource): `connectorGoogleanalyticsUA`
-
-Properties (used under the `properties` block in the resource as a key in the JSON object):
-
-* `trackingID` (string): The tracking ID / web property ID. The format is UA-XXXX-Y. All collected data is associated by this ID. Console display name: "Tracking ID".
-* `version` (string): The Protocol version. The current value is '1'. This will only change when there are changes made that are not backwards compatible. Console display name: "Version".
-
-
-Example:
-```terraform
-resource "pingone_davinci_connector_instance" "connectorGoogleanalyticsUA" {
-  environment_id = var.pingone_environment_id
-
-  connector = {
-    id = "connectorGoogleanalyticsUA"
-  }
-  name = "My awesome connectorGoogleanalyticsUA"
-  properties = jsonencode({
-    "trackingID" = var.tracking_id
-    "version" = var.connectorgoogleanalyticsua_property_version
-  })
-}
-```
-
-
 ## Google Chrome Enterprise Device Trust
 
 Connector ID (`connector.id` in the resource): `connectorGoogleChromeEnterprise`
@@ -2267,35 +2485,6 @@ resource "pingone_davinci_connector_instance" "httpConnector" {
     "recaptchaSecretKey" = var.httpconnector_property_recaptcha_secret_key
     "recaptchaSiteKey" = var.httpconnector_property_recaptcha_site_key
     "whiteList" = var.httpconnector_property_white_list
-  })
-}
-```
-
-
-## HUMAN
-
-Connector ID (`connector.id` in the resource): `connectorHuman`
-
-Properties (used under the `properties` block in the resource as a key in the JSON object):
-
-* `humanAuthenticationToken` (string): Bearer Token from HUMAN. Console display name: "HUMAN Authentication Token".
-* `humanCustomerID` (string): Customer ID from HUMAN. Console display name: "HUMAN Customer ID".
-* `humanPolicyName` (string): HUMAN mitigation policy name. Console display name: "HUMAN Policy Name".
-
-
-Example:
-```terraform
-resource "pingone_davinci_connector_instance" "connectorHuman" {
-  environment_id = var.pingone_environment_id
-
-  connector = {
-    id = "connectorHuman"
-  }
-  name = "My awesome connectorHuman"
-  properties = jsonencode({
-    "humanAuthenticationToken" = var.connectorhuman_property_human_authentication_token
-    "humanCustomerID" = var.human_customer_id
-    "humanPolicyName" = var.connectorhuman_property_human_policy_name
   })
 }
 ```
@@ -2731,63 +2920,6 @@ resource "pingone_davinci_connector_instance" "connectorIdmelon" {
 ```
 
 
-## IDmission
-
-Connector ID (`connector.id` in the resource): `idmissionConnector`
-
-Properties (used under the `properties` block in the resource as a key in the JSON object):
-
-* `authDescription` (string):  Console display name: "Authentication Description".
-* `connectorName` (string):  Console display name: "Connector Name".
-* `description` (string):  Console display name: "Description".
-* `details1` (string):  Console display name: "Credentials Details 1".
-* `details2` (string):  Console display name: "Credentials Details 2".
-* `iconUrl` (string):  Console display name: "Icon URL".
-* `iconUrlPng` (string):  Console display name: "Icon URL in PNG".
-* `loginId` (string):  Console display name: "Sign On ID".
-* `merchantId` (string):  Console display name: "Merchant ID".
-* `password` (string):  Console display name: "Password".
-* `productId` (string):  Console display name: "Product ID".
-* `productName` (string):  Console display name: "Product Name".
-* `showCredAddedOn` (boolean):  Console display name: "Show Credentials Added On?".
-* `showCredAddedVia` (boolean):  Console display name: "Show Credentials Added through ?".
-* `title` (string):  Console display name: "Title".
-* `toolTip` (string):  Console display name: "Tooltip".
-* `url` (string):  Console display name: "IDmission Server URL".
-
-
-Example:
-```terraform
-resource "pingone_davinci_connector_instance" "idmissionConnector" {
-  environment_id = var.pingone_environment_id
-
-  connector = {
-    id = "idmissionConnector"
-  }
-  name = "My awesome idmissionConnector"
-  properties = jsonencode({
-    "authDescription" = var.idmissionconnector_property_auth_description
-    "connectorName" = var.idmissionconnector_property_connector_name
-    "description" = var.idmissionconnector_property_description
-    "details1" = var.idmissionconnector_property_details1
-    "details2" = var.idmissionconnector_property_details2
-    "iconUrl" = var.idmissionconnector_property_icon_url
-    "iconUrlPng" = var.idmissionconnector_property_icon_url_png
-    "loginId" = var.idmissionconnector_property_login_id
-    "merchantId" = var.idmissionconnector_property_merchant_id
-    "password" = var.idmissionconnector_property_password
-    "productId" = var.idmissionconnector_property_product_id
-    "productName" = var.idmissionconnector_property_product_name
-    "showCredAddedOn" = var.idmissionconnector_property_show_cred_added_on
-    "showCredAddedVia" = var.idmissionconnector_property_show_cred_added_via
-    "title" = var.idmissionconnector_property_title
-    "toolTip" = var.idmissionconnector_property_tool_tip
-    "url" = var.idmissionconnector_property_url
-  })
-}
-```
-
-
 ## IDmission - OIDC
 
 Connector ID (`connector.id` in the resource): `idmissionOidcConnector`
@@ -2833,6 +2965,41 @@ resource "pingone_davinci_connector_instance" "idrampOidcConnector" {
   name = "My awesome idrampOidcConnector"
   properties = jsonencode({
     "customAuth" = jsonencode({})
+  })
+}
+```
+
+
+## Ideem
+
+Connector ID (`connector.id` in the resource): `ideemConnector`
+
+Properties (used under the `properties` block in the resource as a key in the JSON object):
+
+* `applicationEnvironment` (string): The name of the Ideem application environment. Console display name: "Application Environment".
+* `applicationId` (string): Ideem Application ID. Console display name: "Application ID".
+* `hostURL` (string): The host URL of the Ideem environment. Console display name: "Ideem Host URL".
+* `userIdentifier` (string): User Identifier for Ideem. Console display name: "User Identifier".
+* `validateTokenApiKey` (string): Used for the backend /validate-token API call to validate the signed token. Console display name: "Validate Token API Key".
+* `zsmClientSdkApiKey` (string): Used for the Pingjection JS script (ZSMClientSDK). Console display name: "ZSM Client SDK API Key".
+
+
+Example:
+```terraform
+resource "pingone_davinci_connector_instance" "ideemConnector" {
+  environment_id = var.pingone_environment_id
+
+  connector = {
+    id = "ideemConnector"
+  }
+  name = "My awesome ideemConnector"
+  properties = jsonencode({
+    "applicationEnvironment" = var.ideemconnector_property_application_environment
+    "applicationId" = var.ideemconnector_property_application_id
+    "hostURL" = var.ideemconnector_property_host_u_r_l
+    "userIdentifier" = var.ideemconnector_property_user_identifier
+    "validateTokenApiKey" = var.ideemconnector_property_validate_token_api_key
+    "zsmClientSdkApiKey" = var.ideemconnector_property_zsm_client_sdk_api_key
   })
 }
 ```
@@ -2932,6 +3099,31 @@ resource "pingone_davinci_connector_instance" "intellicheckConnector" {
     "apiKey" = var.intellicheckconnector_property_api_key
     "baseUrl" = var.intellicheckconnector_property_base_url
     "customerId" = var.intellicheckconnector_property_customer_id
+  })
+}
+```
+
+
+## Island
+
+Connector ID (`connector.id` in the resource): `connectorIsland`
+
+Properties (used under the `properties` block in the resource as a key in the JSON object):
+
+* `customAuth` (json):  Console display name: "Custom Parameters".
+
+
+Example:
+```terraform
+resource "pingone_davinci_connector_instance" "connectorIsland" {
+  environment_id = var.pingone_environment_id
+
+  connector = {
+    id = "connectorIsland"
+  }
+  name = "My awesome connectorIsland"
+  properties = jsonencode({
+    "customAuth" = var.connectorisland_property_custom_auth
   })
 }
 ```
@@ -3325,6 +3517,46 @@ resource "pingone_davinci_connector_instance" "connector-oai-launchdarklyrestapi
 ```
 
 
+## Layer7 SiteMinder
+
+Connector ID (`connector.id` in the resource): `broadcomConnector`
+
+*No properties*
+
+
+Example:
+```terraform
+resource "pingone_davinci_connector_instance" "broadcomConnector" {
+  environment_id = var.pingone_environment_id
+
+  connector = {
+    id = "broadcomConnector"
+  }
+  name = "My awesome broadcomConnector"
+}
+```
+
+
+## Leonardo
+
+Connector ID (`connector.id` in the resource): `leonardoConnector`
+
+*No properties*
+
+
+Example:
+```terraform
+resource "pingone_davinci_connector_instance" "leonardoConnector" {
+  environment_id = var.pingone_environment_id
+
+  connector = {
+    id = "leonardoConnector"
+  }
+  name = "My awesome leonardoConnector"
+}
+```
+
+
 ## LexisNexis
 
 Connector ID (`connector.id` in the resource): `lexisnexisV2Connector`
@@ -3511,6 +3743,37 @@ resource "pingone_davinci_connector_instance" "melissaConnector" {
 ```
 
 
+## Microsoft Defender for Endpoint
+
+Connector ID (`connector.id` in the resource): `microsoftDefenderConnector`
+
+Properties (used under the `properties` block in the resource as a key in the JSON object):
+
+* `baseUrl` (string): The regional API endpoint for your Microsoft Defender for Endpoint tenant. Select the region where your tenant data is stored. Console display name: "Base URL".
+* `clientId` (string): The Application (client) ID assigned to your app registration in the Microsoft Entra admin center. Console display name: "Client ID".
+* `clientSecret` (string): The confidential client secret generated for your application to authenticate against the Microsoft identity platform. Console display name: "Client Secret".
+* `tenantId` (string): The unique identifier of your Microsoft Entra ID (Azure AD) tenant. Console display name: "Tenant ID".
+
+
+Example:
+```terraform
+resource "pingone_davinci_connector_instance" "microsoftDefenderConnector" {
+  environment_id = var.pingone_environment_id
+
+  connector = {
+    id = "microsoftDefenderConnector"
+  }
+  name = "My awesome microsoftDefenderConnector"
+  properties = jsonencode({
+    "baseUrl" = var.microsoftdefenderconnector_property_base_url
+    "clientId" = var.microsoftdefenderconnector_property_client_id
+    "clientSecret" = var.microsoftdefenderconnector_property_client_secret
+    "tenantId" = var.microsoftdefenderconnector_property_tenant_id
+  })
+}
+```
+
+
 ## Microsoft Dynamics - Customer Insights
 
 Connector ID (`connector.id` in the resource): `microsoftDynamicsCustomerInsightsConnector`
@@ -3651,6 +3914,39 @@ resource "pingone_davinci_connector_instance" "microsoftTeamsConnector" {
   name = "My awesome microsoftTeamsConnector"
   properties = jsonencode({
     "customAuth" = jsonencode({})
+  })
+}
+```
+
+
+## Mitek
+
+Connector ID (`connector.id` in the resource): `mitekConnector`
+
+Properties (used under the `properties` block in the resource as a key in the JSON object):
+
+* `clientId` (string): Mitek Client ID. Console display name: "Client ID".
+* `clientSecret` (string): Mitek Client Secret. Console display name: "Client Secret".
+* `hostURL` (string): The host URL of the Mitek API (do not include `https://`). Console display name: "Mitek Host URL".
+* `requstAPIVersion` (string): Mitek Request API Version. Console display name: "Request API Version".
+* `skWebhookUri` (string): Use this url as the Webhook URL in the Third Party Integration's configuration. Console display name: "Redirect Webhook URI".
+
+
+Example:
+```terraform
+resource "pingone_davinci_connector_instance" "mitekConnector" {
+  environment_id = var.pingone_environment_id
+
+  connector = {
+    id = "mitekConnector"
+  }
+  name = "My awesome mitekConnector"
+  properties = jsonencode({
+    "clientId" = var.mitekconnector_property_client_id
+    "clientSecret" = var.mitekconnector_property_client_secret
+    "hostURL" = var.mitekconnector_property_host_u_r_l
+    "requstAPIVersion" = var.mitekconnector_property_requst_a_p_i_version
+    "skWebhookUri" = var.mitekconnector_property_sk_webhook_uri
   })
 }
 ```
@@ -3903,7 +4199,7 @@ Properties (used under the `properties` block in the resource as a key in the JS
 
 * `baseURL` (string): Prisma Base URL. Console display name: "Prisma Base URL".
 * `prismaPassword` (string): Secret Key. Console display name: "Prisma - Secret Key".
-* `prismaUsername` (string): Access Key. Console display name: "Prisma - Access Key".
+* `prismaUsername` (string): User name. Console display name: "Username".
 
 
 Example:
@@ -4055,6 +4351,33 @@ resource "pingone_davinci_connector_instance" "connector-oai-pfadminapi" {
     "authUsername" = var.connector-oai-pfadminapi_property_auth_username
     "basePath" = var.connector-oai-pfadminapi_property_base_path
     "sslVerification" = var.connector-oai-pfadminapi_property_ssl_verification
+  })
+}
+```
+
+
+## PingFederate POC
+
+Connector ID (`connector.id` in the resource): `pingFederateConnector`
+
+Properties (used under the `properties` block in the resource as a key in the JSON object):
+
+* `apiUrl` (string):  Console display name: "PingFederate API URL".
+* `clientId` (string):  Console display name: "PingFederate Client ID".
+
+
+Example:
+```terraform
+resource "pingone_davinci_connector_instance" "pingFederateConnector" {
+  environment_id = var.pingone_environment_id
+
+  connector = {
+    id = "pingFederateConnector"
+  }
+  name = "My awesome pingFederateConnector"
+  properties = jsonencode({
+    "apiUrl" = var.pingfederateconnector_property_api_url
+    "clientId" = var.pingfederateconnector_property_client_id
   })
 }
 ```
@@ -4292,26 +4615,6 @@ resource "pingone_davinci_connector_instance" "pingOneCredentialsConnector" {
     "envId" = var.pingone_worker_app_environment_id
     "region" = var.pingonecredentialsconnector_property_region
   })
-}
-```
-
-
-## PingOne Forms
-
-Connector ID (`connector.id` in the resource): `pingOneFormsConnector`
-
-*No properties*
-
-
-Example:
-```terraform
-resource "pingone_davinci_connector_instance" "pingOneFormsConnector" {
-  environment_id = var.pingone_environment_id
-
-  connector = {
-    id = "pingOneFormsConnector"
-  }
-  name = "My awesome pingOneFormsConnector"
 }
 ```
 
@@ -4654,6 +4957,100 @@ resource "pingone_davinci_connector_instance" "inveridConnector" {
 ```
 
 
+## Recovery Codes
+
+Connector ID (`connector.id` in the resource): `recoveryCodeConnector`
+
+Properties (used under the `properties` block in the resource as a key in the JSON object):
+
+* `authDescription` (string):  Console display name: "Authentication Description".
+* `codeLength` (number):  Console display name: "Length of the codes (Even number)".
+* `codeNumber` (number):  Console display name: "Number of codes to be generated".
+* `connectorName` (string):  Console display name: "Connector Name".
+* `description` (string):  Console display name: "Description".
+* `details1` (string):  Console display name: "Credentials Details 1".
+* `details2` (string):  Console display name: "Credentials Details 2".
+* `iconUrl` (string):  Console display name: "Icon URL".
+* `iconUrlPng` (string):  Console display name: "Icon URL in PNG".
+* `showCredAddedOn` (boolean):  Console display name: "Show Credentials Added On?".
+* `showCredAddedVia` (boolean):  Console display name: "Show Credentials Added through ?".
+* `title` (string):  Console display name: "Title".
+* `toolTip` (string):  Console display name: "Tooltip".
+
+
+Example:
+```terraform
+resource "pingone_davinci_connector_instance" "recoveryCodeConnector" {
+  environment_id = var.pingone_environment_id
+
+  connector = {
+    id = "recoveryCodeConnector"
+  }
+  name = "My awesome recoveryCodeConnector"
+  properties = jsonencode({
+    "authDescription" = var.recoverycodeconnector_property_auth_description
+    "codeLength" = var.recoverycodeconnector_property_code_length
+    "codeNumber" = var.recoverycodeconnector_property_code_number
+    "connectorName" = var.recoverycodeconnector_property_connector_name
+    "description" = var.recoverycodeconnector_property_description
+    "details1" = var.recoverycodeconnector_property_details1
+    "details2" = var.recoverycodeconnector_property_details2
+    "iconUrl" = var.recoverycodeconnector_property_icon_url
+    "iconUrlPng" = var.recoverycodeconnector_property_icon_url_png
+    "showCredAddedOn" = var.recoverycodeconnector_property_show_cred_added_on
+    "showCredAddedVia" = var.recoverycodeconnector_property_show_cred_added_via
+    "title" = var.recoverycodeconnector_property_title
+    "toolTip" = var.recoverycodeconnector_property_tool_tip
+  })
+}
+```
+
+
+## Risk Engine
+
+Connector ID (`connector.id` in the resource): `riskEngineConnector`
+
+*No properties*
+
+
+Example:
+```terraform
+resource "pingone_davinci_connector_instance" "riskEngineConnector" {
+  environment_id = var.pingone_environment_id
+
+  connector = {
+    id = "riskEngineConnector"
+  }
+  name = "My awesome riskEngineConnector"
+}
+```
+
+
+## Roles
+
+Connector ID (`connector.id` in the resource): `rolesConnector`
+
+Properties (used under the `properties` block in the resource as a key in the JSON object):
+
+* `roles` (string):  
+
+
+Example:
+```terraform
+resource "pingone_davinci_connector_instance" "rolesConnector" {
+  environment_id = var.pingone_environment_id
+
+  connector = {
+    id = "rolesConnector"
+  }
+  name = "My awesome rolesConnector"
+  properties = jsonencode({
+    "roles" = var.rolesconnector_property_roles
+  })
+}
+```
+
+
 ## SAML
 
 Connector ID (`connector.id` in the resource): `samlConnector`
@@ -4722,6 +5119,46 @@ resource "pingone_davinci_connector_instance" "connector-oai-sapidentityapis" {
     "authApiKey" = var.connector-oai-sapidentityapis_property_auth_api_key
     "basePath" = var.connector-oai-sapidentityapis_property_base_path
   })
+}
+```
+
+
+## SDK Container
+
+Connector ID (`connector.id` in the resource): `sdkContainerConnector`
+
+*No properties*
+
+
+Example:
+```terraform
+resource "pingone_davinci_connector_instance" "sdkContainerConnector" {
+  environment_id = var.pingone_environment_id
+
+  connector = {
+    id = "sdkContainerConnector"
+  }
+  name = "My awesome sdkContainerConnector"
+}
+```
+
+
+## SDK Container (None User)
+
+Connector ID (`connector.id` in the resource): `sdkConnector`
+
+*No properties*
+
+
+Example:
+```terraform
+resource "pingone_davinci_connector_instance" "sdkConnector" {
+  environment_id = var.pingone_environment_id
+
+  connector = {
+    id = "sdkConnector"
+  }
+  name = "My awesome sdkConnector"
 }
 ```
 
@@ -4914,6 +5351,31 @@ resource "pingone_davinci_connector_instance" "connectorSaviyntFlow" {
 ```
 
 
+## ScrambleID
+
+Connector ID (`connector.id` in the resource): `scrambleIdConnector`
+
+Properties (used under the `properties` block in the resource as a key in the JSON object):
+
+* `customAuth` (json):  Console display name: "Custom Parameters".
+
+
+Example:
+```terraform
+resource "pingone_davinci_connector_instance" "scrambleIdConnector" {
+  environment_id = var.pingone_environment_id
+
+  connector = {
+    id = "scrambleIdConnector"
+  }
+  name = "My awesome scrambleIdConnector"
+  properties = jsonencode({
+    "customAuth" = var.scrambleidconnector_property_custom_auth
+  })
+}
+```
+
+
 ## Screen
 
 Connector ID (`connector.id` in the resource): `screenConnector`
@@ -4930,6 +5392,37 @@ resource "pingone_davinci_connector_instance" "screenConnector" {
     id = "screenConnector"
   }
   name = "My awesome screenConnector"
+}
+```
+
+
+## Secret Double Octopus
+
+Connector ID (`connector.id` in the resource): `secretDoubleOctopusConnector`
+
+Properties (used under the `properties` block in the resource as a key in the JSON object):
+
+* `apiToken` (string): The 128-character API Token found in the Management Console under Service > Sign-On tab. Console display name: "API Token".
+* `baseUrl` (string): The root URL of your Secret Double Octopus authentication server (e.g., https://sdo.example.com). Console display name: "Base URL".
+* `serviceId` (string): The service UUID found in the REST Endpoint URL field in the Management Console under Service > Sign-On tab. Console display name: "Service ID".
+* `x509Certificate` (string): The public certificate from SDO used to verify response signatures, found in the Management Console under Service > Sign-On tab. Console display name: "X.509 Certificate".
+
+
+Example:
+```terraform
+resource "pingone_davinci_connector_instance" "secretDoubleOctopusConnector" {
+  environment_id = var.pingone_environment_id
+
+  connector = {
+    id = "secretDoubleOctopusConnector"
+  }
+  name = "My awesome secretDoubleOctopusConnector"
+  properties = jsonencode({
+    "apiToken" = var.secretdoubleoctopusconnector_property_api_token
+    "baseUrl" = var.secretdoubleoctopusconnector_property_base_url
+    "serviceId" = var.secretdoubleoctopusconnector_property_service_id
+    "x509Certificate" = var.secretdoubleoctopusconnector_property_x509_certificate
+  })
 }
 ```
 
@@ -5423,6 +5916,102 @@ resource "pingone_davinci_connector_instance" "stringsConnector" {
     id = "stringsConnector"
   }
   name = "My awesome stringsConnector"
+}
+```
+
+
+## Support
+
+Connector ID (`connector.id` in the resource): `supportConnector`
+
+Properties (used under the `properties` block in the resource as a key in the JSON object):
+
+* `authDescription` (string):  Console display name: "Authentication Description".
+* `connectorName` (string):  Console display name: "Connector Name".
+* `description` (string):  Console display name: "Description".
+* `details1` (string):  Console display name: "Credentials Details 1".
+* `details2` (string):  Console display name: "Credentials Details 2".
+* `iconUrl` (string):  Console display name: "Icon URL".
+* `iconUrlPng` (string):  Console display name: "Icon URL in PNG".
+* `showCredAddedOn` (boolean):  Console display name: "Show Credentials Added On?".
+* `showCredAddedVia` (boolean):  Console display name: "Show Credentials Added through ?".
+* `title` (string):  Console display name: "Title".
+* `toolTip` (string):  Console display name: "Tooltip".
+
+
+Example:
+```terraform
+resource "pingone_davinci_connector_instance" "supportConnector" {
+  environment_id = var.pingone_environment_id
+
+  connector = {
+    id = "supportConnector"
+  }
+  name = "My awesome supportConnector"
+  properties = jsonencode({
+    "authDescription" = var.supportconnector_property_auth_description
+    "connectorName" = var.supportconnector_property_connector_name
+    "description" = var.supportconnector_property_description
+    "details1" = var.supportconnector_property_details1
+    "details2" = var.supportconnector_property_details2
+    "iconUrl" = var.supportconnector_property_icon_url
+    "iconUrlPng" = var.supportconnector_property_icon_url_png
+    "showCredAddedOn" = var.supportconnector_property_show_cred_added_on
+    "showCredAddedVia" = var.supportconnector_property_show_cred_added_via
+    "title" = var.supportconnector_property_title
+    "toolTip" = var.supportconnector_property_tool_tip
+  })
+}
+```
+
+
+## Symantec VIP
+
+Connector ID (`connector.id` in the resource): `symc`
+
+Properties (used under the `properties` block in the resource as a key in the JSON object):
+
+* `authDescription` (string):  Console display name: "Authentication Description".
+* `connectorName` (string):  Console display name: "Connector Name".
+* `description` (string):  Console display name: "Description".
+* `details1` (string):  Console display name: "Credentials Details 1".
+* `details2` (string):  Console display name: "Credentials Details 2".
+* `iconUrl` (string):  Console display name: "Icon URL".
+* `iconUrlPng` (string):  Console display name: "Icon URL in PNG".
+* `pfxBase64` (string):  Console display name: "PFX File (Base64 encoded)".
+* `pfxPassword` (string):  Console display name: "PFX Password".
+* `pushLoginEnabled` (boolean):  Console display name: "Enable Push Sign On".
+* `showCredAddedOn` (boolean):  Console display name: "Show Credentials Added On?".
+* `showCredAddedVia` (boolean):  Console display name: "Show Credentials Added through ?".
+* `title` (string):  Console display name: "Title".
+* `toolTip` (string):  Console display name: "Tooltip".
+
+
+Example:
+```terraform
+resource "pingone_davinci_connector_instance" "symc" {
+  environment_id = var.pingone_environment_id
+
+  connector = {
+    id = "symc"
+  }
+  name = "My awesome symc"
+  properties = jsonencode({
+    "authDescription" = var.symc_property_auth_description
+    "connectorName" = var.symc_property_connector_name
+    "description" = var.symc_property_description
+    "details1" = var.symc_property_details1
+    "details2" = var.symc_property_details2
+    "iconUrl" = var.symc_property_icon_url
+    "iconUrlPng" = var.symc_property_icon_url_png
+    "pfxBase64" = var.symc_property_pfx_base64
+    "pfxPassword" = var.symc_property_pfx_password
+    "pushLoginEnabled" = var.symc_property_push_login_enabled
+    "showCredAddedOn" = var.symc_property_show_cred_added_on
+    "showCredAddedVia" = var.symc_property_show_cred_added_via
+    "title" = var.symc_property_title
+    "toolTip" = var.symc_property_tool_tip
+  })
 }
 ```
 
@@ -5939,11 +6528,8 @@ Connector ID (`connector.id` in the resource): `userPolicyConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `passwordExpiryInDays` (number): Choose 0 for never expire. Console display name: "Expires in the specified number of days".
-* `passwordExpiryNotification` (boolean):  Console display name: "Notify user before password expires".
 * `passwordLengthMax` (number):  Console display name: "Maximum Password Length".
 * `passwordLengthMin` (number):  Console display name: "Minimum Password Length".
-* `passwordLockoutAttempts` (number):  Console display name: "Number of failed login attempts before account is locked".
 * `passwordPreviousXPasswords` (number): Choose 0 if any previous passwords are allowed. This is not recommended. Console display name: "Number of unique user passwords associated with a user".
 * `passwordRequireLowercase` (boolean): Should the password contain lowercase characters?. Console display name: "Require Lowercase Characters".
 * `passwordRequireNumbers` (boolean): Should the password contain numbers?. Console display name: "Require Numbers".
@@ -5951,7 +6537,6 @@ Properties (used under the `properties` block in the resource as a key in the JS
 * `passwordRequireUppercase` (boolean): Should the password contain uppercase characters?. Console display name: "Require Uppercase Characters".
 * `passwordSpacesOk` (boolean): Are spaces allowed in the password?. Console display name: "Spaces Accepted".
 * `passwordsEnabled` (boolean):  Console display name: "Passwords Feature Enabled?".
-* `temporaryPasswordExpiryInDays` (number): If an administrator sets a temporary password, choose how long before it expires. Console display name: "Temporary password expires in the specified number of days".
 
 
 Example:
@@ -5964,11 +6549,8 @@ resource "pingone_davinci_connector_instance" "userPolicyConnector" {
   }
   name = "My awesome userPolicyConnector"
   properties = jsonencode({
-    "passwordExpiryInDays" = var.userpolicyconnector_property_password_expiry_in_days
-    "passwordExpiryNotification" = var.userpolicyconnector_property_password_expiry_notification
     "passwordLengthMax" = var.userpolicyconnector_property_password_length_max
     "passwordLengthMin" = var.userpolicyconnector_property_password_length_min
-    "passwordLockoutAttempts" = var.userpolicyconnector_property_password_lockout_attempts
     "passwordPreviousXPasswords" = var.userpolicyconnector_property_password_previous_x_passwords
     "passwordRequireLowercase" = var.userpolicyconnector_property_password_require_lowercase
     "passwordRequireNumbers" = var.userpolicyconnector_property_password_require_numbers
@@ -5976,7 +6558,6 @@ resource "pingone_davinci_connector_instance" "userPolicyConnector" {
     "passwordRequireUppercase" = var.userpolicyconnector_property_password_require_uppercase
     "passwordSpacesOk" = var.userpolicyconnector_property_password_spaces_ok
     "passwordsEnabled" = var.userpolicyconnector_property_passwords_enabled
-    "temporaryPasswordExpiryInDays" = var.userpolicyconnector_property_temporary_password_expiry_in_days
   })
 }
 ```
@@ -6245,6 +6826,51 @@ resource "pingone_davinci_connector_instance" "mailchainConnector" {
 ```
 
 
+## Voice OTP
+
+Connector ID (`connector.id` in the resource): `voiceConnector`
+
+Properties (used under the `properties` block in the resource as a key in the JSON object):
+
+* `authDescription` (string):  Console display name: "Authentication Description".
+* `connectorName` (string):  Console display name: "Connector Name".
+* `description` (string):  Console display name: "Description".
+* `details1` (string):  Console display name: "Credentials Details 1".
+* `details2` (string):  Console display name: "Credentials Details 2".
+* `iconUrl` (string):  Console display name: "Icon URL".
+* `iconUrlPng` (string):  Console display name: "Icon URL in PNG".
+* `showCredAddedOn` (boolean):  Console display name: "Show Credentials Added On?".
+* `showCredAddedVia` (boolean):  Console display name: "Show Credentials Added through ?".
+* `title` (string):  Console display name: "Title".
+* `toolTip` (string):  Console display name: "Tooltip".
+
+
+Example:
+```terraform
+resource "pingone_davinci_connector_instance" "voiceConnector" {
+  environment_id = var.pingone_environment_id
+
+  connector = {
+    id = "voiceConnector"
+  }
+  name = "My awesome voiceConnector"
+  properties = jsonencode({
+    "authDescription" = var.voiceconnector_property_auth_description
+    "connectorName" = var.voiceconnector_property_connector_name
+    "description" = var.voiceconnector_property_description
+    "details1" = var.voiceconnector_property_details1
+    "details2" = var.voiceconnector_property_details2
+    "iconUrl" = var.voiceconnector_property_icon_url
+    "iconUrlPng" = var.voiceconnector_property_icon_url_png
+    "showCredAddedOn" = var.voiceconnector_property_show_cred_added_on
+    "showCredAddedVia" = var.voiceconnector_property_show_cred_added_via
+    "title" = var.voiceconnector_property_title
+    "toolTip" = var.voiceconnector_property_tool_tip
+  })
+}
+```
+
+
 ## Webhook
 
 Connector ID (`connector.id` in the resource): `webhookConnector`
@@ -6409,6 +7035,31 @@ resource "pingone_davinci_connector_instance" "yotiConnector" {
 ```
 
 
+## ZenKey
+
+Connector ID (`connector.id` in the resource): `zenkeyConnector`
+
+Properties (used under the `properties` block in the resource as a key in the JSON object):
+
+* `customAuth` (json):  Console display name: "Custom Parameters".
+
+
+Example:
+```terraform
+resource "pingone_davinci_connector_instance" "zenkeyConnector" {
+  environment_id = var.pingone_environment_id
+
+  connector = {
+    id = "zenkeyConnector"
+  }
+  name = "My awesome zenkeyConnector"
+  properties = jsonencode({
+    "customAuth" = var.zenkeyconnector_property_custom_auth
+  })
+}
+```
+
+
 ## Zendesk
 
 Connector ID (`connector.id` in the resource): `connectorZendesk`
@@ -6495,87 +7146,6 @@ resource "pingone_davinci_connector_instance" "connectorZscaler" {
     "zscalerAPIkey" = var.zscaler_api_key
     "zscalerPassword" = var.connectorzscaler_property_zscaler_password
     "zscalerUsername" = var.connectorzscaler_property_zscaler_username
-  })
-}
-```
-
-
-## iProov
-
-Connector ID (`connector.id` in the resource): `iproovConnector`
-
-Properties (used under the `properties` block in the resource as a key in the JSON object):
-
-* `allowLandscape` (boolean):  Console display name: "Allow Landscape".
-* `apiKey` (string):  Console display name: "API Key".
-* `authDescription` (string):  Console display name: "Authentication Description".
-* `baseUrl` (string):  Console display name: "Base URL".
-* `color1` (string): Ex. #000000. Console display name: "Loading Tint Color".
-* `color2` (string): Ex. #000000. Console display name: "Not Ready Tint Color".
-* `color3` (string): Ex. #000000. Console display name: "Ready Tint Color".
-* `color4` (string): Ex. #000000. Console display name: "Liveness Tint Color".
-* `connectorName` (string):  Console display name: "Connector Name".
-* `customTitle` (string): Specify a custom title to be shown. Defaults to show an iProov-generated message. Set to empty string "" to hide the message entirely.  Console display name: "Custom Title".
-* `description` (string):  Console display name: "Description".
-* `details1` (string):  Console display name: "Credentials Details 1".
-* `details2` (string):  Console display name: "Credentials Details 2".
-* `enableCameraSelector` (boolean):  Console display name: "Enable Camera Selector".
-* `iconUrl` (string):  Console display name: "Icon URL".
-* `iconUrlPng` (string):  Console display name: "Icon URL in PNG".
-* `javascriptCSSUrl` (string):  Console display name: "CSS URL".
-* `javascriptCdnUrl` (string):  Console display name: "Javascript CDN URL".
-* `kioskMode` (boolean):  Console display name: "Kiosk Mode".
-* `logo` (string): You can use a custom logo by simply passing a relative link, absolute path or data URI to your logo. If you do not want a logo to show pass the logo attribute as null. Console display name: "Logo".
-* `password` (string):  Console display name: "Password".
-* `secret` (string):  Console display name: "Secret".
-* `showCountdown` (boolean):  Console display name: "Show Countdown".
-* `showCredAddedOn` (boolean):  Console display name: "Show Credentials Added On?".
-* `showCredAddedVia` (boolean):  Console display name: "Show Credentials Added through ?".
-* `startScreenTitle` (string):  Console display name: "Start Screen Title".
-* `title` (string):  Console display name: "Title".
-* `toolTip` (string):  Console display name: "Tooltip".
-* `username` (string):  Console display name: "Username".
-
-
-Example:
-```terraform
-resource "pingone_davinci_connector_instance" "iproovConnector" {
-  environment_id = var.pingone_environment_id
-
-  connector = {
-    id = "iproovConnector"
-  }
-  name = "My awesome iproovConnector"
-  properties = jsonencode({
-    "allowLandscape" = var.iproovconnector_property_allow_landscape
-    "apiKey" = var.iproovconnector_property_api_key
-    "authDescription" = var.iproovconnector_property_auth_description
-    "baseUrl" = var.iproovconnector_property_base_url
-    "color1" = var.iproovconnector_property_color1
-    "color2" = var.iproovconnector_property_color2
-    "color3" = var.iproovconnector_property_color3
-    "color4" = var.iproovconnector_property_color4
-    "connectorName" = var.iproovconnector_property_connector_name
-    "customTitle" = var.iproovconnector_property_custom_title
-    "description" = var.iproovconnector_property_description
-    "details1" = var.iproovconnector_property_details1
-    "details2" = var.iproovconnector_property_details2
-    "enableCameraSelector" = var.iproovconnector_property_enable_camera_selector
-    "iconUrl" = var.iproovconnector_property_icon_url
-    "iconUrlPng" = var.iproovconnector_property_icon_url_png
-    "javascriptCSSUrl" = var.javascript_css_url
-    "javascriptCdnUrl" = var.iproovconnector_property_javascript_cdn_url
-    "kioskMode" = var.iproovconnector_property_kiosk_mode
-    "logo" = var.iproovconnector_property_logo
-    "password" = var.iproovconnector_property_password
-    "secret" = var.iproovconnector_property_secret
-    "showCountdown" = var.iproovconnector_property_show_countdown
-    "showCredAddedOn" = var.iproovconnector_property_show_cred_added_on
-    "showCredAddedVia" = var.iproovconnector_property_show_cred_added_via
-    "startScreenTitle" = var.iproovconnector_property_start_screen_title
-    "title" = var.iproovconnector_property_title
-    "toolTip" = var.iproovconnector_property_tool_tip
-    "username" = var.iproovconnector_property_username
   })
 }
 ```
