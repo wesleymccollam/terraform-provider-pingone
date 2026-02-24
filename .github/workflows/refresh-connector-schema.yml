@@ -124,7 +124,7 @@ jobs:
         id: create_changelog_entry
         if: steps.check_changes.outputs.CONTENT_CHANGED == 'true'
         run: |
-          echo -e "\`\`\`release-note:note\nUpdate Connector Reference Guide ($(date +'%d %B %Y')).\n\`\`\`" > .changelog/${{ steps.create_pr.outputs.PR_NUMBER }}.txt
+          echo -e "\`\`\`release-note:note\nUpdate Connector Reference Guide ($(date +'%d %B %Y')).\n\`\`\`" > .changelog/pr-${{ steps.create_pr.outputs.PR_NUMBER }}.txt
 
       - name: Commit changes
         id: commit_changelog
