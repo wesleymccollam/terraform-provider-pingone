@@ -31,12 +31,12 @@ type connectorDocPropertyData struct {
 }
 
 func Generate() {
-	dir, err := filepath.Abs(filepath.Dir("."))
+	dir, err := filepath.Abs(".")
 	if err != nil {
 		panic(err)
 	}
-	// Go up one level to the provider root directory
-	dir = filepath.Dir(dir)
+	// Go up two levels to the provider root directory (tools/dvgenerate -> tools -> root)
+	dir = filepath.Dir(filepath.Dir(dir))
 	fmt.Println("base directory:", dir)
 
 	GenerateReferenceTemplate(dir)
