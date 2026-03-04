@@ -4,6 +4,7 @@ package dvgenerate
 
 import (
 	"bytes"
+	"encoding/json"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -13,13 +14,13 @@ import (
 	"unicode"
 
 	"github.com/pingidentity/terraform-provider-pingone/dvgenerate/internal"
-	"github.com/samir-gandhi/davinci-client-go/davinci"
 )
 
 type connectorDocData struct {
-	ConnectorName string
-	ConnectorId   string
-	Properties    []connectorDocPropertyData
+	ConnectorName string                     `json:"name,omitempty"`
+	ConnectorId   string                     `json:"connectorId,omitempty"`
+	RawProperties map[string]any             `json:"properties,omitempty"`
+	Properties    []connectorDocPropertyData `json:"-"`
 }
 
 type connectorDocPropertyData struct {
@@ -31,42 +32,43 @@ type connectorDocPropertyData struct {
 }
 
 func Generate() {
-	dir, err := filepath.Abs(".")
+	dir, err := os.Getwd()
 	if err != nil {
 		panic(err)
 	}
-	// Go up two levels to the provider root directory (tools/dvgenerate -> tools -> root)
-	dir = filepath.Dir(filepath.Dir(dir))
-	fmt.Println("base directory:", dir)
 
-	GenerateReferenceTemplate(dir)
-	GenerateConnectorHCLExamples(dir)
+	absDir, err := filepath.Abs(dir)
+	if err != nil {
+		panic(err)
+	}
+
+	baseDirectory := absDir
+	if strings.HasSuffix(baseDirectory, "tools/dvgenerate") {
+		baseDirectory = filepath.Dir(filepath.Dir(baseDirectory))
+	}
+
+	conns, err := readConnectors()
+	if err != nil {
+		panic(err)
+	}
+
+	GenerateReferenceTemplate(baseDirectory, conns)
+	GenerateConnectorHCLExamples(baseDirectory, conns)
 }
 
-func GenerateReferenceTemplate(baseDirectory string) {
+func GenerateReferenceTemplate(baseDirectory string, conns []connectorDocData) {
 
 	fileNameDirectory := fmt.Sprintf("%s/templates/guides", baseDirectory)
 
-	conns, err := readConnectors()
-	if err != nil {
-		panic(err)
-	}
-
-	err = writeConnectorTemplate(fileNameDirectory, internal.ConnectorReferenceTmpl, conns, true)
+	err := writeConnectorTemplate(fileNameDirectory, internal.ConnectorReferenceTmpl, conns, true)
 	if err != nil {
 		panic(err)
 	}
 }
 
-func GenerateConnectorHCLExamples(baseDirectory string) {
-
-	conns, err := readConnectors()
-	if err != nil {
-		panic(err)
-	}
+func GenerateConnectorHCLExamples(baseDirectory string, conns []connectorDocData) {
 
 	fileNameDirectory := fmt.Sprintf("%s/examples/davinci-connector-instances", baseDirectory)
-	fmt.Println("connector examples directory:", fileNameDirectory)
 	for _, conn := range conns {
 		err := writeConnector(fileNameDirectory, internal.ConnectorTmpl, conn, false)
 		if err != nil {
@@ -75,7 +77,7 @@ func GenerateConnectorHCLExamples(baseDirectory string) {
 	}
 }
 
-func writeConnectorTemplate(fileNameDirectory, templateString string, conns connectionByName, overwrite bool) error {
+func writeConnectorTemplate(fileNameDirectory, templateString string, conns []connectorDocData, overwrite bool) error {
 	fileName := fmt.Sprintf("%s/connector-instance-reference.md.tmpl", fileNameDirectory)
 
 	t, err := template.New("ConnectorReferenceTemplate").Parse(templateString)
@@ -122,59 +124,67 @@ func writeTemplateFile(t *template.Template, fileName string, overwrite bool, da
 	return nil
 }
 
-func readConnectors() (connectionByName, error) {
+func readConnectors() ([]connectorDocData, error) {
 
-	connectorSchema := []davinci.Connector{}
-	err := davinci.Unmarshal(internal.ConnectorSchemaBytes, &connectorSchema, davinci.ExportCmpOpts{
-		IgnoreEnvironmentMetadata: true,
-	})
+	connectorList := []connectorDocData{}
+	err := json.Unmarshal(internal.ConnectorSchemaBytes, &connectorList)
 	if err != nil {
 		return nil, err
 	}
 
-	connectorList := make(connectionByName, 0)
-	for _, connectorSchemaItem := range connectorSchema {
-
-		connectorDocData := connectorDocData{}
-
-		if v := connectorSchemaItem.ConnectorID; v != nil {
-			connectorDocData.ConnectorId = *v
-		} else {
-			connectorDocData.ConnectorId = "No value"
+	for i := range connectorList {
+		if connectorList[i].ConnectorId == "" {
+			connectorList[i].ConnectorId = "No value"
 		}
 
-		if v := connectorSchemaItem.Name; v != nil {
-			connectorDocData.ConnectorName = *v
-		} else {
-			connectorDocData.ConnectorName = "No name"
+		if connectorList[i].ConnectorName == "" {
+			connectorList[i].ConnectorName = "No name"
 		}
 
-		if connectorSchemaItem.Properties != nil {
-			connectorProperties := make(connectionPropertyByName, 0)
-			for propertyName, property := range connectorSchemaItem.Properties {
+		if connectorList[i].RawProperties != nil {
+			connectorProperties := make([]connectorDocPropertyData, 0)
+			for propertyName, property := range connectorList[i].RawProperties {
+
+				propertyMap, ok := property.(map[string]any)
+				if !ok {
+					continue
+				}
+
 				propertyType := "string"
-				if v := property.Type; v != nil {
-					propertyType = *v
+				if v, ok := propertyMap["type"].(string); ok && v != "" {
+					propertyType = v
 				}
 
 				propertyType = rewritePropertyType(propertyType)
 
-				description := property.Info
+				description := ""
+				if v, ok := propertyMap["info"].(string); ok {
+					description = v
+				}
 
-				if description != nil && strings.TrimSpace(*description) != "" && !strings.HasSuffix(strings.TrimSpace(*description), ".") {
-					descriptionTemp := fmt.Sprintf("%s.", *description)
-					description = &descriptionTemp
+				if strings.TrimSpace(description) != "" && !strings.HasSuffix(strings.TrimSpace(description), ".") {
+					description = fmt.Sprintf("%s.", description)
+				}
+
+				var descriptionPtr *string
+				if description != "" {
+					descriptionPtr = &description
+				}
+
+				var displayName string
+				if v, ok := propertyMap["displayName"].(string); ok {
+					displayName = v
 				}
 
 				connectorProperty := connectorDocPropertyData{
 					Name:               propertyName,
 					Type:               &propertyType,
-					Description:        description,
-					ConsoleDisplayName: property.DisplayName,
+					Description:        descriptionPtr,
+					ConsoleDisplayName: &displayName,
 				}
 
 				exampleFound := false
-				if v, ok := internal.ExampleValues[connectorDocData.ConnectorId][propertyName]; ok {
+				if v, ok := internal.ExampleValues[connectorList[i].ConnectorId][propertyName]; ok {
 					connectorProperty.Value = &v.Value
 
 					if v.OverridingType != nil {
@@ -185,7 +195,7 @@ func readConnectors() (connectionByName, error) {
 				}
 
 				if !exampleFound {
-					defaultValue := fmt.Sprintf("var.%s_property_%s", strings.ToLower(connectorDocData.ConnectorId), camelToSnake(propertyName))
+					defaultValue := fmt.Sprintf("var.%s_property_%s", strings.ToLower(connectorList[i].ConnectorId), camelToSnake(propertyName))
 					connectorProperty.Value = &defaultValue
 				}
 
@@ -195,10 +205,8 @@ func readConnectors() (connectionByName, error) {
 			slices.SortFunc(connectorProperties, func(i, j connectorDocPropertyData) int {
 				return strings.Compare(i.Name, j.Name)
 			})
-			connectorDocData.Properties = connectorProperties
+			connectorList[i].Properties = connectorProperties
 		}
-
-		connectorList = append(connectorList, connectorDocData)
 	}
 
 	slices.SortFunc(connectorList, func(i, j connectorDocData) int {
@@ -218,20 +226,6 @@ func rewritePropertyType(dvSchemaPropertyType string) (propertyType string) {
 
 	return
 }
-
-type connectionPropertyByName []connectorDocPropertyData
-
-func (a connectionPropertyByName) Len() int           { return len(a) }
-func (a connectionPropertyByName) Less(i, j int) bool { return a[i].Name < a[j].Name }
-func (a connectionPropertyByName) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
-
-type connectionByName []connectorDocData
-
-func (a connectionByName) Len() int { return len(a) }
-func (a connectionByName) Less(i, j int) bool {
-	return fmt.Sprintf("%s%s", a[i].ConnectorName, a[i].ConnectorId) < fmt.Sprintf("%s%s", a[j].ConnectorName, a[j].ConnectorId)
-}
-func (a connectionByName) Swap(i, j int) { a[i], a[j] = a[j], a[i] }
 
 func camelToSnake(camel string) string {
 	// A buffer to build the output string
