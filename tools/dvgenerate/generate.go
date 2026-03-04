@@ -32,6 +32,12 @@ type connectorDocPropertyData struct {
 }
 
 func Generate(input []byte) {
+	conns, err := readConnectors(input)
+	if err != nil {
+		fmt.Printf("Warning: %s\n", err)
+		return
+	}
+
 	dir, err := os.Getwd()
 	if err != nil {
 		panic(err)
@@ -45,11 +51,6 @@ func Generate(input []byte) {
 	baseDirectory := absDir
 	if strings.HasSuffix(baseDirectory, "tools/dvgenerate") {
 		baseDirectory = filepath.Dir(filepath.Dir(baseDirectory))
-	}
-
-	conns, err := readConnectors(input)
-	if err != nil {
-		panic(err)
 	}
 
 	GenerateReferenceTemplate(baseDirectory, conns)
@@ -129,7 +130,7 @@ func readConnectors(input []byte) ([]connectorDocData, error) {
 	connectorList := []connectorDocData{}
 
 	if len(input) == 0 {
-		return nil, fmt.Errorf("no connector schema input provided. Please provide schema via -file flag or stdin")
+		return nil, fmt.Errorf("no connector schema input provided. Please provide schema via -file flag or stdin.  Skipping generation")
 	}
 
 	err := json.Unmarshal(input, &connectorList)
