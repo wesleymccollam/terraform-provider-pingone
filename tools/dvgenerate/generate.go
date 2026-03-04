@@ -31,7 +31,7 @@ type connectorDocPropertyData struct {
 	Value              *string
 }
 
-func Generate() {
+func Generate(input []byte) {
 	dir, err := os.Getwd()
 	if err != nil {
 		panic(err)
@@ -47,7 +47,7 @@ func Generate() {
 		baseDirectory = filepath.Dir(filepath.Dir(baseDirectory))
 	}
 
-	conns, err := readConnectors()
+	conns, err := readConnectors(input)
 	if err != nil {
 		panic(err)
 	}
@@ -124,10 +124,18 @@ func writeTemplateFile(t *template.Template, fileName string, overwrite bool, da
 	return nil
 }
 
-func readConnectors() ([]connectorDocData, error) {
+func readConnectors(input []byte) ([]connectorDocData, error) {
 
 	connectorList := []connectorDocData{}
-	err := json.Unmarshal(internal.ConnectorSchemaBytes, &connectorList)
+
+	var sourceBytes []byte
+	if len(input) > 0 {
+		sourceBytes = input
+	} else {
+		sourceBytes = internal.ConnectorSchemaBytes
+	}
+
+	err := json.Unmarshal(sourceBytes, &connectorList)
 	if err != nil {
 		return nil, err
 	}
