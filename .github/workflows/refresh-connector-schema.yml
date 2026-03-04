@@ -1,6 +1,8 @@
 name: Refresh Connector Schema
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 13 1 * *'
 
 jobs:
   generate:
@@ -18,15 +20,11 @@ jobs:
       
       - name: Generate Connector Schema
         run: |
-          davinci-pingcli connectors schema --json | jq '[.[] | .accountConfigView.items as $items | {"name": .name, "connectorId": .connectorId, "connectorCategories": .connectorCategories, "properties": (.properties // {} | with_entries(select(.key as $k | ($items // [] | map(.propertyName)) | index($k))))}] | sort_by(.connectorId)' > tools/dvgenerate/internal/connector_schema/connector-schema.json
+          davinci-pingcli connectors schema --json | jq '[.[] | .accountConfigView.items as $items | {"name": .name, "connectorId": .connectorId, "connectorCategories": .connectorCategories, "properties": (.properties // {} | with_entries(select(.key as $k | ($items // [] | map(.propertyName)) | index($k))))}] | sort_by(.connectorId)'
         continue-on-error: false
 
-        env:
-          PINGCLI_DAVINCI_USERNAME: ${{ secrets.PINGCLI_DAVINCI_USERNAME }}
-          PINGCLI_DAVINCI_PASSWORD: ${{ secrets.PINGCLI_DAVINCI_PASSWORD }}
-          PINGCLI_DAVINCI_ADMINENVIRONMENTID: ${{ secrets.PINGCLI_DAVINCI_ADMIN_ENVIRONMENT_ID }}
-          PINGCLI_DAVINCI_ENVIRONMENTID: ${{ secrets.PINGCLI_DAVINCI_ENVIRONMENT_ID }}
-          PINGCLI_DAVINCI_REGION: ${{ secrets.PINGCLI_DAVINCI_REGION }}
+      - name: Generate Terraform Docs & Examples
+        run: make generate
 
       - name: Check for changes
         id: check_changes
@@ -59,33 +57,9 @@ jobs:
           git commit -m "Update connector schema"
           git push
 
-      - name: Get dependencies
-        if: steps.check_changes.outputs.CONTENT_CHANGED == 'true'
-        run: |
-          go mod download
-      
-      - name: Check dependencies
-        if: steps.check_changes.outputs.CONTENT_CHANGED == 'true'
-        run: |
-          make depscheck
-      
-      - name: Vet
-        if: steps.check_changes.outputs.CONTENT_CHANGED == 'true'
-        run: |
-          make vet
-      
-      - name: Build
-        if: steps.check_changes.outputs.CONTENT_CHANGED == 'true'
-        run: |
-          make build
-
       - uses: hashicorp/setup-terraform@v3
         if: steps.check_changes.outputs.CONTENT_CHANGED == 'true'
       
-      - run: go install github.com/hashicorp/terraform-plugin-docs/cmd/tfplugindocs
-        if: steps.check_changes.outputs.CONTENT_CHANGED == 'true'
-      - run: go install github.com/katbyte/terrafmt
-        if: steps.check_changes.outputs.CONTENT_CHANGED == 'true'
       - run: make generate
         if: steps.check_changes.outputs.CONTENT_CHANGED == 'true'
 
