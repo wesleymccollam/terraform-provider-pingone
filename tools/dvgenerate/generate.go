@@ -128,14 +128,11 @@ func readConnectors(input []byte) ([]connectorDocData, error) {
 
 	connectorList := []connectorDocData{}
 
-	var sourceBytes []byte
-	if len(input) > 0 {
-		sourceBytes = input
-	} else {
-		sourceBytes = internal.ConnectorSchemaBytes
+	if len(input) == 0 {
+		return nil, fmt.Errorf("no connector schema input provided. Please provide schema via -file flag or stdin")
 	}
 
-	err := json.Unmarshal(sourceBytes, &connectorList)
+	err := json.Unmarshal(input, &connectorList)
 	if err != nil {
 		return nil, err
 	}
