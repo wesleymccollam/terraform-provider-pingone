@@ -45,7 +45,6 @@ jobs:
       - name: Generate Terraform Provider Documentation
         run: |
           make generateconnectorref
-          make generate
 
       - name: Check for changes
         id: check_changes
