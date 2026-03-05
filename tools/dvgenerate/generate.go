@@ -247,11 +247,16 @@ func camelToSnake(camel string) string {
 	for i, r := range camel {
 		// If the rune is an uppercase letter and it's not the first character,
 		// write an underscore to the buffer
-		if unicode.IsUpper(r) && i > 0 {
+		if unicode.IsUpper(r) {
+			if i > 0 && camel[i-1] != '_' && !unicode.IsUpper(rune(camel[i-1])) {
+				buf.WriteRune('_')
+			}
+			buf.WriteRune(unicode.ToLower(r))
+		} else if unicode.IsLetter(r) || unicode.IsDigit(r) {
+			buf.WriteRune(r)
+		} else {
 			buf.WriteRune('_')
 		}
-		// Write the lowercase version of the current rune to the buffer
-		buf.WriteRune(unicode.ToLower(r))
 	}
 
 	// Return the contents of the buffer as a string
