@@ -265,7 +265,11 @@ func camelToSnake(camel string) string {
 
 func sanitizeForTemplate(input string) string {
 	// Replaces "{{" with "{{ "{{" }}" and "}}" with "{{ "}}" }}"
-	output := strings.ReplaceAll(input, "{{", "{{ \"{{\" }}")
-	output = strings.ReplaceAll(output, "}}", "{{ \"}}\" }}")
+	// Use placeholders to avoid double replacement
+	output := strings.ReplaceAll(input, "{{", "___OPEN_BRACE___")
+	output = strings.ReplaceAll(output, "}}", "___CLOSE_BRACE___")
+	
+	output = strings.ReplaceAll(output, "___OPEN_BRACE___", "{{ \"{{\" }}")
+	output = strings.ReplaceAll(output, "___CLOSE_BRACE___", "{{ \"}}\" }}")
 	return output
 }
