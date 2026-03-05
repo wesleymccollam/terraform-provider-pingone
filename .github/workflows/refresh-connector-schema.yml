@@ -32,13 +32,20 @@ jobs:
             --output-format json \
             "environments/${{ secrets.PINGONE_PROD_NA_FF_ENVIRONMENT_ID }}/connectors" \
           | sed -n '/^{/,$p' \
-          | jq '.response._embedded.connectors | map({"name": .name, "connectorId": .id, "connectorCategories": [], "properties": {}}) | sort_by(.connectorId)' > tools/dvgenerate/internal/connector_schema.json
+          | jq '.response._embedded.connectors | unique_by(.id) | map({"name": .name, "connectorId": .id, "connectorCategories": [], "properties": {}}) | sort_by(.connectorId)' > tools/dvgenerate/internal/connector-schema.json
+
+          if [ ! -s tools/dvgenerate/internal/connector-schema.json ]; then
+            echo "Error: Generated connector schema is empty or missing."
+            exit 1
+          fi
         continue-on-error: false
 
       - uses: hashicorp/setup-terraform@v3
 
-      - name: Generate Terraform Docs & Examples
-        run: make generate
+      - name: Generate Terraform Provider Documentation
+        run: |
+          make generateconnectorref
+          make generate
 
       - name: Check for changes
         id: check_changes

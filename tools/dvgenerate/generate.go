@@ -71,7 +71,7 @@ func GenerateConnectorHCLExamples(baseDirectory string, conns []connectorDocData
 
 	fileNameDirectory := fmt.Sprintf("%s/examples/davinci-connector-instances", baseDirectory)
 	for _, conn := range conns {
-		err := writeConnector(fileNameDirectory, internal.ConnectorTmpl, conn, false)
+		err := writeConnector(fileNameDirectory, internal.ConnectorTmpl, conn, true)
 		if err != nil {
 			panic(err)
 		}
