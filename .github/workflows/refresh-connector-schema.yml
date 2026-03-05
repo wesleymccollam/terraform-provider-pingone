@@ -32,7 +32,7 @@ jobs:
             --output-format json \
             "environments/${{ secrets.PINGONE_PROD_NA_FF_ENVIRONMENT_ID }}/connectors" \
           | sed -n '/^{/,$p' \
-          | jq '.response._embedded.connectors | unique_by(.id) | map({"name": .name, "connectorId": .id, "connectorCategories": [], "properties": {}}) | sort_by(.connectorId)' > tools/dvgenerate/internal/connector-schema.json
+          | jq '.response._embedded.connectors | unique_by(.id) | map({"name": .name, "connectorId": .id, "connectorCategories": (.connectorCategories // []), "properties": (.properties // {})}) | sort_by(.connectorId)' > tools/dvgenerate/internal/connector-schema.json
 
           if [ ! -s tools/dvgenerate/internal/connector-schema.json ]; then
             echo "Error: Generated connector schema is empty or missing."
