@@ -35,6 +35,8 @@ jobs:
           | jq '.response._embedded.connectors | map({"name": .name, "connectorId": .id, "connectorCategories": [], "properties": {}}) | sort_by(.connectorId)' > tools/dvgenerate/internal/connector_schema.json
         continue-on-error: false
 
+      - uses: hashicorp/setup-terraform@v3
+
       - name: Generate Terraform Docs & Examples
         run: make generate
 
