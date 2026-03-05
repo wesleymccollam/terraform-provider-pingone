@@ -2,6 +2,9 @@
 set -e
 set -o pipefail
 
+# Do not store pingcli login token
+export PINGCLI_LOGIN_STORAGE_TYPE=none
+
 echo "Fetching connector list..."
 pingcli request \
   --fail \
@@ -31,10 +34,17 @@ while read -r conn; do
   | sed -n '/^{/,$p')
 
   if [ -z "$detail_json" ]; then detail_json="{}"; fi
-  properties=$(echo "$detail_json" | jq -c '.response.properties // {}')
+  
+  # Write to temp files to avoid huge arguments in jq
+  echo "$detail_json" | jq -c '.response.properties // {}' > props.tmp.json
+  echo "$conn" > conn.tmp.json
 
-  echo "$conn" | jq -c --argjson props "$properties" '{name, connectorId: .id, connectorCategories, properties: $props}' >> expanded_connectors.jsonl
+  jq -n -c --slurpfile c conn.tmp.json --slurpfile p props.tmp.json \
+    '{name: $c[0].name, connectorId: $c[0].id, connectorCategories: $c[0].connectorCategories, properties: $p[0]}' \
+    >> expanded_connectors.jsonl
 done < base_connectors.jsonl
+
+rm conn.tmp.json props.tmp.json
 
 jq -s 'unique_by(.connectorId) | sort_by(.connectorId)' expanded_connectors.jsonl > tools/dvgenerate/internal/connector-schema.json
 rm base_connectors.jsonl expanded_connectors.jsonl
