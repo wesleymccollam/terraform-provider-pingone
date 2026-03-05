@@ -7,6 +7,6 @@ resource "pingone_davinci_connector_instance" "connectorSecuronix" {
   name = "My awesome connectorSecuronix"
   properties = jsonencode({
     "domainName" = var.connectorsecuronix_property_domain_name
-    "token" = var.connectorsecuronix_property_token
+    "token"      = var.connectorsecuronix_property_token
   })
 }

@@ -6,9 +6,9 @@ resource "pingone_davinci_connector_instance" "finicityConnector" {
   }
   name = "My awesome finicityConnector"
   properties = jsonencode({
-    "appKey" = var.finicityconnector_property_app_key
-    "baseUrl" = var.finicityconnector_property_base_url
-    "partnerId" = var.finicityconnector_property_partner_id
+    "appKey"        = var.finicityconnector_property_app_key
+    "baseUrl"       = var.finicityconnector_property_base_url
+    "partnerId"     = var.finicityconnector_property_partner_id
     "partnerSecret" = var.finicityconnector_property_partner_secret
   })
 }

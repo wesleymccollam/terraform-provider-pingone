@@ -6,8 +6,8 @@ resource "pingone_davinci_connector_instance" "connectorAmazonAwsSecretsManager"
   }
   name = "My awesome connectorAmazonAwsSecretsManager"
   properties = jsonencode({
-    "accessKeyId" = var.connectoramazonawssecretsmanager_property_access_key_id
-    "region" = "eu-west-1"
+    "accessKeyId"     = var.connectoramazonawssecretsmanager_property_access_key_id
+    "region"          = "eu-west-1"
     "secretAccessKey" = var.connectoramazonawssecretsmanager_property_secret_access_key
   })
 }

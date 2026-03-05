@@ -7,7 +7,7 @@ resource "pingone_davinci_connector_instance" "flowConnector" {
   name = "My awesome flowConnector"
   properties = jsonencode({
     "enforcedSignedToken" = var.flowconnector_property_enforced_signed_token
-    "inputSchema" = var.flowconnector_property_input_schema
-    "pemPublicKey" = var.flowconnector_property_pem_public_key
+    "inputSchema"         = var.flowconnector_property_input_schema
+    "pemPublicKey"        = var.flowconnector_property_pem_public_key
   })
 }

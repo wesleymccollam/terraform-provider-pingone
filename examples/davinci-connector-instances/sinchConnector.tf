@@ -8,6 +8,6 @@ resource "pingone_davinci_connector_instance" "sinchConnector" {
   properties = jsonencode({
     "acceptLanguage" = var.sinchconnector_property_accept_language
     "applicationKey" = var.sinchconnector_property_application_key
-    "secretKey" = var.sinchconnector_property_secret_key
+    "secretKey"      = var.sinchconnector_property_secret_key
   })
 }

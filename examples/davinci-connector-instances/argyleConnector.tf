@@ -6,10 +6,10 @@ resource "pingone_davinci_connector_instance" "argyleConnector" {
   }
   name = "My awesome argyleConnector"
   properties = jsonencode({
-    "apiUrl" = var.argyleconnector_property_api_url
-    "clientId" = var.argyleconnector_property_client_id
-    "clientSecret" = var.argyleconnector_property_client_secret
+    "apiUrl"           = var.argyleconnector_property_api_url
+    "clientId"         = var.argyleconnector_property_client_id
+    "clientSecret"     = var.argyleconnector_property_client_secret
     "javascriptWebUrl" = var.argyleconnector_property_javascript_web_url
-    "pluginKey" = var.argyleconnector_property_plugin_key
+    "pluginKey"        = var.argyleconnector_property_plugin_key
   })
 }

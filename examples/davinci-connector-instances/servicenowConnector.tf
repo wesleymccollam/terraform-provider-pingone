@@ -7,7 +7,7 @@ resource "pingone_davinci_connector_instance" "servicenowConnector" {
   name = "My awesome servicenowConnector"
   properties = jsonencode({
     "adminUsername" = var.servicenowconnector_property_admin_username
-    "apiUrl" = var.servicenowconnector_property_api_url
-    "password" = var.servicenowconnector_property_password
+    "apiUrl"        = var.servicenowconnector_property_api_url
+    "password"      = var.servicenowconnector_property_password
   })
 }

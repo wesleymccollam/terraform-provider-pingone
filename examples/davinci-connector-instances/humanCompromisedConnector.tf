@@ -6,7 +6,7 @@ resource "pingone_davinci_connector_instance" "humanCompromisedConnector" {
   }
   name = "My awesome humanCompromisedConnector"
   properties = jsonencode({
-    "appId" = var.humancompromisedconnector_property_app_id
+    "appId"     = var.humancompromisedconnector_property_app_id
     "authToken" = var.humancompromisedconnector_property_auth_token
   })
 }

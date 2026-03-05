@@ -6,8 +6,8 @@ resource "pingone_davinci_connector_instance" "connector-oai-datadogapi" {
   }
   name = "My awesome connector-oai-datadogapi"
   properties = jsonencode({
-    "authApiKey" = var.connector-oai-datadogapi_property_auth_api_key
+    "authApiKey"         = var.connector-oai-datadogapi_property_auth_api_key
     "authApplicationKey" = var.connector-oai-datadogapi_property_auth_application_key
-    "basePath" = var.connector-oai-datadogapi_property_base_path
+    "basePath"           = var.connector-oai-datadogapi_property_base_path
   })
 }

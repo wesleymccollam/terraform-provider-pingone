@@ -6,8 +6,8 @@ resource "pingone_davinci_connector_instance" "haveIBeenPwnedConnector" {
   }
   name = "My awesome haveIBeenPwnedConnector"
   properties = jsonencode({
-    "apiKey" = var.haveibeenpwnedconnector_property_api_key
-    "apiUrl" = var.haveibeenpwnedconnector_property_api_url
+    "apiKey"    = var.haveibeenpwnedconnector_property_api_key
+    "apiUrl"    = var.haveibeenpwnedconnector_property_api_url
     "userAgent" = var.haveibeenpwnedconnector_property_user_agent
   })
 }

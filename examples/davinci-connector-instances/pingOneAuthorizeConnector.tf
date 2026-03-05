@@ -6,8 +6,8 @@ resource "pingone_davinci_connector_instance" "pingOneAuthorizeConnector" {
   }
   name = "My awesome pingOneAuthorizeConnector"
   properties = jsonencode({
-    "clientId" = var.pingoneauthorizeconnector_property_client_id
+    "clientId"     = var.pingoneauthorizeconnector_property_client_id
     "clientSecret" = var.pingoneauthorizeconnector_property_client_secret
-    "endpointURL" = var.endpoint_url
+    "endpointURL"  = var.endpoint_url
   })
 }

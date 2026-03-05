@@ -6,8 +6,8 @@ resource "pingone_davinci_connector_instance" "rsaConnector" {
   }
   name = "My awesome rsaConnector"
   properties = jsonencode({
-    "accessId" = var.rsaconnector_property_access_id
+    "accessId"  = var.rsaconnector_property_access_id
     "accessKey" = var.rsaconnector_property_access_key
-    "baseUrl" = var.rsaconnector_property_base_url
+    "baseUrl"   = var.rsaconnector_property_base_url
   })
 }

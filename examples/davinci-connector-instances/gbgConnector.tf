@@ -6,9 +6,9 @@ resource "pingone_davinci_connector_instance" "gbgConnector" {
   }
   name = "My awesome gbgConnector"
   properties = jsonencode({
-    "password" = var.gbgconnector_property_password
+    "password"   = var.gbgconnector_property_password
     "requestUrl" = var.gbgconnector_property_request_url
     "soapAction" = var.gbgconnector_property_soap_action
-    "username" = var.gbgconnector_property_username
+    "username"   = var.gbgconnector_property_username
   })
 }

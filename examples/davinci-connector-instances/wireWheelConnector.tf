@@ -6,9 +6,9 @@ resource "pingone_davinci_connector_instance" "wireWheelConnector" {
   }
   name = "My awesome wireWheelConnector"
   properties = jsonencode({
-    "baseURL" = var.base_url
-    "clientId" = var.wirewheelconnector_property_client_id
+    "baseURL"      = var.base_url
+    "clientId"     = var.wirewheelconnector_property_client_id
     "clientSecret" = var.wirewheelconnector_property_client_secret
-    "issuerId" = var.wirewheelconnector_property_issuer_id
+    "issuerId"     = var.wirewheelconnector_property_issuer_id
   })
 }

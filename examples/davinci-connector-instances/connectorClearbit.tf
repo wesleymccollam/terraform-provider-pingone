@@ -6,8 +6,8 @@ resource "pingone_davinci_connector_instance" "connectorClearbit" {
   }
   name = "My awesome connectorClearbit"
   properties = jsonencode({
-    "apiKey" = var.connectorclearbit_property_api_key
+    "apiKey"         = var.connectorclearbit_property_api_key
     "riskApiVersion" = var.connectorclearbit_property_risk_api_version
-    "version" = var.connectorclearbit_property_version
+    "version"        = var.connectorclearbit_property_version
   })
 }

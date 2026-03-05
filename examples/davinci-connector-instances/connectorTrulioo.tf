@@ -6,7 +6,7 @@ resource "pingone_davinci_connector_instance" "connectorTrulioo" {
   }
   name = "My awesome connectorTrulioo"
   properties = jsonencode({
-    "clientID" = var.connectortrulioo_property_client_i_d
+    "clientID"     = var.connectortrulioo_property_client_i_d
     "clientSecret" = var.connectortrulioo_property_client_secret
   })
 }

@@ -6,8 +6,8 @@ resource "pingone_davinci_connector_instance" "mparticleConnector" {
   }
   name = "My awesome mparticleConnector"
   properties = jsonencode({
-    "clientID" = var.mparticleconnector_property_client_i_d
+    "clientID"     = var.mparticleconnector_property_client_i_d
     "clientSecret" = var.mparticleconnector_property_client_secret
-    "pod" = var.mparticleconnector_property_pod
+    "pod"          = var.mparticleconnector_property_pod
   })
 }

@@ -6,8 +6,8 @@ resource "pingone_davinci_connector_instance" "connectorAmazonDynamoDB" {
   }
   name = "My awesome connectorAmazonDynamoDB"
   properties = jsonencode({
-    "awsAccessKey" = var.connectoramazondynamodb_property_aws_access_key
+    "awsAccessKey"    = var.connectoramazondynamodb_property_aws_access_key
     "awsAccessSecret" = var.connectoramazondynamodb_property_aws_access_secret
-    "awsRegion" = "eu-west-1"
+    "awsRegion"       = "eu-west-1"
   })
 }

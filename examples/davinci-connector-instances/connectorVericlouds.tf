@@ -7,6 +7,6 @@ resource "pingone_davinci_connector_instance" "connectorVericlouds" {
   name = "My awesome connectorVericlouds"
   properties = jsonencode({
     "apiSecret" = var.connectorvericlouds_property_api_secret
-    "apikey" = var.connectorvericlouds_property_apikey
+    "apikey"    = var.connectorvericlouds_property_apikey
   })
 }

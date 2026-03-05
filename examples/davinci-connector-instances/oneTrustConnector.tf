@@ -6,7 +6,7 @@ resource "pingone_davinci_connector_instance" "oneTrustConnector" {
   }
   name = "My awesome oneTrustConnector"
   properties = jsonencode({
-    "clientId" = var.onetrustconnector_property_client_id
+    "clientId"     = var.onetrustconnector_property_client_id
     "clientSecret" = var.onetrustconnector_property_client_secret
   })
 }

@@ -7,6 +7,6 @@ resource "pingone_davinci_connector_instance" "connectorIPStack" {
   name = "My awesome connectorIPStack"
   properties = jsonencode({
     "allowInsecureIPStackConnection" = var.allow_insecure_ip_stack_connection
-    "apiKey" = var.connectoripstack_property_api_key
+    "apiKey"                         = var.connectoripstack_property_api_key
   })
 }

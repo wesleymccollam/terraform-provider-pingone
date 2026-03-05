@@ -6,11 +6,11 @@ resource "pingone_davinci_connector_instance" "smtpConnector" {
   }
   name = "My awesome smtpConnector"
   properties = jsonencode({
-    "hostname" = var.smtpconnector_property_hostname
-    "name" = var.smtpconnector_property_name
-    "password" = var.smtpconnector_property_password
-    "port" = var.smtpconnector_property_port
+    "hostname"   = var.smtpconnector_property_hostname
+    "name"       = var.smtpconnector_property_name
+    "password"   = var.smtpconnector_property_password
+    "port"       = var.smtpconnector_property_port
     "secureFlag" = var.smtpconnector_property_secure_flag
-    "username" = var.smtpconnector_property_username
+    "username"   = var.smtpconnector_property_username
   })
 }

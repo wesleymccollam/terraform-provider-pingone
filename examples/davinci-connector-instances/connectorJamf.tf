@@ -8,6 +8,6 @@ resource "pingone_davinci_connector_instance" "connectorJamf" {
   properties = jsonencode({
     "jamfPassword" = var.connectorjamf_property_jamf_password
     "jamfUsername" = var.connectorjamf_property_jamf_username
-    "serverName" = var.connectorjamf_property_server_name
+    "serverName"   = var.connectorjamf_property_server_name
   })
 }

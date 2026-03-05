@@ -6,8 +6,8 @@ resource "pingone_davinci_connector_instance" "connectorAWSLambda" {
   }
   name = "My awesome connectorAWSLambda"
   properties = jsonencode({
-    "accessKeyId" = var.connectorawslambda_property_access_key_id
-    "region" = "eu-west-1"
+    "accessKeyId"     = var.connectorawslambda_property_access_key_id
+    "region"          = "eu-west-1"
     "secretAccessKey" = var.connectorawslambda_property_secret_access_key
   })
 }

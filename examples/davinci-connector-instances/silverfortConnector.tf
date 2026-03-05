@@ -6,8 +6,8 @@ resource "pingone_davinci_connector_instance" "silverfortConnector" {
   }
   name = "My awesome silverfortConnector"
   properties = jsonencode({
-    "apiKey" = var.silverfortconnector_property_api_key
+    "apiKey"        = var.silverfortconnector_property_api_key
     "appUserSecret" = var.silverfortconnector_property_app_user_secret
-    "consoleApi" = var.silverfortconnector_property_console_api
+    "consoleApi"    = var.silverfortconnector_property_console_api
   })
 }

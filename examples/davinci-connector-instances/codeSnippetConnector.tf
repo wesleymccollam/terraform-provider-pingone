@@ -6,8 +6,8 @@ resource "pingone_davinci_connector_instance" "codeSnippetConnector" {
   }
   name = "My awesome codeSnippetConnector"
   properties = jsonencode({
-    "code" = var.codesnippetconnector_property_code
-    "inputSchema" = var.codesnippetconnector_property_input_schema
+    "code"         = var.codesnippetconnector_property_code
+    "inputSchema"  = var.codesnippetconnector_property_input_schema
     "outputSchema" = var.codesnippetconnector_property_output_schema
   })
 }

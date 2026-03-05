@@ -6,8 +6,8 @@ resource "pingone_davinci_connector_instance" "connector-oai-github" {
   }
   name = "My awesome connector-oai-github"
   properties = jsonencode({
-    "apiVersion" = var.connector-oai-github_property_api_version
+    "apiVersion"      = var.connector-oai-github_property_api_version
     "authBearerToken" = var.connector-oai-github_property_auth_bearer_token
-    "basePath" = var.connector-oai-github_property_base_path
+    "basePath"        = var.connector-oai-github_property_base_path
   })
 }

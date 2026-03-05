@@ -6,8 +6,8 @@ resource "pingone_davinci_connector_instance" "connectorZendesk" {
   }
   name = "My awesome connectorZendesk"
   properties = jsonencode({
-    "apiToken" = var.connectorzendesk_property_api_token
+    "apiToken"      = var.connectorzendesk_property_api_token
     "emailUsername" = var.connectorzendesk_property_email_username
-    "subdomain" = var.connectorzendesk_property_subdomain
+    "subdomain"     = var.connectorzendesk_property_subdomain
   })
 }

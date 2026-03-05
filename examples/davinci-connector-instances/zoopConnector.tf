@@ -7,7 +7,7 @@ resource "pingone_davinci_connector_instance" "zoopConnector" {
   name = "My awesome zoopConnector"
   properties = jsonencode({
     "agencyId" = var.zoopconnector_property_agency_id
-    "apiKey" = var.zoopconnector_property_api_key
-    "apiUrl" = var.zoopconnector_property_api_url
+    "apiKey"   = var.zoopconnector_property_api_key
+    "apiUrl"   = var.zoopconnector_property_api_url
   })
 }

@@ -6,10 +6,10 @@ resource "pingone_davinci_connector_instance" "pingOneCredentialsConnector" {
   }
   name = "My awesome pingOneCredentialsConnector"
   properties = jsonencode({
-    "clientId" = var.pingone_worker_app_client_id
-    "clientSecret" = var.pingone_worker_app_client_secret
+    "clientId"                   = var.pingone_worker_app_client_id
+    "clientSecret"               = var.pingone_worker_app_client_secret
     "digitalWalletApplicationId" = var.pingonecredentialsconnector_property_digital_wallet_application_id
-    "envId" = var.pingone_worker_app_environment_id
-    "region" = var.pingonecredentialsconnector_property_region
+    "envId"                      = var.pingone_worker_app_environment_id
+    "region"                     = var.pingonecredentialsconnector_property_region
   })
 }

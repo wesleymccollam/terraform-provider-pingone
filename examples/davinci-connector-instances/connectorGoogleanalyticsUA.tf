@@ -7,6 +7,6 @@ resource "pingone_davinci_connector_instance" "connectorGoogleanalyticsUA" {
   name = "My awesome connectorGoogleanalyticsUA"
   properties = jsonencode({
     "trackingID" = var.tracking_id
-    "version" = var.connectorgoogleanalyticsua_property_version
+    "version"    = var.connectorgoogleanalyticsua_property_version
   })
 }

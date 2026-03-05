@@ -6,8 +6,8 @@ resource "pingone_davinci_connector_instance" "adobemarketoConnector" {
   }
   name = "My awesome adobemarketoConnector"
   properties = jsonencode({
-    "clientId" = var.adobemarketoconnector_property_client_id
+    "clientId"     = var.adobemarketoconnector_property_client_id
     "clientSecret" = var.adobemarketoconnector_property_client_secret
-    "endpoint" = var.adobemarketoconnector_property_endpoint
+    "endpoint"     = var.adobemarketoconnector_property_endpoint
   })
 }

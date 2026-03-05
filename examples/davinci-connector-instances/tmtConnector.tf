@@ -6,8 +6,8 @@ resource "pingone_davinci_connector_instance" "tmtConnector" {
   }
   name = "My awesome tmtConnector"
   properties = jsonencode({
-    "apiKey" = var.tmtconnector_property_api_key
+    "apiKey"    = var.tmtconnector_property_api_key
     "apiSecret" = var.tmtconnector_property_api_secret
-    "apiUrl" = var.tmtconnector_property_api_url
+    "apiUrl"    = var.tmtconnector_property_api_url
   })
 }

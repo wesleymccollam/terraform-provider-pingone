@@ -17,7 +17,7 @@ Connector ID (`connector.id` in the resource): `connector1Kosmos`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -57,8 +57,8 @@ resource "pingone_davinci_connector_instance" "connectorAWSLambda" {
   }
   name = "My awesome connectorAWSLambda"
   properties = jsonencode({
-    "accessKeyId" = var.connectorawslambda_property_access_key_id
-    "region" = "eu-west-1"
+    "accessKeyId"     = var.connectorawslambda_property_access_key_id
+    "region"          = "eu-west-1"
     "secretAccessKey" = var.connectorawslambda_property_secret_access_key
   })
 }
@@ -71,7 +71,7 @@ Connector ID (`connector.id` in the resource): `awsIdpConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `openId` (json):  Console display name: "OpenId Parameters".
+* `openId` (json): Console display name: "OpenId Parameters".
 
 
 Example:
@@ -111,8 +111,8 @@ resource "pingone_davinci_connector_instance" "connectorAmazonAwsSecretsManager"
   }
   name = "My awesome connectorAmazonAwsSecretsManager"
   properties = jsonencode({
-    "accessKeyId" = var.connectoramazonawssecretsmanager_property_access_key_id
-    "region" = "eu-west-1"
+    "accessKeyId"     = var.connectoramazonawssecretsmanager_property_access_key_id
+    "region"          = "eu-west-1"
     "secretAccessKey" = var.connectoramazonawssecretsmanager_property_secret_access_key
   })
 }
@@ -165,9 +165,9 @@ resource "pingone_davinci_connector_instance" "connector-oai-activecampaignapi" 
   }
   name = "My awesome connector-oai-activecampaignapi"
   properties = jsonencode({
-    "authApiKey" = var.connector-oai-activecampaignapi_property_auth_api_key
+    "authApiKey"     = var.connector-oai-activecampaignapi_property_auth_api_key
     "authApiVersion" = var.connector-oai-activecampaignapi_property_auth_api_version
-    "basePath" = var.connector-oai-activecampaignapi_property_base_path
+    "basePath"       = var.connector-oai-activecampaignapi_property_base_path
   })
 }
 ```
@@ -179,7 +179,7 @@ Connector ID (`connector.id` in the resource): `connectorAcuant`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -219,9 +219,9 @@ resource "pingone_davinci_connector_instance" "adobemarketoConnector" {
   }
   name = "My awesome adobemarketoConnector"
   properties = jsonencode({
-    "clientId" = var.adobemarketoconnector_property_client_id
+    "clientId"     = var.adobemarketoconnector_property_client_id
     "clientSecret" = var.adobemarketoconnector_property_client_secret
-    "endpoint" = var.adobemarketoconnector_property_endpoint
+    "endpoint"     = var.adobemarketoconnector_property_endpoint
   })
 }
 ```
@@ -233,7 +233,7 @@ Connector ID (`connector.id` in the resource): `akamaiConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -258,7 +258,7 @@ Connector ID (`connector.id` in the resource): `connectorAllthenticate`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -298,9 +298,9 @@ resource "pingone_davinci_connector_instance" "connectorAmazonDynamoDB" {
   }
   name = "My awesome connectorAmazonDynamoDB"
   properties = jsonencode({
-    "awsAccessKey" = var.connectoramazondynamodb_property_aws_access_key
+    "awsAccessKey"    = var.connectoramazondynamodb_property_aws_access_key
     "awsAccessSecret" = var.connectoramazondynamodb_property_aws_access_secret
-    "awsRegion" = "eu-west-1"
+    "awsRegion"       = "eu-west-1"
   })
 }
 ```
@@ -312,9 +312,9 @@ Connector ID (`connector.id` in the resource): `amazonSimpleEmailConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `awsAccessKey` (string):  Console display name: "AWS Access Key".
-* `awsAccessSecret` (string):  Console display name: "AWS Access Secret".
-* `awsRegion` (string):  Console display name: "AWS Region".
+* `awsAccessKey` (string): Console display name: "AWS Access Key".
+* `awsAccessSecret` (string): Console display name: "AWS Access Secret".
+* `awsRegion` (string): Console display name: "AWS Region".
 * `from` (string): The email address that the message appears to originate from, as registered with your AWS account, such as "support@mycompany.com". Console display name: "From (Default) *".
 
 
@@ -328,10 +328,10 @@ resource "pingone_davinci_connector_instance" "amazonSimpleEmailConnector" {
   }
   name = "My awesome amazonSimpleEmailConnector"
   properties = jsonencode({
-    "awsAccessKey" = var.amazonsimpleemailconnector_property_aws_access_key
+    "awsAccessKey"    = var.amazonsimpleemailconnector_property_aws_access_key
     "awsAccessSecret" = var.amazonsimpleemailconnector_property_aws_access_secret
-    "awsRegion" = "eu-west-1"
-    "from" = "support@bxretail.org"
+    "awsRegion"       = "eu-west-1"
+    "from"            = "support@bxretail.org"
   })
 }
 ```
@@ -363,7 +363,7 @@ Connector ID (`connector.id` in the resource): `appleConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -377,141 +377,141 @@ resource "pingone_davinci_connector_instance" "appleConnector" {
   name = "My awesome appleConnector"
   properties = jsonencode({
     "customAuth" = jsonencode({
-				"properties": {
-				  "providerName": {
-					"displayName": "Provider Name",
-					"preferredControlType": "textField",
-					"value": "${var.appleconnector_property_provider_name}"
-				  },
-				  "skRedirectUri": {
-					"displayName": "DaVinci Redirect URL",
-					"info": "Your DaVinci redirect URL. This allows an identity provider to redirect the browser back to DaVinci.",
-					"preferredControlType": "textField",
-					"disabled": true,
-					"initializeValue": "SINGULARKEY_REDIRECT_URI",
-					"copyToClip": true
-				  },
-				  "iss": {
-					"displayName": "Issuer",
-					"info": "The issuer registered claim identifies the principal that issued the client secret. Since the client secret was generated for your developer team, use your 10-character Team ID associated with your developer account.",
-					"preferredControlType": "textField",
-					"required": true,
-					"value": "${var.appleconnector_property_issuer}"
-				  },
-				  "kid": {
-					"displayName": "Key ID",
-					"info": "A 10-character key identifier generated for the Sign in with Apple private key associated with your developer account.",
-					"preferredControlType": "textField",
-					"required": true,
-					"value": "${var.appleconnector_property_key_id}"
-				  },
-				  "issuerUrl": {
-					"displayName": "Issuer URL",
-					"preferredControlType": "textField",
-					"required": true,
-					"value": "${var.appleconnector_property_issuer_url}"
-				  },
-				  "authorizationEndpoint": {
-					"preferredControlType": "textField",
-					"displayName": "Authorization Endpoint",
-					"required": true,
-					"value": "${var.appleconnector_property_authorization_endpoint}"
-				  },
-				  "tokenEndpoint": {
-					"preferredControlType": "textField",
-					"displayName": "Token Endpoint",
-					"required": true,
-					"value": "${var.appleconnector_property_token_endpoint}"
-				  },
-				  "clientId": {
-					"displayName": "Client ID",
-					"preferredControlType": "textField",
-					"required": true,
-					"value": "${var.appleconnector_property_client_id}"
-				  },
-				  "clientSecret": {
-					"displayName": "Private Key",
-					"info": "Content of your 'Sign in with Apple' private key associated with your developer account.",
-					"preferredControlType": "textArea",
-					"secure": true,
-					"required": true,
-					"value": "${var.appleconnector_property_private_key}"
-				  },
-				  "scope": {
-					"displayName": "Scope",
-					"preferredControlType": "textField",
-					"requiredValue": "email",
-					"required": true,
-					"value": "${var.appleconnector_property_scope}"
-				  },
-				  "userConnectorAttributeMapping": {
-					"type": "object",
-					"preferredControlType": "userConnectorAttributeMapping",
-					"newMappingAllowed": true,
-					"title1": null,
-					"title2": null,
-					"sections": [
-					  "attributeMapping"
-					],
-					"value": {
-					  "userPoolConnectionId": "defaultUserPool",
-					  "mapping": {
-						"username": {
-						  "value1": "sub"
-						},
-						"name": {
-						  "value1": "email"
-						},
-						"email": {
-						  "value1": "email"
-						}
-					  }
-					}
-				  },
-				  "customAttributes": {
-					"type": "array",
-					"displayName": "Connector Attributes",
-					"preferredControlType": "tableViewAttributes",
-					"info": "These attributes will be available in User Connector Attribute Mapping.",
-					"sections": [
-					  "connectorAttributes"
-					],
-					"value": [
-					  {
-						"name": "sub",
-						"description": "Sub",
-						"type": "string",
-						"value": null,
-						"minLength": "1",
-						"maxLength": "300",
-						"required": true,
-						"attributeType": "sk"
-					  },
-					  {
-						"name": "email",
-						"description": "Email",
-						"type": "string",
-						"value": null,
-						"minLength": "1",
-						"maxLength": "250",
-						"required": false,
-						"attributeType": "sk"
-					  }
-					]
-				  },
-				  "disableCreateUser": {
-					"displayName": "Disable Shadow User Creation",
-					"preferredControlType": "toggleSwitch",
-					"value": false,
-					"info": "A shadow user is implicitly created, unless disabled."
-				  },
-				  "returnToUrl": {
-					"displayName": "Application Return To URL",
-					"preferredControlType": "textField",
-					"info": "When using the embedded flow player widget and an IDP/Social Login connector, provide a callback URL to return back to the application."
-				  }
-				}
-			  })
+      "properties" : {
+        "providerName" : {
+          "displayName" : "Provider Name",
+          "preferredControlType" : "textField",
+          "value" : "${var.appleconnector_property_provider_name}"
+        },
+        "skRedirectUri" : {
+          "displayName" : "DaVinci Redirect URL",
+          "info" : "Your DaVinci redirect URL. This allows an identity provider to redirect the browser back to DaVinci.",
+          "preferredControlType" : "textField",
+          "disabled" : true,
+          "initializeValue" : "SINGULARKEY_REDIRECT_URI",
+          "copyToClip" : true
+        },
+        "iss" : {
+          "displayName" : "Issuer",
+          "info" : "The issuer registered claim identifies the principal that issued the client secret. Since the client secret was generated for your developer team, use your 10-character Team ID associated with your developer account.",
+          "preferredControlType" : "textField",
+          "required" : true,
+          "value" : "${var.appleconnector_property_issuer}"
+        },
+        "kid" : {
+          "displayName" : "Key ID",
+          "info" : "A 10-character key identifier generated for the Sign in with Apple private key associated with your developer account.",
+          "preferredControlType" : "textField",
+          "required" : true,
+          "value" : "${var.appleconnector_property_key_id}"
+        },
+        "issuerUrl" : {
+          "displayName" : "Issuer URL",
+          "preferredControlType" : "textField",
+          "required" : true,
+          "value" : "${var.appleconnector_property_issuer_url}"
+        },
+        "authorizationEndpoint" : {
+          "preferredControlType" : "textField",
+          "displayName" : "Authorization Endpoint",
+          "required" : true,
+          "value" : "${var.appleconnector_property_authorization_endpoint}"
+        },
+        "tokenEndpoint" : {
+          "preferredControlType" : "textField",
+          "displayName" : "Token Endpoint",
+          "required" : true,
+          "value" : "${var.appleconnector_property_token_endpoint}"
+        },
+        "clientId" : {
+          "displayName" : "Client ID",
+          "preferredControlType" : "textField",
+          "required" : true,
+          "value" : "${var.appleconnector_property_client_id}"
+        },
+        "clientSecret" : {
+          "displayName" : "Private Key",
+          "info" : "Content of your 'Sign in with Apple' private key associated with your developer account.",
+          "preferredControlType" : "textArea",
+          "secure" : true,
+          "required" : true,
+          "value" : "${var.appleconnector_property_private_key}"
+        },
+        "scope" : {
+          "displayName" : "Scope",
+          "preferredControlType" : "textField",
+          "requiredValue" : "email",
+          "required" : true,
+          "value" : "${var.appleconnector_property_scope}"
+        },
+        "userConnectorAttributeMapping" : {
+          "type" : "object",
+          "preferredControlType" : "userConnectorAttributeMapping",
+          "newMappingAllowed" : true,
+          "title1" : null,
+          "title2" : null,
+          "sections" : [
+            "attributeMapping"
+          ],
+          "value" : {
+            "userPoolConnectionId" : "defaultUserPool",
+            "mapping" : {
+              "username" : {
+                "value1" : "sub"
+              },
+              "name" : {
+                "value1" : "email"
+              },
+              "email" : {
+                "value1" : "email"
+              }
+            }
+          }
+        },
+        "customAttributes" : {
+          "type" : "array",
+          "displayName" : "Connector Attributes",
+          "preferredControlType" : "tableViewAttributes",
+          "info" : "These attributes will be available in User Connector Attribute Mapping.",
+          "sections" : [
+            "connectorAttributes"
+          ],
+          "value" : [
+            {
+              "name" : "sub",
+              "description" : "Sub",
+              "type" : "string",
+              "value" : null,
+              "minLength" : "1",
+              "maxLength" : "300",
+              "required" : true,
+              "attributeType" : "sk"
+            },
+            {
+              "name" : "email",
+              "description" : "Email",
+              "type" : "string",
+              "value" : null,
+              "minLength" : "1",
+              "maxLength" : "250",
+              "required" : false,
+              "attributeType" : "sk"
+            }
+          ]
+        },
+        "disableCreateUser" : {
+          "displayName" : "Disable Shadow User Creation",
+          "preferredControlType" : "toggleSwitch",
+          "value" : false,
+          "info" : "A shadow user is implicitly created, unless disabled."
+        },
+        "returnToUrl" : {
+          "displayName" : "Application Return To URL",
+          "preferredControlType" : "textField",
+          "info" : "When using the embedded flow player widget and an IDP/Social Login connector, provide a callback URL to return back to the application."
+        }
+      }
+    })
   })
 }
 ```
@@ -523,11 +523,11 @@ Connector ID (`connector.id` in the resource): `argyleConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `apiUrl` (string):  Console display name: "API Server URL".
-* `clientId` (string):  Console display name: "Client ID".
-* `clientSecret` (string):  Console display name: "Client Secret".
+* `apiUrl` (string): Console display name: "API Server URL".
+* `clientId` (string): Console display name: "Client ID".
+* `clientSecret` (string): Console display name: "Client Secret".
 * `javascriptWebUrl` (string): Argyle loader javascript web URL. Console display name: "Argyle Loader Javascript Web URL".
-* `pluginKey` (string):  Console display name: "Plugin Key".
+* `pluginKey` (string): Console display name: "Plugin Key".
 
 
 Example:
@@ -540,11 +540,11 @@ resource "pingone_davinci_connector_instance" "argyleConnector" {
   }
   name = "My awesome argyleConnector"
   properties = jsonencode({
-    "apiUrl" = var.argyleconnector_property_api_url
-    "clientId" = var.argyleconnector_property_client_id
-    "clientSecret" = var.argyleconnector_property_client_secret
+    "apiUrl"           = var.argyleconnector_property_api_url
+    "clientId"         = var.argyleconnector_property_client_id
+    "clientSecret"     = var.argyleconnector_property_client_secret
     "javascriptWebUrl" = var.argyleconnector_property_javascript_web_url
-    "pluginKey" = var.argyleconnector_property_plugin_key
+    "pluginKey"        = var.argyleconnector_property_plugin_key
   })
 }
 ```
@@ -556,7 +556,7 @@ Connector ID (`connector.id` in the resource): `connectorAsignio`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -581,7 +581,7 @@ Connector ID (`connector.id` in the resource): `connectorAuthid`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -627,15 +627,15 @@ resource "pingone_davinci_connector_instance" "authenticIdConnector" {
   }
   name = "My awesome authenticIdConnector"
   properties = jsonencode({
-    "accountAccessKey" = var.authenticidconnector_property_account_access_key
+    "accountAccessKey"     = var.authenticidconnector_property_account_access_key
     "androidSDKLicenseKey" = var.authenticidconnector_property_android_sdk_license_key
-    "apiUrl" = var.authenticidconnector_property_api_url
-    "baseUrl" = var.authenticidconnector_property_base_url
-    "clientCertificate" = var.authenticidconnector_property_client_certificate
-    "clientKey" = var.authenticidconnector_property_client_key
-    "iOSSDKLicenseKey" = var.authenticidconnector_property_ios_sdk_license_key
-    "passphrase" = var.authenticidconnector_property_passphrase
-    "secretToken" = var.authenticidconnector_property_secret_token
+    "apiUrl"               = var.authenticidconnector_property_api_url
+    "baseUrl"              = var.authenticidconnector_property_base_url
+    "clientCertificate"    = var.authenticidconnector_property_client_certificate
+    "clientKey"            = var.authenticidconnector_property_client_key
+    "iOSSDKLicenseKey"     = var.authenticidconnector_property_ios_sdk_license_key
+    "passphrase"           = var.authenticidconnector_property_passphrase
+    "secretToken"          = var.authenticidconnector_property_secret_token
   })
 }
 ```
@@ -662,7 +662,7 @@ resource "pingone_davinci_connector_instance" "connector-oai-authomizeapireferen
   name = "My awesome connector-oai-authomizeapireference"
   properties = jsonencode({
     "authApiKey" = var.connector-oai-authomizeapireference_property_auth_api_key
-    "basePath" = var.connector-oai-authomizeapireference_property_base_path
+    "basePath"   = var.connector-oai-authomizeapireference_property_base_path
   })
 }
 ```
@@ -701,7 +701,7 @@ Properties (used under the `properties` block in the resource as a key in the JS
 
 * `baseUrl` (string): The Microsoft API URL to target. For a custom value, select Use Custom API URL and enter a value in the Custom API URL field. Console display name: "API URL".
 * `customApiUrl` (string): The URL for the Microsoft Graph API, such as "https://graph.microsoft.com/v1.0". Console display name: "Custom API URL".
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -714,9 +714,9 @@ resource "pingone_davinci_connector_instance" "azureUserManagementConnector" {
   }
   name = "My awesome azureUserManagementConnector"
   properties = jsonencode({
-    "baseUrl" = var.azureusermanagementconnector_property_base_url
+    "baseUrl"      = var.azureusermanagementconnector_property_base_url
     "customApiUrl" = var.azureusermanagementconnector_property_custom_api_url
-    "customAuth" = jsonencode({})
+    "customAuth"   = jsonencode({})
   })
 }
 ```
@@ -728,7 +728,7 @@ Connector ID (`connector.id` in the resource): `connectorBadge`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -753,7 +753,7 @@ Connector ID (`connector.id` in the resource): `bambooConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `apiKey` (string):  Console display name: "API Key".
+* `apiKey` (string): Console display name: "API Key".
 * `baseUrl` (string):  BambooHR Base URL. Console display name: "Base URL".
 * `companySubDomain` (string):  Your BambooHR subdomain. Console display name: "Company Sub Domain".
 * `flowId` (string): Select ID of the flow to execute when BambooHR sends a webhook. Console display name: "Flow ID".
@@ -771,12 +771,12 @@ resource "pingone_davinci_connector_instance" "bambooConnector" {
   }
   name = "My awesome bambooConnector"
   properties = jsonencode({
-    "apiKey" = var.bambooconnector_property_api_key
-    "baseUrl" = var.bambooconnector_property_base_url
+    "apiKey"           = var.bambooconnector_property_api_key
+    "baseUrl"          = var.bambooconnector_property_base_url
     "companySubDomain" = var.bambooconnector_property_company_sub_domain
-    "flowId" = var.bambooconnector_property_flow_id
-    "skWebhookUri" = var.bambooconnector_property_sk_webhook_uri
-    "webhookToken" = var.bambooconnector_property_webhook_token
+    "flowId"           = var.bambooconnector_property_flow_id
+    "skWebhookUri"     = var.bambooconnector_property_sk_webhook_uri
+    "webhookToken"     = var.bambooconnector_property_webhook_token
   })
 }
 ```
@@ -804,8 +804,8 @@ resource "pingone_davinci_connector_instance" "connectorBerbix" {
   name = "My awesome connectorBerbix"
   properties = jsonencode({
     "domainName" = var.connectorberbix_property_domain_name
-    "path" = var.connectorberbix_property_path
-    "username" = var.connectorberbix_property_username
+    "path"       = var.connectorberbix_property_path
+    "username"   = var.connectorberbix_property_username
   })
 }
 ```
@@ -817,7 +817,7 @@ Connector ID (`connector.id` in the resource): `connectorBeyondIdentity`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `openId` (json):  Console display name: "OpenId Parameters".
+* `openId` (json): Console display name: "OpenId Parameters".
 
 
 Example:
@@ -857,9 +857,9 @@ resource "pingone_davinci_connector_instance" "connectorBTps" {
   }
   name = "My awesome connectorBTps"
   properties = jsonencode({
-    "apiKey" = var.connectorbtps_property_api_key
+    "apiKey"  = var.connectorbtps_property_api_key
     "apiUser" = var.connectorbtps_property_api_user
-    "domain" = var.connectorbtps_property_domain
+    "domain"  = var.connectorbtps_property_domain
   })
 }
 ```
@@ -886,9 +886,9 @@ resource "pingone_davinci_connector_instance" "connectorBTpra" {
   }
   name = "My awesome connectorBTpra"
   properties = jsonencode({
-    "clientID" = var.connectorbtpra_property_client_i_d
+    "clientID"     = var.connectorbtpra_property_client_i_d
     "clientSecret" = var.connectorbtpra_property_client_secret
-    "praAPIurl" = var.pra_api_url
+    "praAPIurl"    = var.pra_api_url
   })
 }
 ```
@@ -915,9 +915,9 @@ resource "pingone_davinci_connector_instance" "connectorBTrs" {
   }
   name = "My awesome connectorBTrs"
   properties = jsonencode({
-    "clientID" = var.connectorbtrs_property_client_i_d
+    "clientID"     = var.connectorbtrs_property_client_i_d
     "clientSecret" = var.connectorbtrs_property_client_secret
-    "rsAPIurl" = var.rs_api_url
+    "rsAPIurl"     = var.rs_api_url
   })
 }
 ```
@@ -929,10 +929,10 @@ Connector ID (`connector.id` in the resource): `biocatchConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `apiUrl` (string):  Console display name: "API Server URL".
-* `customerId` (string):  Console display name: "Customer ID".
-* `javascriptCdnUrl` (string):  Console display name: "Javascript CDN URL".
-* `sdkToken` (string):  Console display name: "SDK Token".
+* `apiUrl` (string): Console display name: "API Server URL".
+* `customerId` (string): Console display name: "Customer ID".
+* `javascriptCdnUrl` (string): Console display name: "Javascript CDN URL".
+* `sdkToken` (string): Console display name: "SDK Token".
 * `truthApiKey` (string): Fraudulent/Genuine Session Reporting API Key. Console display name: "Truth-mapping API Key".
 * `truthApiUrl` (string): Fraudulent/Genuine Session Reporting. Console display name: "Truth-mapping API URL".
 
@@ -947,12 +947,12 @@ resource "pingone_davinci_connector_instance" "biocatchConnector" {
   }
   name = "My awesome biocatchConnector"
   properties = jsonencode({
-    "apiUrl" = var.biocatchconnector_property_api_url
-    "customerId" = var.biocatchconnector_property_customer_id
+    "apiUrl"           = var.biocatchconnector_property_api_url
+    "customerId"       = var.biocatchconnector_property_customer_id
     "javascriptCdnUrl" = var.biocatchconnector_property_javascript_cdn_url
-    "sdkToken" = var.biocatchconnector_property_sdk_token
-    "truthApiKey" = var.biocatchconnector_property_truth_api_key
-    "truthApiUrl" = var.biocatchconnector_property_truth_api_url
+    "sdkToken"         = var.biocatchconnector_property_sdk_token
+    "truthApiKey"      = var.biocatchconnector_property_truth_api_key
+    "truthApiUrl"      = var.biocatchconnector_property_truth_api_url
   })
 }
 ```
@@ -964,7 +964,7 @@ Connector ID (`connector.id` in the resource): `bitbucketIdpConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `oauth2` (json):  Console display name: "Oauth2 Parameters".
+* `oauth2` (json): Console display name: "Oauth2 Parameters".
 
 
 Example:
@@ -1014,7 +1014,7 @@ Connector ID (`connector.id` in the resource): `connectorClear`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -1060,7 +1060,7 @@ Connector ID (`connector.id` in the resource): `connectorCircleAccess`
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
 * `appKey` (string): App Key. Console display name: "App Key".
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 * `loginUrl` (string): The URL of your Circle Access login. Console display name: "Login Url".
 * `readKey` (string): Read Key. Console display name: "Read Key".
 * `returnToUrl` (string): When using the embedded flow player widget and an IDP/Social Login connector, provide a callback URL to return back to the application. Console display name: "Application Return To URL".
@@ -1077,12 +1077,12 @@ resource "pingone_davinci_connector_instance" "connectorCircleAccess" {
   }
   name = "My awesome connectorCircleAccess"
   properties = jsonencode({
-    "appKey" = var.connectorcircleaccess_property_app_key
-    "customAuth" = jsonencode({})
-    "loginUrl" = var.connectorcircleaccess_property_login_url
-    "readKey" = var.connectorcircleaccess_property_read_key
+    "appKey"      = var.connectorcircleaccess_property_app_key
+    "customAuth"  = jsonencode({})
+    "loginUrl"    = var.connectorcircleaccess_property_login_url
+    "readKey"     = var.connectorcircleaccess_property_read_key
     "returnToUrl" = var.connectorcircleaccess_property_return_to_url
-    "writeKey" = var.connectorcircleaccess_property_write_key
+    "writeKey"    = var.connectorcircleaccess_property_write_key
   })
 }
 ```
@@ -1109,9 +1109,9 @@ resource "pingone_davinci_connector_instance" "connectorClearbit" {
   }
   name = "My awesome connectorClearbit"
   properties = jsonencode({
-    "apiKey" = var.connectorclearbit_property_api_key
+    "apiKey"         = var.connectorclearbit_property_api_key
     "riskApiVersion" = var.connectorclearbit_property_risk_api_version
-    "version" = var.connectorclearbit_property_version
+    "version"        = var.connectorclearbit_property_version
   })
 }
 ```
@@ -1138,7 +1138,7 @@ resource "pingone_davinci_connector_instance" "connectorCloudflare" {
   name = "My awesome connectorCloudflare"
   properties = jsonencode({
     "accountId" = var.connectorcloudflare_property_account_id
-    "apiToken" = var.connectorcloudflare_property_api_token
+    "apiToken"  = var.connectorcloudflare_property_api_token
   })
 }
 ```
@@ -1165,8 +1165,8 @@ resource "pingone_davinci_connector_instance" "codeSnippetConnector" {
   }
   name = "My awesome codeSnippetConnector"
   properties = jsonencode({
-    "code" = var.codesnippetconnector_property_code
-    "inputSchema" = var.codesnippetconnector_property_input_schema
+    "code"         = var.codesnippetconnector_property_code
+    "inputSchema"  = var.codesnippetconnector_property_input_schema
     "outputSchema" = var.codesnippetconnector_property_output_schema
   })
 }
@@ -1193,7 +1193,7 @@ resource "pingone_davinci_connector_instance" "complyAdvatangeConnector" {
   }
   name = "My awesome complyAdvatangeConnector"
   properties = jsonencode({
-    "apiKey" = var.complyadvatangeconnector_property_api_key
+    "apiKey"  = var.complyadvatangeconnector_property_api_key
     "baseUrl" = var.complyadvatangeconnector_property_base_url
   })
 }
@@ -1206,7 +1206,7 @@ Connector ID (`connector.id` in the resource): `connectIdConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -1273,11 +1273,11 @@ resource "pingone_davinci_connector_instance" "connector-oai-copperdeveloperapi"
   }
   name = "My awesome connector-oai-copperdeveloperapi"
   properties = jsonencode({
-    "basePath" = var.connector-oai-copperdeveloperapi_property_base_path
-    "contentType" = var.connector-oai-copperdeveloperapi_property_content_type
+    "basePath"       = var.connector-oai-copperdeveloperapi_property_base_path
+    "contentType"    = var.connector-oai-copperdeveloperapi_property_content_type
     "xPWAccessToken" = var.connector-oai-copperdeveloperapi_property_x_p_w_access_token
     "xPWApplication" = var.connector-oai-copperdeveloperapi_property_x_p_w_application
-    "xPWUserEmail" = var.connector-oai-copperdeveloperapi_property_x_p_w_user_email
+    "xPWUserEmail"   = var.connector-oai-copperdeveloperapi_property_x_p_w_user_email
   })
 }
 ```
@@ -1304,7 +1304,7 @@ resource "pingone_davinci_connector_instance" "credovaConnector" {
   }
   name = "My awesome credovaConnector"
   properties = jsonencode({
-    "baseUrl" = var.credovaconnector_property_base_url
+    "baseUrl"  = var.credovaconnector_property_base_url
     "password" = var.credovaconnector_property_password
     "username" = var.credovaconnector_property_username
   })
@@ -1333,8 +1333,8 @@ resource "pingone_davinci_connector_instance" "crowdStrikeConnector" {
   }
   name = "My awesome crowdStrikeConnector"
   properties = jsonencode({
-    "baseURL" = var.base_url
-    "clientId" = var.crowdstrikeconnector_property_client_id
+    "baseURL"      = var.base_url
+    "clientId"     = var.crowdstrikeconnector_property_client_id
     "clientSecret" = var.crowdstrikeconnector_property_client_secret
   })
 }
@@ -1347,7 +1347,7 @@ Connector ID (`connector.id` in the resource): `connectorDaonidv`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `openId` (json):  Console display name: "OpenId Parameters".
+* `openId` (json): Console display name: "OpenId Parameters".
 
 
 Example:
@@ -1387,7 +1387,7 @@ resource "pingone_davinci_connector_instance" "daonConnector" {
   }
   name = "My awesome daonConnector"
   properties = jsonencode({
-    "apiUrl" = var.daonconnector_property_api_url
+    "apiUrl"   = var.daonconnector_property_api_url
     "password" = var.daonconnector_property_password
     "username" = var.daonconnector_property_username
   })
@@ -1401,8 +1401,8 @@ Connector ID (`connector.id` in the resource): `dataZooConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `password` (string):  Console display name: "Data Zoo Password".
-* `username` (string):  Console display name: "Data Zoo Username".
+* `password` (string): Console display name: "Data Zoo Password".
+* `username` (string): Console display name: "Data Zoo Username".
 
 
 Example:
@@ -1443,9 +1443,9 @@ resource "pingone_davinci_connector_instance" "connector-oai-datadogapi" {
   }
   name = "My awesome connector-oai-datadogapi"
   properties = jsonencode({
-    "authApiKey" = var.connector-oai-datadogapi_property_auth_api_key
+    "authApiKey"         = var.connector-oai-datadogapi_property_auth_api_key
     "authApplicationKey" = var.connector-oai-datadogapi_property_auth_application_key
-    "basePath" = var.connector-oai-datadogapi_property_base_path
+    "basePath"           = var.connector-oai-datadogapi_property_base_path
   })
 }
 ```
@@ -1502,7 +1502,7 @@ Connector ID (`connector.id` in the resource): `digilockerConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `oauth2` (json):  Console display name: "Oauth2 Parameters".
+* `oauth2` (json): Console display name: "Oauth2 Parameters".
 
 
 Example:
@@ -1527,7 +1527,7 @@ Connector ID (`connector.id` in the resource): `digidentityConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `oauth2` (json):  Console display name: "Oauth2 Parameters".
+* `oauth2` (json): Console display name: "Oauth2 Parameters".
 
 
 Example:
@@ -1568,10 +1568,10 @@ resource "pingone_davinci_connector_instance" "connector-oai-druvainsynccloud" {
   }
   name = "My awesome connector-oai-druvainsynccloud"
   properties = jsonencode({
-    "authClientId" = var.connector-oai-druvainsynccloud_property_auth_client_id
+    "authClientId"     = var.connector-oai-druvainsynccloud_property_auth_client_id
     "authClientSecret" = var.connector-oai-druvainsynccloud_property_auth_client_secret
-    "authTokenUrl" = var.connector-oai-druvainsynccloud_property_auth_token_url
-    "basePath" = var.connector-oai-druvainsynccloud_property_base_path
+    "authTokenUrl"     = var.connector-oai-druvainsynccloud_property_auth_token_url
+    "basePath"         = var.connector-oai-druvainsynccloud_property_base_path
   })
 }
 ```
@@ -1583,7 +1583,7 @@ Connector ID (`connector.id` in the resource): `duoConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -1654,13 +1654,13 @@ resource "pingone_davinci_connector_instance" "equifaxConnector" {
   }
   name = "My awesome equifaxConnector"
   properties = jsonencode({
-    "baseUrl" = var.equifaxconnector_property_base_url
-    "clientId" = var.equifaxconnector_property_client_id
-    "clientSecret" = var.equifaxconnector_property_client_secret
+    "baseUrl"                   = var.equifaxconnector_property_base_url
+    "clientId"                  = var.equifaxconnector_property_client_id
+    "clientSecret"              = var.equifaxconnector_property_client_secret
     "equifaxSoapApiEnvironment" = var.equifaxconnector_property_equifax_soap_api_environment
-    "memberNumber" = var.equifaxconnector_property_member_number
-    "password" = var.equifaxconnector_property_password
-    "username" = var.equifaxconnector_property_username
+    "memberNumber"              = var.equifaxconnector_property_member_number
+    "password"                  = var.equifaxconnector_property_password
+    "username"                  = var.equifaxconnector_property_username
   })
 }
 ```
@@ -1692,7 +1692,7 @@ Connector ID (`connector.id` in the resource): `facebookIdpConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `oauth2` (json):  Console display name: "Oauth2 Parameters".
+* `oauth2` (json): Console display name: "Oauth2 Parameters".
 
 
 Example:
@@ -1706,131 +1706,131 @@ resource "pingone_davinci_connector_instance" "facebookIdpConnector" {
   name = "My awesome facebookIdpConnector"
   properties = jsonencode({
     "oauth2" = jsonencode({
-				"properties": {
-				  "providerName": {
-					"type": "string",
-					"displayName": "Provider Name",
-					"preferredControlType": "textField",
-					"value": "Login with Facebook"
-				  },
-				  "skRedirectUri": {
-					"type": "string",
-					"displayName": "DaVinci Redirect URL",
-					"info": "Enter this in your identity provider configuration to allow it to redirect the browser back to DaVinci. If you use a custom PingOne domain, modify the URL accordingly.",
-					"preferredControlType": "textField",
-					"disabled": true,
-					"initializeValue": "SINGULARKEY_REDIRECT_URI",
-					"copyToClip": true
-				  },
-				  "clientId": {
-					"type": "string",
-					"displayName": "Application ID",
-					"preferredControlType": "textField",
-					"required": true,
-					"value": "${var.facebookidpconnector_property_application_id}"
-				  },
-				  "clientSecret": {
-					"type": "string",
-					"displayName": "Client Secret",
-					"preferredControlType": "textField",
-					"secure": true,
-					"required": true,
-					"value": "${var.facebookidpconnector_property_client_secret}"
-				  },
-				  "scope": {
-					"type": "string",
-					"displayName": "Scope",
-					"preferredControlType": "textField",
-					"requiredValue": "email",
-					"required": true,
-					"value": "${var.facebookidpconnector_property_scope}"
-				  },
-				  "disableCreateUser": {
-					"displayName": "Disable Shadow User",
-					"preferredControlType": "toggleSwitch",
-					"value": true,
-					"info": "A shadow user is implicitly created, unless disabled."
-				  },
-				  "userConnectorAttributeMapping": {
-					"type": "object",
-					"displayName": null,
-					"preferredControlType": "userConnectorAttributeMapping",
-					"newMappingAllowed": true,
-					"title1": null,
-					"title2": null,
-					"sections": [
-					  "attributeMapping"
-					],
-					"value": {
-					  "userPoolConnectionId": "defaultUserPool",
-					  "mapping": {
-						"username": {
-						  "value1": "id"
-						},
-						"name": {
-						  "value1": "name"
-						},
-						"email": {
-						  "value1": "email"
-						}
-					  }
-					}
-				  },
-				  "customAttributes": {
-					"type": "array",
-					"displayName": "Connector Attributes",
-					"preferredControlType": "tableViewAttributes",
-					"info": "These attributes will be available in User Connector Attribute Mapping.",
-					"sections": [
-					  "connectorAttributes"
-					],
-					"value": [
-					  {
-						"name": "id",
-						"description": "ID",
-						"type": "string",
-						"value": null,
-						"minLength": "1",
-						"maxLength": "300",
-						"required": true,
-						"attributeType": "sk"
-					  },
-					  {
-						"name": "name",
-						"description": "Display Name",
-						"type": "string",
-						"value": null,
-						"minLength": "1",
-						"maxLength": "250",
-						"required": false,
-						"attributeType": "sk"
-					  },
-					  {
-						"name": "email",
-						"description": "Email",
-						"type": "string",
-						"value": null,
-						"minLength": "1",
-						"maxLength": "250",
-						"required": false,
-						"attributeType": "sk"
-					  }
-					]
-				  },
-				  "state": {
-					"displayName": "Send state with request",
-					"value": true,
-					"preferredControlType": "toggleSwitch",
-					"info": "Send unique state value with every request"
-				  },
-				  "returnToUrl": {
-					"displayName": "Application Return To URL",
-					"preferredControlType": "textField",
-					"info": "When using the embedded flow player widget and an IDP/Social Login connector, provide a callback URL to return back to the application.",
-					"value": "${var.facebookidpconnector_property_callback_url}"
-				  }
-				}
-			  })
+      "properties" : {
+        "providerName" : {
+          "type" : "string",
+          "displayName" : "Provider Name",
+          "preferredControlType" : "textField",
+          "value" : "Login with Facebook"
+        },
+        "skRedirectUri" : {
+          "type" : "string",
+          "displayName" : "DaVinci Redirect URL",
+          "info" : "Enter this in your identity provider configuration to allow it to redirect the browser back to DaVinci. If you use a custom PingOne domain, modify the URL accordingly.",
+          "preferredControlType" : "textField",
+          "disabled" : true,
+          "initializeValue" : "SINGULARKEY_REDIRECT_URI",
+          "copyToClip" : true
+        },
+        "clientId" : {
+          "type" : "string",
+          "displayName" : "Application ID",
+          "preferredControlType" : "textField",
+          "required" : true,
+          "value" : "${var.facebookidpconnector_property_application_id}"
+        },
+        "clientSecret" : {
+          "type" : "string",
+          "displayName" : "Client Secret",
+          "preferredControlType" : "textField",
+          "secure" : true,
+          "required" : true,
+          "value" : "${var.facebookidpconnector_property_client_secret}"
+        },
+        "scope" : {
+          "type" : "string",
+          "displayName" : "Scope",
+          "preferredControlType" : "textField",
+          "requiredValue" : "email",
+          "required" : true,
+          "value" : "${var.facebookidpconnector_property_scope}"
+        },
+        "disableCreateUser" : {
+          "displayName" : "Disable Shadow User",
+          "preferredControlType" : "toggleSwitch",
+          "value" : true,
+          "info" : "A shadow user is implicitly created, unless disabled."
+        },
+        "userConnectorAttributeMapping" : {
+          "type" : "object",
+          "displayName" : null,
+          "preferredControlType" : "userConnectorAttributeMapping",
+          "newMappingAllowed" : true,
+          "title1" : null,
+          "title2" : null,
+          "sections" : [
+            "attributeMapping"
+          ],
+          "value" : {
+            "userPoolConnectionId" : "defaultUserPool",
+            "mapping" : {
+              "username" : {
+                "value1" : "id"
+              },
+              "name" : {
+                "value1" : "name"
+              },
+              "email" : {
+                "value1" : "email"
+              }
+            }
+          }
+        },
+        "customAttributes" : {
+          "type" : "array",
+          "displayName" : "Connector Attributes",
+          "preferredControlType" : "tableViewAttributes",
+          "info" : "These attributes will be available in User Connector Attribute Mapping.",
+          "sections" : [
+            "connectorAttributes"
+          ],
+          "value" : [
+            {
+              "name" : "id",
+              "description" : "ID",
+              "type" : "string",
+              "value" : null,
+              "minLength" : "1",
+              "maxLength" : "300",
+              "required" : true,
+              "attributeType" : "sk"
+            },
+            {
+              "name" : "name",
+              "description" : "Display Name",
+              "type" : "string",
+              "value" : null,
+              "minLength" : "1",
+              "maxLength" : "250",
+              "required" : false,
+              "attributeType" : "sk"
+            },
+            {
+              "name" : "email",
+              "description" : "Email",
+              "type" : "string",
+              "value" : null,
+              "minLength" : "1",
+              "maxLength" : "250",
+              "required" : false,
+              "attributeType" : "sk"
+            }
+          ]
+        },
+        "state" : {
+          "displayName" : "Send state with request",
+          "value" : true,
+          "preferredControlType" : "toggleSwitch",
+          "info" : "Send unique state value with every request"
+        },
+        "returnToUrl" : {
+          "displayName" : "Application Return To URL",
+          "preferredControlType" : "textField",
+          "info" : "When using the embedded flow player widget and an IDP/Social Login connector, provide a callback URL to return back to the application.",
+          "value" : "${var.facebookidpconnector_property_callback_url}"
+        }
+      }
+    })
   })
 }
 ```
@@ -1842,9 +1842,9 @@ Connector ID (`connector.id` in the resource): `fingerprintjsConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `apiToken` (string):  Console display name: "Fingerprint Subscription API Token".
-* `javascriptCdnUrl` (string):  Console display name: "Javascript CDN URL".
-* `token` (string):  Console display name: "Fingerprint Subscription Browser Token".
+* `apiToken` (string): Console display name: "Fingerprint Subscription API Token".
+* `javascriptCdnUrl` (string): Console display name: "Javascript CDN URL".
+* `token` (string): Console display name: "Fingerprint Subscription Browser Token".
 
 
 Example:
@@ -1857,9 +1857,9 @@ resource "pingone_davinci_connector_instance" "fingerprintjsConnector" {
   }
   name = "My awesome fingerprintjsConnector"
   properties = jsonencode({
-    "apiToken" = var.fingerprintjsconnector_property_api_token
+    "apiToken"         = var.fingerprintjsconnector_property_api_token
     "javascriptCdnUrl" = var.fingerprintjsconnector_property_javascript_cdn_url
-    "token" = var.fingerprintjsconnector_property_token
+    "token"            = var.fingerprintjsconnector_property_token
   })
 }
 ```
@@ -1887,9 +1887,9 @@ resource "pingone_davinci_connector_instance" "finicityConnector" {
   }
   name = "My awesome finicityConnector"
   properties = jsonencode({
-    "appKey" = var.finicityconnector_property_app_key
-    "baseUrl" = var.finicityconnector_property_base_url
-    "partnerId" = var.finicityconnector_property_partner_id
+    "appKey"        = var.finicityconnector_property_app_key
+    "baseUrl"       = var.finicityconnector_property_base_url
+    "partnerId"     = var.finicityconnector_property_partner_id
     "partnerSecret" = var.finicityconnector_property_partner_secret
   })
 }
@@ -1922,7 +1922,7 @@ Connector ID (`connector.id` in the resource): `flowConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `enforcedSignedToken` (boolean):  Console display name: "Enforce Signed Token".
+* `enforcedSignedToken` (boolean): Console display name: "Enforce Signed Token".
 * `inputSchema` (string): Follow example for JSON schema. Console display name: "Input Schema".
 * `pemPublicKey` (string): pem public key. Console display name: "Public Key".
 
@@ -1938,8 +1938,8 @@ resource "pingone_davinci_connector_instance" "flowConnector" {
   name = "My awesome flowConnector"
   properties = jsonencode({
     "enforcedSignedToken" = var.flowconnector_property_enforced_signed_token
-    "inputSchema" = var.flowconnector_property_input_schema
-    "pemPublicKey" = var.flowconnector_property_pem_public_key
+    "inputSchema"         = var.flowconnector_property_input_schema
+    "pemPublicKey"        = var.flowconnector_property_pem_public_key
   })
 }
 ```
@@ -1967,8 +1967,8 @@ resource "pingone_davinci_connector_instance" "forterConnector" {
   name = "My awesome forterConnector"
   properties = jsonencode({
     "apiVersion" = var.forterconnector_property_api_version
-    "secretKey" = var.forterconnector_property_secret_key
-    "siteId" = var.forterconnector_property_site_id
+    "secretKey"  = var.forterconnector_property_secret_key
+    "siteId"     = var.forterconnector_property_site_id
   })
 }
 ```
@@ -1995,7 +1995,7 @@ resource "pingone_davinci_connector_instance" "connectorFreshdesk" {
   }
   name = "My awesome connectorFreshdesk"
   properties = jsonencode({
-    "apiKey" = var.connectorfreshdesk_property_api_key
+    "apiKey"  = var.connectorfreshdesk_property_api_key
     "baseURL" = var.base_url
     "version" = var.connectorfreshdesk_property_version
   })
@@ -2056,10 +2056,10 @@ Connector ID (`connector.id` in the resource): `gbgConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `password` (string):  Console display name: "GBG Password".
-* `requestUrl` (string):  Console display name: "Request URL".
+* `password` (string): Console display name: "GBG Password".
+* `requestUrl` (string): Console display name: "Request URL".
 * `soapAction` (string): SOAP Action is a header required for the soap request. Console display name: "Soap Action URL".
-* `username` (string):  Console display name: "GBG Username".
+* `username` (string): Console display name: "GBG Username".
 
 
 Example:
@@ -2072,10 +2072,10 @@ resource "pingone_davinci_connector_instance" "gbgConnector" {
   }
   name = "My awesome gbgConnector"
   properties = jsonencode({
-    "password" = var.gbgconnector_property_password
+    "password"   = var.gbgconnector_property_password
     "requestUrl" = var.gbgconnector_property_request_url
     "soapAction" = var.gbgconnector_property_soap_action
-    "username" = var.gbgconnector_property_username
+    "username"   = var.gbgconnector_property_username
   })
 }
 ```
@@ -2102,9 +2102,9 @@ resource "pingone_davinci_connector_instance" "connector-oai-github" {
   }
   name = "My awesome connector-oai-github"
   properties = jsonencode({
-    "apiVersion" = var.connector-oai-github_property_api_version
+    "apiVersion"      = var.connector-oai-github_property_api_version
     "authBearerToken" = var.connector-oai-github_property_auth_bearer_token
-    "basePath" = var.connector-oai-github_property_base_path
+    "basePath"        = var.connector-oai-github_property_base_path
   })
 }
 ```
@@ -2116,7 +2116,7 @@ Connector ID (`connector.id` in the resource): `githubIdpConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `oauth2` (json):  Console display name: "Oauth2 Parameters".
+* `oauth2` (json): Console display name: "Oauth2 Parameters".
 
 
 Example:
@@ -2156,7 +2156,7 @@ resource "pingone_davinci_connector_instance" "connectorGoogleanalyticsUA" {
   name = "My awesome connectorGoogleanalyticsUA"
   properties = jsonencode({
     "trackingID" = var.tracking_id
-    "version" = var.connectorgoogleanalyticsua_property_version
+    "version"    = var.connectorgoogleanalyticsua_property_version
   })
 }
 ```
@@ -2168,7 +2168,7 @@ Connector ID (`connector.id` in the resource): `connectorGoogleChromeEnterprise`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -2193,7 +2193,7 @@ Connector ID (`connector.id` in the resource): `googleConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `openId` (json):  Console display name: "OpenId Parameters".
+* `openId` (json): Console display name: "OpenId Parameters".
 
 
 Example:
@@ -2233,9 +2233,9 @@ resource "pingone_davinci_connector_instance" "googleWorkSpaceAdminConnector" {
   }
   name = "My awesome googleWorkSpaceAdminConnector"
   properties = jsonencode({
-    "iss" = var.googleworkspaceadminconnector_property_iss
+    "iss"        = var.googleworkspaceadminconnector_property_iss
     "privateKey" = var.googleworkspaceadminconnector_property_private_key
-    "sub" = var.googleworkspaceadminconnector_property_sub
+    "sub"        = var.googleworkspaceadminconnector_property_sub
   })
 }
 ```
@@ -2247,7 +2247,7 @@ Connector ID (`connector.id` in the resource): `httpConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `connectionId` (string):  Console display name: "Select an OpenID token management connection for signed HTTP responses.".
+* `connectionId` (string): Console display name: "Select an OpenID token management connection for signed HTTP responses.".
 * `recaptchaSecretKey` (string): The Secret Key from reCAPTCHA Admin dashboard. Console display name: "reCAPTCHA v2 Secret Key".
 * `recaptchaSiteKey` (string): The Site Key from reCAPTCHA Admin dashboard. Console display name: "reCAPTCHA v2 Site Key".
 * `whiteList` (string): Enter the hostname for the trusted sites that host your HTML. Note: Ensure that the content hosted on these sites can be trusted and that publishing safeguards are in place to prevent unexpected issues. Console display name: "Trusted Sites".
@@ -2263,10 +2263,10 @@ resource "pingone_davinci_connector_instance" "httpConnector" {
   }
   name = "My awesome httpConnector"
   properties = jsonencode({
-    "connectionId" = var.httpconnector_property_connection_id
+    "connectionId"       = var.httpconnector_property_connection_id
     "recaptchaSecretKey" = var.httpconnector_property_recaptcha_secret_key
-    "recaptchaSiteKey" = var.httpconnector_property_recaptcha_site_key
-    "whiteList" = var.httpconnector_property_white_list
+    "recaptchaSiteKey"   = var.httpconnector_property_recaptcha_site_key
+    "whiteList"          = var.httpconnector_property_white_list
   })
 }
 ```
@@ -2294,8 +2294,8 @@ resource "pingone_davinci_connector_instance" "connectorHuman" {
   name = "My awesome connectorHuman"
   properties = jsonencode({
     "humanAuthenticationToken" = var.connectorhuman_property_human_authentication_token
-    "humanCustomerID" = var.human_customer_id
-    "humanPolicyName" = var.connectorhuman_property_human_policy_name
+    "humanCustomerID"          = var.human_customer_id
+    "humanPolicyName"          = var.connectorhuman_property_human_policy_name
   })
 }
 ```
@@ -2321,7 +2321,7 @@ resource "pingone_davinci_connector_instance" "humanCompromisedConnector" {
   }
   name = "My awesome humanCompromisedConnector"
   properties = jsonencode({
-    "appId" = var.humancompromisedconnector_property_app_id
+    "appId"     = var.humancompromisedconnector_property_app_id
     "authToken" = var.humancompromisedconnector_property_auth_token
   })
 }
@@ -2334,7 +2334,7 @@ Connector ID (`connector.id` in the resource): `hyprConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -2384,9 +2384,9 @@ Connector ID (`connector.id` in the resource): `haveIBeenPwnedConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `apiKey` (string):  Console display name: "Have I Been Pwned API Key".
-* `apiUrl` (string):  Console display name: "API Server URL".
-* `userAgent` (string):  
+* `apiKey` (string): Console display name: "Have I Been Pwned API Key".
+* `apiUrl` (string): Console display name: "API Server URL".
+* `userAgent` (string): Console display name: "".
 
 
 Example:
@@ -2399,8 +2399,8 @@ resource "pingone_davinci_connector_instance" "haveIBeenPwnedConnector" {
   }
   name = "My awesome haveIBeenPwnedConnector"
   properties = jsonencode({
-    "apiKey" = var.haveibeenpwnedconnector_property_api_key
-    "apiUrl" = var.haveibeenpwnedconnector_property_api_url
+    "apiKey"    = var.haveibeenpwnedconnector_property_api_key
+    "apiUrl"    = var.haveibeenpwnedconnector_property_api_url
     "userAgent" = var.haveibeenpwnedconnector_property_user_agent
   })
 }
@@ -2413,7 +2413,7 @@ Connector ID (`connector.id` in the resource): `connectorHello`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -2453,7 +2453,7 @@ resource "pingone_davinci_connector_instance" "connector-oai-hubspotcompanies" {
   name = "My awesome connector-oai-hubspotcompanies"
   properties = jsonencode({
     "authBearerToken" = var.connector-oai-hubspotcompanies_property_auth_bearer_token
-    "basePath" = var.connector-oai-hubspotcompanies_property_base_path
+    "basePath"        = var.connector-oai-hubspotcompanies_property_base_path
   })
 }
 ```
@@ -2490,7 +2490,7 @@ Connector ID (`connector.id` in the resource): `idDatawebConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -2515,8 +2515,8 @@ Connector ID (`connector.id` in the resource): `idranddConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `apiKey` (string):  Console display name: "API Key".
-* `apiUrl` (string):  Console display name: "API Server URL".
+* `apiKey` (string): Console display name: "API Key".
+* `apiUrl` (string): Console display name: "API Server URL".
 
 
 Example:
@@ -2542,7 +2542,7 @@ Connector ID (`connector.id` in the resource): `idMeConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `oauth2` (json):  Console display name: "Oauth2 Parameters".
+* `oauth2` (json): Console display name: "Oauth2 Parameters".
 
 
 Example:
@@ -2567,7 +2567,7 @@ Connector ID (`connector.id` in the resource): `idmecommunityConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `openId` (json):  Console display name: "OpenId Parameters".
+* `openId` (json): Console display name: "OpenId Parameters".
 
 
 Example:
@@ -2592,7 +2592,7 @@ Connector ID (`connector.id` in the resource): `connectorIdMeIdentity`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `openId` (json):  Console display name: "OpenId Parameters".
+* `openId` (json): Console display name: "OpenId Parameters".
 
 
 Example:
@@ -2617,7 +2617,7 @@ Connector ID (`connector.id` in the resource): `idemiaConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `apikey` (string):  Console display name: "API Key".
+* `apikey` (string): Console display name: "API Key".
 * `baseUrl` (string): Base Url for IDEMIA API. Can be found in the dashboard documents. Console display name: "IDEMIA API base URL".
 
 
@@ -2631,7 +2631,7 @@ resource "pingone_davinci_connector_instance" "idemiaConnector" {
   }
   name = "My awesome idemiaConnector"
   properties = jsonencode({
-    "apikey" = var.idemiaconnector_property_apikey
+    "apikey"  = var.idemiaconnector_property_apikey
     "baseUrl" = var.idemiaconnector_property_base_url
   })
 }
@@ -2644,12 +2644,12 @@ Connector ID (`connector.id` in the resource): `skPeopleIntelligenceConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `authUrl` (string):  Console display name: "Authorization URL".
-* `clientId` (string):  Console display name: "Client ID".
-* `clientSecret` (string):  Console display name: "Client Secret".
-* `dppa` (string):  Console display name: "DPPA".
-* `glba` (string):  Console display name: "GLBA".
-* `searchUrl` (string):  Console display name: "Search URL".
+* `authUrl` (string): Console display name: "Authorization URL".
+* `clientId` (string): Console display name: "Client ID".
+* `clientSecret` (string): Console display name: "Client Secret".
+* `dppa` (string): Console display name: "DPPA".
+* `glba` (string): Console display name: "GLBA".
+* `searchUrl` (string): Console display name: "Search URL".
 
 
 Example:
@@ -2662,12 +2662,12 @@ resource "pingone_davinci_connector_instance" "skPeopleIntelligenceConnector" {
   }
   name = "My awesome skPeopleIntelligenceConnector"
   properties = jsonencode({
-    "authUrl" = var.skpeopleintelligenceconnector_property_auth_url
-    "clientId" = var.skpeopleintelligenceconnector_property_client_id
+    "authUrl"      = var.skpeopleintelligenceconnector_property_auth_url
+    "clientId"     = var.skpeopleintelligenceconnector_property_client_id
     "clientSecret" = var.skpeopleintelligenceconnector_property_client_secret
-    "dppa" = var.skpeopleintelligenceconnector_property_dppa
-    "glba" = var.skpeopleintelligenceconnector_property_glba
-    "searchUrl" = var.skpeopleintelligenceconnector_property_search_url
+    "dppa"         = var.skpeopleintelligenceconnector_property_dppa
+    "glba"         = var.skpeopleintelligenceconnector_property_glba
+    "searchUrl"    = var.skpeopleintelligenceconnector_property_search_url
   })
 }
 ```
@@ -2696,11 +2696,11 @@ resource "pingone_davinci_connector_instance" "connectorIdiVERIFIED" {
   }
   name = "My awesome connectorIdiVERIFIED"
   properties = jsonencode({
-    "apiSecret" = var.connectoridiverified_property_api_secret
+    "apiSecret"  = var.connectoridiverified_property_api_secret
     "companyKey" = var.connectoridiverified_property_company_key
-    "idiEnv" = var.connectoridiverified_property_idi_env
-    "siteKey" = var.connectoridiverified_property_site_key
-    "uniqueUrl" = var.connectoridiverified_property_unique_url
+    "idiEnv"     = var.connectoridiverified_property_idi_env
+    "siteKey"    = var.connectoridiverified_property_site_key
+    "uniqueUrl"  = var.connectoridiverified_property_unique_url
   })
 }
 ```
@@ -2712,7 +2712,7 @@ Connector ID (`connector.id` in the resource): `connectorIdmelon`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -2737,23 +2737,23 @@ Connector ID (`connector.id` in the resource): `idmissionConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `authDescription` (string):  Console display name: "Authentication Description".
-* `connectorName` (string):  Console display name: "Connector Name".
-* `description` (string):  Console display name: "Description".
-* `details1` (string):  Console display name: "Credentials Details 1".
-* `details2` (string):  Console display name: "Credentials Details 2".
-* `iconUrl` (string):  Console display name: "Icon URL".
-* `iconUrlPng` (string):  Console display name: "Icon URL in PNG".
-* `loginId` (string):  Console display name: "Sign On ID".
-* `merchantId` (string):  Console display name: "Merchant ID".
-* `password` (string):  Console display name: "Password".
-* `productId` (string):  Console display name: "Product ID".
-* `productName` (string):  Console display name: "Product Name".
-* `showCredAddedOn` (boolean):  Console display name: "Show Credentials Added On?".
-* `showCredAddedVia` (boolean):  Console display name: "Show Credentials Added through ?".
-* `title` (string):  Console display name: "Title".
-* `toolTip` (string):  Console display name: "Tooltip".
-* `url` (string):  Console display name: "IDmission Server URL".
+* `authDescription` (string): Console display name: "Authentication Description".
+* `connectorName` (string): Console display name: "Connector Name".
+* `description` (string): Console display name: "Description".
+* `details1` (string): Console display name: "Credentials Details 1".
+* `details2` (string): Console display name: "Credentials Details 2".
+* `iconUrl` (string): Console display name: "Icon URL".
+* `iconUrlPng` (string): Console display name: "Icon URL in PNG".
+* `loginId` (string): Console display name: "Sign On ID".
+* `merchantId` (string): Console display name: "Merchant ID".
+* `password` (string): Console display name: "Password".
+* `productId` (string): Console display name: "Product ID".
+* `productName` (string): Console display name: "Product Name".
+* `showCredAddedOn` (boolean): Console display name: "Show Credentials Added On?".
+* `showCredAddedVia` (boolean): Console display name: "Show Credentials Added through ?".
+* `title` (string): Console display name: "Title".
+* `toolTip` (string): Console display name: "Tooltip".
+* `url` (string): Console display name: "IDmission Server URL".
 
 
 Example:
@@ -2766,23 +2766,23 @@ resource "pingone_davinci_connector_instance" "idmissionConnector" {
   }
   name = "My awesome idmissionConnector"
   properties = jsonencode({
-    "authDescription" = var.idmissionconnector_property_auth_description
-    "connectorName" = var.idmissionconnector_property_connector_name
-    "description" = var.idmissionconnector_property_description
-    "details1" = var.idmissionconnector_property_details1
-    "details2" = var.idmissionconnector_property_details2
-    "iconUrl" = var.idmissionconnector_property_icon_url
-    "iconUrlPng" = var.idmissionconnector_property_icon_url_png
-    "loginId" = var.idmissionconnector_property_login_id
-    "merchantId" = var.idmissionconnector_property_merchant_id
-    "password" = var.idmissionconnector_property_password
-    "productId" = var.idmissionconnector_property_product_id
-    "productName" = var.idmissionconnector_property_product_name
-    "showCredAddedOn" = var.idmissionconnector_property_show_cred_added_on
+    "authDescription"  = var.idmissionconnector_property_auth_description
+    "connectorName"    = var.idmissionconnector_property_connector_name
+    "description"      = var.idmissionconnector_property_description
+    "details1"         = var.idmissionconnector_property_details1
+    "details2"         = var.idmissionconnector_property_details2
+    "iconUrl"          = var.idmissionconnector_property_icon_url
+    "iconUrlPng"       = var.idmissionconnector_property_icon_url_png
+    "loginId"          = var.idmissionconnector_property_login_id
+    "merchantId"       = var.idmissionconnector_property_merchant_id
+    "password"         = var.idmissionconnector_property_password
+    "productId"        = var.idmissionconnector_property_product_id
+    "productName"      = var.idmissionconnector_property_product_name
+    "showCredAddedOn"  = var.idmissionconnector_property_show_cred_added_on
     "showCredAddedVia" = var.idmissionconnector_property_show_cred_added_via
-    "title" = var.idmissionconnector_property_title
-    "toolTip" = var.idmissionconnector_property_tool_tip
-    "url" = var.idmissionconnector_property_url
+    "title"            = var.idmissionconnector_property_title
+    "toolTip"          = var.idmissionconnector_property_tool_tip
+    "url"              = var.idmissionconnector_property_url
   })
 }
 ```
@@ -2794,7 +2794,7 @@ Connector ID (`connector.id` in the resource): `idmissionOidcConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -2819,7 +2819,7 @@ Connector ID (`connector.id` in the resource): `idrampOidcConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -2864,7 +2864,7 @@ Connector ID (`connector.id` in the resource): `incodeConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -2889,7 +2889,7 @@ Connector ID (`connector.id` in the resource): `connectorInfinipoint`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -2929,8 +2929,8 @@ resource "pingone_davinci_connector_instance" "intellicheckConnector" {
   }
   name = "My awesome intellicheckConnector"
   properties = jsonencode({
-    "apiKey" = var.intellicheckconnector_property_api_key
-    "baseUrl" = var.intellicheckconnector_property_base_url
+    "apiKey"     = var.intellicheckconnector_property_api_key
+    "baseUrl"    = var.intellicheckconnector_property_base_url
     "customerId" = var.intellicheckconnector_property_customer_id
   })
 }
@@ -2960,7 +2960,7 @@ resource "pingone_davinci_connector_instance" "connectorJamf" {
   properties = jsonencode({
     "jamfPassword" = var.connectorjamf_property_jamf_password
     "jamfUsername" = var.connectorjamf_property_jamf_username
-    "serverName" = var.connectorjamf_property_server_name
+    "serverName"   = var.connectorjamf_property_server_name
   })
 }
 ```
@@ -2989,7 +2989,7 @@ resource "pingone_davinci_connector_instance" "jiraConnector" {
   properties = jsonencode({
     "apiKey" = var.jiraconnector_property_api_key
     "apiUrl" = var.jiraconnector_property_api_url
-    "email" = var.jiraconnector_property_email
+    "email"  = var.jiraconnector_property_email
   })
 }
 ```
@@ -3018,11 +3018,11 @@ resource "pingone_davinci_connector_instance" "connectorJiraServiceDesk" {
   }
   name = "My awesome connectorJiraServiceDesk"
   properties = jsonencode({
-    "JIRAServiceDeskAuth" = var.jira_service_desk_auth
+    "JIRAServiceDeskAuth"       = var.jira_service_desk_auth
     "JIRAServiceDeskCreateData" = var.jira_service_desk_create_data
-    "JIRAServiceDeskURL" = var.jira_service_desk_url
+    "JIRAServiceDeskURL"        = var.jira_service_desk_url
     "JIRAServiceDeskUpdateData" = var.jira_service_desk_update_data
-    "method" = var.connectorjiraservicedesk_property_method
+    "method"                    = var.connectorjiraservicedesk_property_method
   })
 }
 ```
@@ -3034,28 +3034,28 @@ Connector ID (`connector.id` in the resource): `jumioConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `apiKey` (string):  Console display name: "API Key".
-* `authDescription` (string):  Console display name: "Authentication Description".
-* `authUrl` (string):  Console display name: "Base URL for Authentication".
+* `apiKey` (string): Console display name: "API Key".
+* `authDescription` (string): Console display name: "Authentication Description".
+* `authUrl` (string): Console display name: "Base URL for Authentication".
 * `authorizationTokenLifetime` (number): default: 1800 (30 minutes). maximum: 5184000 (60 days). Console display name: "Time Transaction URL Valid (seconds)".
 * `baseColor` (string): Must be passed with bgColor. Console display name: "HEX Main Color".
 * `bgColor` (string): Must be passed with baseColor. Console display name: "HEX Background Color.".
-* `callbackUrl` (string):  Console display name: "Callback URL".
-* `clientSecret` (string):  Console display name: "API Secret".
-* `connectorName` (string):  Console display name: "Connector Name".
-* `description` (string):  Console display name: "Description".
-* `details1` (string):  Console display name: "Credentials Details 1".
-* `details2` (string):  Console display name: "Credentials Details 2".
+* `callbackUrl` (string): Console display name: "Callback URL".
+* `clientSecret` (string): Console display name: "API Secret".
+* `connectorName` (string): Console display name: "Connector Name".
+* `description` (string): Console display name: "Description".
+* `details1` (string): Console display name: "Credentials Details 1".
+* `details2` (string): Console display name: "Credentials Details 2".
 * `doNotShowInIframe` (boolean): If this is true, user will be redirected to the verification url and then redirected back when complete. Console display name: "Do not show in iFrame".
-* `docVerificationUrl` (string):  Console display name: "Document Verification Url".
+* `docVerificationUrl` (string): Console display name: "Document Verification Url".
 * `headerImageUrl` (string): Logo must be: landscape (16:9 or 4:3), min. height of 192 pixels, size 8-64 KB. Console display name: "Custom Header Logo URL".
-* `iconUrl` (string):  Console display name: "Icon URL".
-* `iconUrlPng` (string):  Console display name: "Icon URL in PNG".
+* `iconUrl` (string): Console display name: "Icon URL".
+* `iconUrlPng` (string): Console display name: "Icon URL in PNG".
 * `locale` (string): Renders content in the specified language. Console display name: "Locale".
-* `showCredAddedOn` (boolean):  Console display name: "Show Credentials Added On?".
-* `showCredAddedVia` (boolean):  Console display name: "Show Credentials Added through ?".
-* `title` (string):  Console display name: "Title".
-* `toolTip` (string):  Console display name: "Tooltip".
+* `showCredAddedOn` (boolean): Console display name: "Show Credentials Added On?".
+* `showCredAddedVia` (boolean): Console display name: "Show Credentials Added through ?".
+* `title` (string): Console display name: "Title".
+* `toolTip` (string): Console display name: "Tooltip".
 
 
 Example:
@@ -3068,28 +3068,28 @@ resource "pingone_davinci_connector_instance" "jumioConnector" {
   }
   name = "My awesome jumioConnector"
   properties = jsonencode({
-    "apiKey" = var.jumioconnector_property_api_key
-    "authDescription" = var.jumioconnector_property_auth_description
-    "authUrl" = var.jumioconnector_property_auth_url
+    "apiKey"                     = var.jumioconnector_property_api_key
+    "authDescription"            = var.jumioconnector_property_auth_description
+    "authUrl"                    = var.jumioconnector_property_auth_url
     "authorizationTokenLifetime" = var.jumioconnector_property_authorization_token_lifetime
-    "baseColor" = var.jumioconnector_property_base_color
-    "bgColor" = var.jumioconnector_property_bg_color
-    "callbackUrl" = var.jumioconnector_property_callback_url
-    "clientSecret" = var.jumioconnector_property_client_secret
-    "connectorName" = var.jumioconnector_property_connector_name
-    "description" = var.jumioconnector_property_description
-    "details1" = var.jumioconnector_property_details1
-    "details2" = var.jumioconnector_property_details2
-    "doNotShowInIframe" = var.jumioconnector_property_do_not_show_in_iframe
-    "docVerificationUrl" = var.jumioconnector_property_doc_verification_url
-    "headerImageUrl" = var.jumioconnector_property_header_image_url
-    "iconUrl" = var.jumioconnector_property_icon_url
-    "iconUrlPng" = var.jumioconnector_property_icon_url_png
-    "locale" = var.jumioconnector_property_locale
-    "showCredAddedOn" = var.jumioconnector_property_show_cred_added_on
-    "showCredAddedVia" = var.jumioconnector_property_show_cred_added_via
-    "title" = var.jumioconnector_property_title
-    "toolTip" = var.jumioconnector_property_tool_tip
+    "baseColor"                  = var.jumioconnector_property_base_color
+    "bgColor"                    = var.jumioconnector_property_bg_color
+    "callbackUrl"                = var.jumioconnector_property_callback_url
+    "clientSecret"               = var.jumioconnector_property_client_secret
+    "connectorName"              = var.jumioconnector_property_connector_name
+    "description"                = var.jumioconnector_property_description
+    "details1"                   = var.jumioconnector_property_details1
+    "details2"                   = var.jumioconnector_property_details2
+    "doNotShowInIframe"          = var.jumioconnector_property_do_not_show_in_iframe
+    "docVerificationUrl"         = var.jumioconnector_property_doc_verification_url
+    "headerImageUrl"             = var.jumioconnector_property_header_image_url
+    "iconUrl"                    = var.jumioconnector_property_icon_url
+    "iconUrlPng"                 = var.jumioconnector_property_icon_url_png
+    "locale"                     = var.jumioconnector_property_locale
+    "showCredAddedOn"            = var.jumioconnector_property_show_cred_added_on
+    "showCredAddedVia"           = var.jumioconnector_property_show_cred_added_via
+    "title"                      = var.jumioconnector_property_title
+    "toolTip"                    = var.jumioconnector_property_tool_tip
   })
 }
 ```
@@ -3101,18 +3101,18 @@ Connector ID (`connector.id` in the resource): `kbaConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `authDescription` (string):  Console display name: "Authentication Description".
-* `connectorName` (string):  Console display name: "Connector Name".
-* `description` (string):  Console display name: "Description".
-* `details1` (string):  Console display name: "Credentials Details 1".
-* `details2` (string):  Console display name: "Credentials Details 2".
-* `formFieldsList` (json):  Console display name: "Fields List".
-* `iconUrl` (string):  Console display name: "Icon URL".
-* `iconUrlPng` (string):  Console display name: "Icon URL in PNG".
-* `showCredAddedOn` (boolean):  Console display name: "Show Credentials Added On?".
-* `showCredAddedVia` (boolean):  Console display name: "Show Credentials Added through ?".
-* `title` (string):  Console display name: "Title".
-* `toolTip` (string):  Console display name: "Tooltip".
+* `authDescription` (string): Console display name: "Authentication Description".
+* `connectorName` (string): Console display name: "Connector Name".
+* `description` (string): Console display name: "Description".
+* `details1` (string): Console display name: "Credentials Details 1".
+* `details2` (string): Console display name: "Credentials Details 2".
+* `formFieldsList` (json): Console display name: "Fields List".
+* `iconUrl` (string): Console display name: "Icon URL".
+* `iconUrlPng` (string): Console display name: "Icon URL in PNG".
+* `showCredAddedOn` (boolean): Console display name: "Show Credentials Added On?".
+* `showCredAddedVia` (boolean): Console display name: "Show Credentials Added through ?".
+* `title` (string): Console display name: "Title".
+* `toolTip` (string): Console display name: "Tooltip".
 
 
 Example:
@@ -3125,18 +3125,18 @@ resource "pingone_davinci_connector_instance" "kbaConnector" {
   }
   name = "My awesome kbaConnector"
   properties = jsonencode({
-    "authDescription" = var.kbaconnector_property_auth_description
-    "connectorName" = var.kbaconnector_property_connector_name
-    "description" = var.kbaconnector_property_description
-    "details1" = var.kbaconnector_property_details1
-    "details2" = var.kbaconnector_property_details2
-    "formFieldsList" = var.kbaconnector_property_form_fields_list
-    "iconUrl" = var.kbaconnector_property_icon_url
-    "iconUrlPng" = var.kbaconnector_property_icon_url_png
-    "showCredAddedOn" = var.kbaconnector_property_show_cred_added_on
+    "authDescription"  = var.kbaconnector_property_auth_description
+    "connectorName"    = var.kbaconnector_property_connector_name
+    "description"      = var.kbaconnector_property_description
+    "details1"         = var.kbaconnector_property_details1
+    "details2"         = var.kbaconnector_property_details2
+    "formFieldsList"   = var.kbaconnector_property_form_fields_list
+    "iconUrl"          = var.kbaconnector_property_icon_url
+    "iconUrlPng"       = var.kbaconnector_property_icon_url_png
+    "showCredAddedOn"  = var.kbaconnector_property_show_cred_added_on
     "showCredAddedVia" = var.kbaconnector_property_show_cred_added_via
-    "title" = var.kbaconnector_property_title
-    "toolTip" = var.kbaconnector_property_tool_tip
+    "title"            = var.kbaconnector_property_title
+    "toolTip"          = var.kbaconnector_property_tool_tip
   })
 }
 ```
@@ -3163,9 +3163,9 @@ resource "pingone_davinci_connector_instance" "kyxstartConnector" {
   }
   name = "My awesome kyxstartConnector"
   properties = jsonencode({
-    "clientId" = var.kyxstartconnector_property_client_id
+    "clientId"     = var.kyxstartconnector_property_client_id
     "clientSecret" = var.kyxstartconnector_property_client_secret
-    "tenantName" = var.kyxstartconnector_property_tenant_name
+    "tenantName"   = var.kyxstartconnector_property_tenant_name
   })
 }
 ```
@@ -3178,18 +3178,18 @@ Connector ID (`connector.id` in the resource): `kaizenVoizConnector`
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
 * `apiUrl` (string): example: http://<server_root>/ksvvoiceservice/rest/service. Console display name: "API Server URL".
-* `applicationName` (string):  Console display name: "Application Name".
-* `authDescription` (string):  Console display name: "Authentication Description".
-* `connectorName` (string):  Console display name: "Connector Name".
-* `description` (string):  Console display name: "Description".
-* `details1` (string):  Console display name: "Credentials Details 1".
-* `details2` (string):  Console display name: "Credentials Details 2".
-* `iconUrl` (string):  Console display name: "Icon URL".
-* `iconUrlPng` (string):  Console display name: "Icon URL in PNG".
-* `showCredAddedOn` (boolean):  Console display name: "Show Credentials Added On?".
-* `showCredAddedVia` (boolean):  Console display name: "Show Credentials Added through ?".
-* `title` (string):  Console display name: "Title".
-* `toolTip` (string):  Console display name: "Tooltip".
+* `applicationName` (string): Console display name: "Application Name".
+* `authDescription` (string): Console display name: "Authentication Description".
+* `connectorName` (string): Console display name: "Connector Name".
+* `description` (string): Console display name: "Description".
+* `details1` (string): Console display name: "Credentials Details 1".
+* `details2` (string): Console display name: "Credentials Details 2".
+* `iconUrl` (string): Console display name: "Icon URL".
+* `iconUrlPng` (string): Console display name: "Icon URL in PNG".
+* `showCredAddedOn` (boolean): Console display name: "Show Credentials Added On?".
+* `showCredAddedVia` (boolean): Console display name: "Show Credentials Added through ?".
+* `title` (string): Console display name: "Title".
+* `toolTip` (string): Console display name: "Tooltip".
 
 
 Example:
@@ -3202,19 +3202,19 @@ resource "pingone_davinci_connector_instance" "kaizenVoizConnector" {
   }
   name = "My awesome kaizenVoizConnector"
   properties = jsonencode({
-    "apiUrl" = var.kaizenvoizconnector_property_api_url
-    "applicationName" = var.kaizenvoizconnector_property_application_name
-    "authDescription" = var.kaizenvoizconnector_property_auth_description
-    "connectorName" = var.kaizenvoizconnector_property_connector_name
-    "description" = var.kaizenvoizconnector_property_description
-    "details1" = var.kaizenvoizconnector_property_details1
-    "details2" = var.kaizenvoizconnector_property_details2
-    "iconUrl" = var.kaizenvoizconnector_property_icon_url
-    "iconUrlPng" = var.kaizenvoizconnector_property_icon_url_png
-    "showCredAddedOn" = var.kaizenvoizconnector_property_show_cred_added_on
+    "apiUrl"           = var.kaizenvoizconnector_property_api_url
+    "applicationName"  = var.kaizenvoizconnector_property_application_name
+    "authDescription"  = var.kaizenvoizconnector_property_auth_description
+    "connectorName"    = var.kaizenvoizconnector_property_connector_name
+    "description"      = var.kaizenvoizconnector_property_description
+    "details1"         = var.kaizenvoizconnector_property_details1
+    "details2"         = var.kaizenvoizconnector_property_details2
+    "iconUrl"          = var.kaizenvoizconnector_property_icon_url
+    "iconUrlPng"       = var.kaizenvoizconnector_property_icon_url_png
+    "showCredAddedOn"  = var.kaizenvoizconnector_property_show_cred_added_on
     "showCredAddedVia" = var.kaizenvoizconnector_property_show_cred_added_via
-    "title" = var.kaizenvoizconnector_property_title
-    "toolTip" = var.kaizenvoizconnector_property_tool_tip
+    "title"            = var.kaizenvoizconnector_property_title
+    "toolTip"          = var.kaizenvoizconnector_property_tool_tip
   })
 }
 ```
@@ -3226,7 +3226,7 @@ Connector ID (`connector.id` in the resource): `connectorKeyless`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -3288,11 +3288,11 @@ resource "pingone_davinci_connector_instance" "pingOneLDAPConnector" {
   }
   name = "My awesome pingOneLDAPConnector"
   properties = jsonencode({
-    "clientId" = var.pingoneldapconnector_property_client_id
+    "clientId"     = var.pingoneldapconnector_property_client_id
     "clientSecret" = var.pingoneldapconnector_property_client_secret
-    "envId" = var.pingoneldapconnector_property_env_id
-    "gatewayId" = var.pingoneldapconnector_property_gateway_id
-    "region" = var.pingoneldapconnector_property_region
+    "envId"        = var.pingoneldapconnector_property_env_id
+    "gatewayId"    = var.pingoneldapconnector_property_gateway_id
+    "region"       = var.pingoneldapconnector_property_region
   })
 }
 ```
@@ -3319,7 +3319,7 @@ resource "pingone_davinci_connector_instance" "connector-oai-launchdarklyrestapi
   name = "My awesome connector-oai-launchdarklyrestapi"
   properties = jsonencode({
     "authApiKey" = var.connector-oai-launchdarklyrestapi_property_auth_api_key
-    "basePath" = var.connector-oai-launchdarklyrestapi_property_base_path
+    "basePath"   = var.connector-oai-launchdarklyrestapi_property_base_path
   })
 }
 ```
@@ -3347,9 +3347,9 @@ resource "pingone_davinci_connector_instance" "lexisnexisV2Connector" {
   }
   name = "My awesome lexisnexisV2Connector"
   properties = jsonencode({
-    "apiKey" = var.lexisnexisv2connector_property_api_key
-    "apiUrl" = var.lexisnexisv2connector_property_api_url
-    "orgId" = var.lexisnexisv2connector_property_org_id
+    "apiKey"          = var.lexisnexisv2connector_property_api_key
+    "apiUrl"          = var.lexisnexisv2connector_property_api_url
+    "orgId"           = var.lexisnexisv2connector_property_org_id
     "useCustomApiURL" = var.use_custom_api_url
   })
 }
@@ -3362,7 +3362,7 @@ Connector ID (`connector.id` in the resource): `linkedInConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `oauth2` (json):  Console display name: "Oauth2 Parameters".
+* `oauth2` (json): Console display name: "Oauth2 Parameters".
 
 
 Example:
@@ -3421,7 +3421,7 @@ resource "pingone_davinci_connector_instance" "connectorMailchimp" {
   }
   name = "My awesome connectorMailchimp"
   properties = jsonencode({
-    "transactionalApiKey" = var.connectormailchimp_property_transactional_api_key
+    "transactionalApiKey"     = var.connectormailchimp_property_transactional_api_key
     "transactionalApiVersion" = var.connectormailchimp_property_transactional_api_version
   })
 }
@@ -3449,8 +3449,8 @@ resource "pingone_davinci_connector_instance" "connectorMailgun" {
   }
   name = "My awesome connectorMailgun"
   properties = jsonencode({
-    "apiKey" = var.connectormailgun_property_api_key
-    "apiVersion" = var.connectormailgun_property_api_version
+    "apiKey"        = var.connectormailgun_property_api_key
+    "apiVersion"    = var.connectormailgun_property_api_version
     "mailgunDomain" = var.connectormailgun_property_mailgun_domain
   })
 }
@@ -3480,7 +3480,7 @@ resource "pingone_davinci_connector_instance" "connector-oai-mailjetapi" {
   properties = jsonencode({
     "authPassword" = var.connector-oai-mailjetapi_property_auth_password
     "authUsername" = var.connector-oai-mailjetapi_property_auth_username
-    "basePath" = var.connector-oai-mailjetapi_property_base_path
+    "basePath"     = var.connector-oai-mailjetapi_property_base_path
   })
 }
 ```
@@ -3536,13 +3536,13 @@ resource "pingone_davinci_connector_instance" "microsoftDynamicsCustomerInsights
   }
   name = "My awesome microsoftDynamicsCustomerInsightsConnector"
   properties = jsonencode({
-    "baseURL" = var.microsoftdynamicscustomerinsightsconnector_property_base_u_r_l
-    "clientId" = var.microsoftdynamicscustomerinsightsconnector_property_client_id
-    "clientSecret" = var.microsoftdynamicscustomerinsightsconnector_property_client_secret
+    "baseURL"         = var.microsoftdynamicscustomerinsightsconnector_property_base_u_r_l
+    "clientId"        = var.microsoftdynamicscustomerinsightsconnector_property_client_id
+    "clientSecret"    = var.microsoftdynamicscustomerinsightsconnector_property_client_secret
     "environmentName" = var.microsoftdynamicscustomerinsightsconnector_property_environment_name
-    "grantType" = var.microsoftdynamicscustomerinsightsconnector_property_grant_type
-    "tenant" = var.microsoftdynamicscustomerinsightsconnector_property_tenant
-    "version" = var.microsoftdynamicscustomerinsightsconnector_property_version
+    "grantType"       = var.microsoftdynamicscustomerinsightsconnector_property_grant_type
+    "tenant"          = var.microsoftdynamicscustomerinsightsconnector_property_tenant
+    "version"         = var.microsoftdynamicscustomerinsightsconnector_property_version
   })
 }
 ```
@@ -3554,7 +3554,7 @@ Connector ID (`connector.id` in the resource): `connectorMicrosoftEdge`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -3596,11 +3596,11 @@ resource "pingone_davinci_connector_instance" "connectorMicrosoftIntune" {
   }
   name = "My awesome connectorMicrosoftIntune"
   properties = jsonencode({
-    "clientId" = var.connectormicrosoftintune_property_client_id
+    "clientId"     = var.connectormicrosoftintune_property_client_id
     "clientSecret" = var.connectormicrosoftintune_property_client_secret
-    "grantType" = var.connectormicrosoftintune_property_grant_type
-    "scope" = var.connectormicrosoftintune_property_scope
-    "tenant" = var.connectormicrosoftintune_property_tenant
+    "grantType"    = var.connectormicrosoftintune_property_grant_type
+    "scope"        = var.connectormicrosoftintune_property_scope
+    "tenant"       = var.connectormicrosoftintune_property_tenant
   })
 }
 ```
@@ -3612,7 +3612,7 @@ Connector ID (`connector.id` in the resource): `microsoftIdpConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `openId` (json):  Console display name: "OpenId Parameters".
+* `openId` (json): Console display name: "OpenId Parameters".
 
 
 Example:
@@ -3637,7 +3637,7 @@ Connector ID (`connector.id` in the resource): `microsoftTeamsConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -3682,23 +3682,23 @@ Connector ID (`connector.id` in the resource): `nuanceConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `authDescription` (string):  Console display name: "Authentication Description".
+* `authDescription` (string): Console display name: "Authentication Description".
 * `configSetName` (string): The Config Set Name for accessing Nuance API. Console display name: "Config Set Name".
-* `connectorName` (string):  Console display name: "Connector Name".
-* `description` (string):  Console display name: "Description".
-* `details1` (string):  Console display name: "Credentials Details 1".
-* `details2` (string):  Console display name: "Credentials Details 2".
-* `iconUrl` (string):  Console display name: "Icon URL".
-* `iconUrlPng` (string):  Console display name: "Icon URL in PNG".
+* `connectorName` (string): Console display name: "Connector Name".
+* `description` (string): Console display name: "Description".
+* `details1` (string): Console display name: "Credentials Details 1".
+* `details2` (string): Console display name: "Credentials Details 2".
+* `iconUrl` (string): Console display name: "Icon URL".
+* `iconUrlPng` (string): Console display name: "Icon URL in PNG".
 * `passphrase1` (string): Passphrase that the user will need to speak for voice sample. Console display name: "Passphrase One".
 * `passphrase2` (string): Passphrase that the user will need to speak for voice sample. Console display name: "Passphrase Two".
 * `passphrase3` (string): Passphrase that the user will need to speak for voice sample. Console display name: "Passphrase Three".
 * `passphrase4` (string): Passphrase that the user will need to speak for voice sample. Console display name: "Passphrase Four".
 * `passphrase5` (string): Passphrase that the user will need to speak for voice sample. Console display name: "Passphrase Five".
-* `showCredAddedOn` (boolean):  Console display name: "Show Credentials Added On?".
-* `showCredAddedVia` (boolean):  Console display name: "Show Credentials Added through ?".
-* `title` (string):  Console display name: "Title".
-* `toolTip` (string):  Console display name: "Tooltip".
+* `showCredAddedOn` (boolean): Console display name: "Show Credentials Added On?".
+* `showCredAddedVia` (boolean): Console display name: "Show Credentials Added through ?".
+* `title` (string): Console display name: "Title".
+* `toolTip` (string): Console display name: "Tooltip".
 
 
 Example:
@@ -3711,23 +3711,23 @@ resource "pingone_davinci_connector_instance" "nuanceConnector" {
   }
   name = "My awesome nuanceConnector"
   properties = jsonencode({
-    "authDescription" = var.nuanceconnector_property_auth_description
-    "configSetName" = var.nuanceconnector_property_config_set_name
-    "connectorName" = var.nuanceconnector_property_connector_name
-    "description" = var.nuanceconnector_property_description
-    "details1" = var.nuanceconnector_property_details1
-    "details2" = var.nuanceconnector_property_details2
-    "iconUrl" = var.nuanceconnector_property_icon_url
-    "iconUrlPng" = var.nuanceconnector_property_icon_url_png
-    "passphrase1" = var.nuanceconnector_property_passphrase1
-    "passphrase2" = var.nuanceconnector_property_passphrase2
-    "passphrase3" = var.nuanceconnector_property_passphrase3
-    "passphrase4" = var.nuanceconnector_property_passphrase4
-    "passphrase5" = var.nuanceconnector_property_passphrase5
-    "showCredAddedOn" = var.nuanceconnector_property_show_cred_added_on
+    "authDescription"  = var.nuanceconnector_property_auth_description
+    "configSetName"    = var.nuanceconnector_property_config_set_name
+    "connectorName"    = var.nuanceconnector_property_connector_name
+    "description"      = var.nuanceconnector_property_description
+    "details1"         = var.nuanceconnector_property_details1
+    "details2"         = var.nuanceconnector_property_details2
+    "iconUrl"          = var.nuanceconnector_property_icon_url
+    "iconUrlPng"       = var.nuanceconnector_property_icon_url_png
+    "passphrase1"      = var.nuanceconnector_property_passphrase1
+    "passphrase2"      = var.nuanceconnector_property_passphrase2
+    "passphrase3"      = var.nuanceconnector_property_passphrase3
+    "passphrase4"      = var.nuanceconnector_property_passphrase4
+    "passphrase5"      = var.nuanceconnector_property_passphrase5
+    "showCredAddedOn"  = var.nuanceconnector_property_show_cred_added_on
     "showCredAddedVia" = var.nuanceconnector_property_show_cred_added_via
-    "title" = var.nuanceconnector_property_title
-    "toolTip" = var.nuanceconnector_property_tool_tip
+    "title"            = var.nuanceconnector_property_title
+    "toolTip"          = var.nuanceconnector_property_tool_tip
   })
 }
 ```
@@ -3739,7 +3739,7 @@ Connector ID (`connector.id` in the resource): `genericConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -3780,10 +3780,10 @@ resource "pingone_davinci_connector_instance" "connectorOpswat" {
   }
   name = "My awesome connectorOpswat"
   properties = jsonencode({
-    "clientID" = var.connectoropswat_property_client_i_d
-    "clientSecret" = var.connectoropswat_property_client_secret
+    "clientID"           = var.connectoropswat_property_client_i_d
+    "clientSecret"       = var.connectoropswat_property_client_secret
     "crossDomainApiPort" = var.connectoropswat_property_cross_domain_api_port
-    "maDomain" = var.connectoropswat_property_ma_domain
+    "maDomain"           = var.connectoropswat_property_ma_domain
   })
 }
 ```
@@ -3809,7 +3809,7 @@ resource "pingone_davinci_connector_instance" "oneTrustConnector" {
   }
   name = "My awesome oneTrustConnector"
   properties = jsonencode({
-    "clientId" = var.onetrustconnector_property_client_id
+    "clientId"     = var.onetrustconnector_property_client_id
     "clientSecret" = var.onetrustconnector_property_client_secret
   })
 }
@@ -3823,33 +3823,33 @@ Connector ID (`connector.id` in the resource): `onfidoConnector`
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
 * `androidPackageName` (string): Your Android Application's Package Name. Console display name: "Android Application Package Name".
-* `apiKey` (string):  Console display name: "API Key".
-* `authDescription` (string):  Console display name: "Authentication Description".
-* `baseUrl` (string):  Console display name: "Base URL".
-* `connectorName` (string):  Console display name: "Connector Name".
-* `customizeSteps` (boolean):  Console display name: "Customize Steps".
-* `description` (string):  Console display name: "Description".
-* `details1` (string):  Console display name: "Credentials Details 1".
-* `details2` (string):  Console display name: "Credentials Details 2".
+* `apiKey` (string): Console display name: "API Key".
+* `authDescription` (string): Console display name: "Authentication Description".
+* `baseUrl` (string): Console display name: "Base URL".
+* `connectorName` (string): Console display name: "Connector Name".
+* `customizeSteps` (boolean): Console display name: "Customize Steps".
+* `description` (string): Console display name: "Description".
+* `details1` (string): Console display name: "Credentials Details 1".
+* `details2` (string): Console display name: "Credentials Details 2".
 * `iOSBundleId` (string): Your iOS Application's Bundle ID. Console display name: "iOS Application Bundle ID".
-* `iconUrl` (string):  Console display name: "Icon URL".
-* `iconUrlPng` (string):  Console display name: "Icon URL in PNG".
-* `javascriptCSSUrl` (string):  Console display name: "CSS URL".
-* `javascriptCdnUrl` (string):  Console display name: "Javascript CDN URL".
-* `language` (string):  Console display name: "Language".
-* `referenceStepsList` (json):  
-* `referrerUrl` (string):  Console display name: "Referrer URL".
-* `retrieveReports` (boolean):  Console display name: "Retrieve Reports".
-* `shouldCloseOnOverlayClick` (boolean):  Console display name: "Close on Overlay Click".
-* `showCredAddedOn` (boolean):  Console display name: "Show Credentials Added On?".
-* `showCredAddedVia` (boolean):  Console display name: "Show Credentials Added through ?".
+* `iconUrl` (string): Console display name: "Icon URL".
+* `iconUrlPng` (string): Console display name: "Icon URL in PNG".
+* `javascriptCSSUrl` (string): Console display name: "CSS URL".
+* `javascriptCdnUrl` (string): Console display name: "Javascript CDN URL".
+* `language` (string): Console display name: "Language".
+* `referenceStepsList` (json): Console display name: "".
+* `referrerUrl` (string): Console display name: "Referrer URL".
+* `retrieveReports` (boolean): Console display name: "Retrieve Reports".
+* `shouldCloseOnOverlayClick` (boolean): Console display name: "Close on Overlay Click".
+* `showCredAddedOn` (boolean): Console display name: "Show Credentials Added On?".
+* `showCredAddedVia` (boolean): Console display name: "Show Credentials Added through ?".
 * `stepsList` (boolean): The Proof of Address document capture is currently a BETA feature, and it cannot be used in conjunction with the document and face steps as part of a single SDK flow. Console display name: "ID Verification Steps".
-* `title` (string):  Console display name: "Title".
-* `toolTip` (string):  Console display name: "Tooltip".
-* `useLanguage` (boolean):  Console display name: "Customize Language".
-* `useModal` (boolean):  Console display name: "Modal".
-* `viewDescriptions` (string):  Console display name: "OnFido Description".
-* `viewTitle` (string):  Console display name: "OnFido Title".
+* `title` (string): Console display name: "Title".
+* `toolTip` (string): Console display name: "Tooltip".
+* `useLanguage` (boolean): Console display name: "Customize Language".
+* `useModal` (boolean): Console display name: "Modal".
+* `viewDescriptions` (string): Console display name: "OnFido Description".
+* `viewTitle` (string): Console display name: "OnFido Title".
 
 
 Example:
@@ -3862,34 +3862,34 @@ resource "pingone_davinci_connector_instance" "onfidoConnector" {
   }
   name = "My awesome onfidoConnector"
   properties = jsonencode({
-    "androidPackageName" = var.onfidoconnector_property_android_package_name
-    "apiKey" = var.onfidoconnector_property_api_key
-    "authDescription" = var.onfidoconnector_property_auth_description
-    "baseUrl" = var.onfidoconnector_property_base_url
-    "connectorName" = var.onfidoconnector_property_connector_name
-    "customizeSteps" = var.onfidoconnector_property_customize_steps
-    "description" = var.onfidoconnector_property_description
-    "details1" = var.onfidoconnector_property_details1
-    "details2" = var.onfidoconnector_property_details2
-    "iOSBundleId" = var.onfidoconnector_property_i_o_s_bundle_id
-    "iconUrl" = var.onfidoconnector_property_icon_url
-    "iconUrlPng" = var.onfidoconnector_property_icon_url_png
-    "javascriptCSSUrl" = var.javascript_css_url
-    "javascriptCdnUrl" = var.onfidoconnector_property_javascript_cdn_url
-    "language" = var.onfidoconnector_property_language
-    "referenceStepsList" = var.onfidoconnector_property_reference_steps_list
-    "referrerUrl" = var.onfidoconnector_property_referrer_url
-    "retrieveReports" = var.onfidoconnector_property_retrieve_reports
+    "androidPackageName"        = var.onfidoconnector_property_android_package_name
+    "apiKey"                    = var.onfidoconnector_property_api_key
+    "authDescription"           = var.onfidoconnector_property_auth_description
+    "baseUrl"                   = var.onfidoconnector_property_base_url
+    "connectorName"             = var.onfidoconnector_property_connector_name
+    "customizeSteps"            = var.onfidoconnector_property_customize_steps
+    "description"               = var.onfidoconnector_property_description
+    "details1"                  = var.onfidoconnector_property_details1
+    "details2"                  = var.onfidoconnector_property_details2
+    "iOSBundleId"               = var.onfidoconnector_property_i_o_s_bundle_id
+    "iconUrl"                   = var.onfidoconnector_property_icon_url
+    "iconUrlPng"                = var.onfidoconnector_property_icon_url_png
+    "javascriptCSSUrl"          = var.javascript_css_url
+    "javascriptCdnUrl"          = var.onfidoconnector_property_javascript_cdn_url
+    "language"                  = var.onfidoconnector_property_language
+    "referenceStepsList"        = var.onfidoconnector_property_reference_steps_list
+    "referrerUrl"               = var.onfidoconnector_property_referrer_url
+    "retrieveReports"           = var.onfidoconnector_property_retrieve_reports
     "shouldCloseOnOverlayClick" = var.onfidoconnector_property_should_close_on_overlay_click
-    "showCredAddedOn" = var.onfidoconnector_property_show_cred_added_on
-    "showCredAddedVia" = var.onfidoconnector_property_show_cred_added_via
-    "stepsList" = var.onfidoconnector_property_steps_list
-    "title" = var.onfidoconnector_property_title
-    "toolTip" = var.onfidoconnector_property_tool_tip
-    "useLanguage" = var.onfidoconnector_property_use_language
-    "useModal" = var.onfidoconnector_property_use_modal
-    "viewDescriptions" = var.onfidoconnector_property_view_descriptions
-    "viewTitle" = var.onfidoconnector_property_view_title
+    "showCredAddedOn"           = var.onfidoconnector_property_show_cred_added_on
+    "showCredAddedVia"          = var.onfidoconnector_property_show_cred_added_via
+    "stepsList"                 = var.onfidoconnector_property_steps_list
+    "title"                     = var.onfidoconnector_property_title
+    "toolTip"                   = var.onfidoconnector_property_tool_tip
+    "useLanguage"               = var.onfidoconnector_property_use_language
+    "useModal"                  = var.onfidoconnector_property_use_modal
+    "viewDescriptions"          = var.onfidoconnector_property_view_descriptions
+    "viewTitle"                 = var.onfidoconnector_property_view_title
   })
 }
 ```
@@ -3916,7 +3916,7 @@ resource "pingone_davinci_connector_instance" "connectorPaloAltoPrisma" {
   }
   name = "My awesome connectorPaloAltoPrisma"
   properties = jsonencode({
-    "baseURL" = var.base_url
+    "baseURL"        = var.base_url
     "prismaPassword" = var.connectorpaloaltoprisma_property_prisma_password
     "prismaUsername" = var.connectorpaloaltoprisma_property_prisma_username
   })
@@ -3946,9 +3946,9 @@ resource "pingone_davinci_connector_instance" "connector-oai-pingaccessadministr
   }
   name = "My awesome connector-oai-pingaccessadministrativeapi"
   properties = jsonencode({
-    "authPassword" = var.connector-oai-pingaccessadministrativeapi_property_auth_password
-    "authUsername" = var.connector-oai-pingaccessadministrativeapi_property_auth_username
-    "basePath" = var.connector-oai-pingaccessadministrativeapi_property_base_path
+    "authPassword"    = var.connector-oai-pingaccessadministrativeapi_property_auth_password
+    "authUsername"    = var.connector-oai-pingaccessadministrativeapi_property_auth_username
+    "basePath"        = var.connector-oai-pingaccessadministrativeapi_property_base_path
     "sslVerification" = var.connector-oai-pingaccessadministrativeapi_property_ssl_verification
   })
 }
@@ -3961,7 +3961,7 @@ Connector ID (`connector.id` in the resource): `pingFederateConnectorV2`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `openId` (json):  Console display name: "OpenId Parameters".
+* `openId` (json): Console display name: "OpenId Parameters".
 
 
 Example:
@@ -3975,55 +3975,55 @@ resource "pingone_davinci_connector_instance" "pingFederateConnectorV2" {
   name = "My awesome pingFederateConnectorV2"
   properties = jsonencode({
     "openId" = jsonencode({
-				"properties": {
-				  "skRedirectUri": {
-					"type": "string",
-					"displayName": "Redirect URL",
-					"info": "Enter this in your identity provider configuration to allow it to redirect the browser back to DaVinci. If you use a custom PingOne domain, modify the URL accordingly.",
-					"preferredControlType": "textField",
-					"disabled": true,
-					"initializeValue": "SINGULARKEY_REDIRECT_URI",
-					"copyToClip": true
-				  },
-				  "clientId": {
-					"type": "string",
-					"displayName": "Client ID",
-					"placeholder": "",
-					"preferredControlType": "textField",
-					"required": true,
-					"value": "${var.pingfederateconnectorv2_property_client_id}"
-				  },
-				  "clientSecret": {
-					"type": "string",
-					"displayName": "Client Secret",
-					"preferredControlType": "textField",
-					"secure": true,
-					"required": true,
-					"value": "${var.pingfederateconnectorv2_property_client_secret}"
-				  },
-				  "scope": {
-					"type": "string",
-					"displayName": "Scope",
-					"preferredControlType": "textField",
-					"requiredValue": "openid",
-					"value": "${var.pingfederateconnectorv2_property_client_scope}",
-					"required": true
-				  },
-				  "issuerUrl": {
-					"type": "string",
-					"displayName": "Base URL",
-					"preferredControlType": "textField",
-					"value": "${var.pingfederateconnectorv2_property_base_url}",
-					"required": true
-				  },
-				  "returnToUrl": {
-					"displayName": "Application Return To URL",
-					"preferredControlType": "textField",
-					"info": "When using the embedded flow player widget and an IDP/Social Login connector, provide a callback URL to return back to the application.",
-					"value": "${var.pingfederateconnectorv2_property_application_callback}"
-				  }
-				}
-			  })
+      "properties" : {
+        "skRedirectUri" : {
+          "type" : "string",
+          "displayName" : "Redirect URL",
+          "info" : "Enter this in your identity provider configuration to allow it to redirect the browser back to DaVinci. If you use a custom PingOne domain, modify the URL accordingly.",
+          "preferredControlType" : "textField",
+          "disabled" : true,
+          "initializeValue" : "SINGULARKEY_REDIRECT_URI",
+          "copyToClip" : true
+        },
+        "clientId" : {
+          "type" : "string",
+          "displayName" : "Client ID",
+          "placeholder" : "",
+          "preferredControlType" : "textField",
+          "required" : true,
+          "value" : "${var.pingfederateconnectorv2_property_client_id}"
+        },
+        "clientSecret" : {
+          "type" : "string",
+          "displayName" : "Client Secret",
+          "preferredControlType" : "textField",
+          "secure" : true,
+          "required" : true,
+          "value" : "${var.pingfederateconnectorv2_property_client_secret}"
+        },
+        "scope" : {
+          "type" : "string",
+          "displayName" : "Scope",
+          "preferredControlType" : "textField",
+          "requiredValue" : "openid",
+          "value" : "${var.pingfederateconnectorv2_property_client_scope}",
+          "required" : true
+        },
+        "issuerUrl" : {
+          "type" : "string",
+          "displayName" : "Base URL",
+          "preferredControlType" : "textField",
+          "value" : "${var.pingfederateconnectorv2_property_base_url}",
+          "required" : true
+        },
+        "returnToUrl" : {
+          "displayName" : "Application Return To URL",
+          "preferredControlType" : "textField",
+          "info" : "When using the embedded flow player widget and an IDP/Social Login connector, provide a callback URL to return back to the application.",
+          "value" : "${var.pingfederateconnectorv2_property_application_callback}"
+        }
+      }
+    })
   })
 }
 ```
@@ -4051,9 +4051,9 @@ resource "pingone_davinci_connector_instance" "connector-oai-pfadminapi" {
   }
   name = "My awesome connector-oai-pfadminapi"
   properties = jsonencode({
-    "authPassword" = var.connector-oai-pfadminapi_property_auth_password
-    "authUsername" = var.connector-oai-pfadminapi_property_auth_username
-    "basePath" = var.connector-oai-pfadminapi_property_base_path
+    "authPassword"    = var.connector-oai-pfadminapi_property_auth_password
+    "authUsername"    = var.connector-oai-pfadminapi_property_auth_username
+    "basePath"        = var.connector-oai-pfadminapi_property_base_path
     "sslVerification" = var.connector-oai-pfadminapi_property_ssl_verification
   })
 }
@@ -4066,7 +4066,7 @@ Connector ID (`connector.id` in the resource): `pingIdConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -4080,22 +4080,22 @@ resource "pingone_davinci_connector_instance" "pingIdConnector" {
   name = "My awesome pingIdConnector"
   properties = jsonencode({
     "customAuth" = jsonencode({
-				"properties": {
-				  "pingIdProperties": {
-					"displayName": "PingID properties file",
-					"preferredControlType": "secureTextArea",
-					"hashedVisibility": true,
-					"required": true,
-					"info": "Paste the contents of the PingID properties file into this field.",
-					"value": "${file(var.pingidconnector_property_pingid_properties_file_path)}"
-				  },
-				  "returnToUrl": {
-					"displayName": "Application Return To URL",
-					"preferredControlType": "textField",
-					"info": "When using the embedded flow player widget and an IDP/Social Login connector, provide a callback URL to return back to the application."
-				  }
-				}
-			  })
+      "properties" : {
+        "pingIdProperties" : {
+          "displayName" : "PingID properties file",
+          "preferredControlType" : "secureTextArea",
+          "hashedVisibility" : true,
+          "required" : true,
+          "info" : "Paste the contents of the PingID properties file into this field.",
+          "value" : "${file(var.pingidconnector_property_pingid_properties_file_path)}"
+        },
+        "returnToUrl" : {
+          "displayName" : "Application Return To URL",
+          "preferredControlType" : "textField",
+          "info" : "When using the embedded flow player widget and an IDP/Social Login connector, provide a callback URL to return back to the application."
+        }
+      }
+    })
   })
 }
 ```
@@ -4124,11 +4124,11 @@ resource "pingone_davinci_connector_instance" "pingOneSSOConnector" {
   }
   name = "My awesome pingOneSSOConnector"
   properties = jsonencode({
-    "clientId" = var.pingone_worker_app_client_id
-    "clientSecret" = var.pingone_worker_app_client_secret
-    "envId" = var.pingone_worker_app_environment_id
+    "clientId"      = var.pingone_worker_app_client_id
+    "clientSecret"  = var.pingone_worker_app_client_secret
+    "envId"         = var.pingone_worker_app_environment_id
     "envRegionInfo" = var.pingonessoconnector_property_env_region_info
-    "region" = var.pingonessoconnector_property_region
+    "region"        = var.pingonessoconnector_property_region
   })
 }
 ```
@@ -4158,11 +4158,11 @@ resource "pingone_davinci_connector_instance" "accessRequestConnector" {
   }
   name = "My awesome accessRequestConnector"
   properties = jsonencode({
-    "baseURL" = var.accessrequestconnector_property_base_u_r_l
-    "endUserClientId" = var.accessrequestconnector_property_end_user_client_id
-    "endUserClientPrivateKey" = var.accessrequestconnector_property_end_user_client_private_key
-    "realm" = var.accessrequestconnector_property_realm
-    "serviceAccountId" = var.accessrequestconnector_property_service_account_id
+    "baseURL"                  = var.accessrequestconnector_property_base_u_r_l
+    "endUserClientId"          = var.accessrequestconnector_property_end_user_client_id
+    "endUserClientPrivateKey"  = var.accessrequestconnector_property_end_user_client_private_key
+    "realm"                    = var.accessrequestconnector_property_realm
+    "serviceAccountId"         = var.accessrequestconnector_property_service_account_id
     "serviceAccountPrivateKey" = var.accessrequestconnector_property_service_account_private_key
   })
 }
@@ -4175,7 +4175,7 @@ Connector ID (`connector.id` in the resource): `pingoneAdvancedIdentityCloudLogi
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `openId` (json):  Console display name: "OpenId Parameters".
+* `openId` (json): Console display name: "OpenId Parameters".
 
 
 Example:
@@ -4235,9 +4235,9 @@ resource "pingone_davinci_connector_instance" "pingOneAuthorizeConnector" {
   }
   name = "My awesome pingOneAuthorizeConnector"
   properties = jsonencode({
-    "clientId" = var.pingoneauthorizeconnector_property_client_id
+    "clientId"     = var.pingoneauthorizeconnector_property_client_id
     "clientSecret" = var.pingoneauthorizeconnector_property_client_secret
-    "endpointURL" = var.endpoint_url
+    "endpointURL"  = var.endpoint_url
   })
 }
 ```
@@ -4286,11 +4286,11 @@ resource "pingone_davinci_connector_instance" "pingOneCredentialsConnector" {
   }
   name = "My awesome pingOneCredentialsConnector"
   properties = jsonencode({
-    "clientId" = var.pingone_worker_app_client_id
-    "clientSecret" = var.pingone_worker_app_client_secret
+    "clientId"                   = var.pingone_worker_app_client_id
+    "clientSecret"               = var.pingone_worker_app_client_secret
     "digitalWalletApplicationId" = var.pingonecredentialsconnector_property_digital_wallet_application_id
-    "envId" = var.pingone_worker_app_environment_id
-    "region" = var.pingonecredentialsconnector_property_region
+    "envId"                      = var.pingone_worker_app_environment_id
+    "region"                     = var.pingonecredentialsconnector_property_region
   })
 }
 ```
@@ -4339,11 +4339,11 @@ resource "pingone_davinci_connector_instance" "pingOneMfaConnector" {
   }
   name = "My awesome pingOneMfaConnector"
   properties = jsonencode({
-    "clientId" = var.pingone_worker_app_client_id
+    "clientId"     = var.pingone_worker_app_client_id
     "clientSecret" = var.pingone_worker_app_client_secret
-    "envId" = var.pingone_worker_app_environment_id
-    "policyId" = var.pingonemfaconnector_property_policy_id
-    "region" = var.pingonemfaconnector_property_region
+    "envId"        = var.pingone_worker_app_environment_id
+    "policyId"     = var.pingonemfaconnector_property_policy_id
+    "region"       = var.pingonemfaconnector_property_region
   })
 }
 ```
@@ -4372,11 +4372,11 @@ resource "pingone_davinci_connector_instance" "notificationsConnector" {
   }
   name = "My awesome notificationsConnector"
   properties = jsonencode({
-    "clientId" = var.notificationsconnector_property_client_id
-    "clientSecret" = var.notificationsconnector_property_client_secret
-    "envId" = var.notificationsconnector_property_env_id
+    "clientId"             = var.notificationsconnector_property_client_id
+    "clientSecret"         = var.notificationsconnector_property_client_secret
+    "envId"                = var.notificationsconnector_property_env_id
     "notificationPolicyId" = var.notificationsconnector_property_notification_policy_id
-    "region" = var.notificationsconnector_property_region
+    "region"               = var.notificationsconnector_property_region
   })
 }
 ```
@@ -4404,10 +4404,10 @@ resource "pingone_davinci_connector_instance" "pingOneRiskConnector" {
   }
   name = "My awesome pingOneRiskConnector"
   properties = jsonencode({
-    "clientId" = var.pingone_worker_app_client_id
+    "clientId"     = var.pingone_worker_app_client_id
     "clientSecret" = var.pingone_worker_app_client_secret
-    "envId" = var.pingone_worker_app_environment_id
-    "region" = var.pingoneriskconnector_property_region
+    "envId"        = var.pingone_worker_app_environment_id
+    "region"       = var.pingoneriskconnector_property_region
   })
 }
 ```
@@ -4455,10 +4455,10 @@ resource "pingone_davinci_connector_instance" "pingOneScopeConsentConnector" {
   }
   name = "My awesome pingOneScopeConsentConnector"
   properties = jsonencode({
-    "clientId" = var.pingone_worker_app_client_id
+    "clientId"     = var.pingone_worker_app_client_id
     "clientSecret" = var.pingone_worker_app_client_secret
-    "envId" = var.pingone_worker_app_environment_id
-    "region" = var.pingonescopeconsentconnector_property_region
+    "envId"        = var.pingone_worker_app_environment_id
+    "region"       = var.pingonescopeconsentconnector_property_region
   })
 }
 ```
@@ -4486,10 +4486,10 @@ resource "pingone_davinci_connector_instance" "pingOneVerifyConnector" {
   }
   name = "My awesome pingOneVerifyConnector"
   properties = jsonencode({
-    "clientId" = var.pingone_worker_app_client_id
+    "clientId"     = var.pingone_worker_app_client_id
     "clientSecret" = var.pingone_worker_app_client_secret
-    "envId" = var.pingone_worker_app_environment_id
-    "region" = var.pingoneverifyconnector_property_region
+    "envId"        = var.pingone_worker_app_environment_id
+    "region"       = var.pingoneverifyconnector_property_region
   })
 }
 ```
@@ -4501,7 +4501,7 @@ Connector ID (`connector.id` in the resource): `privateidConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -4526,14 +4526,14 @@ Connector ID (`connector.id` in the resource): `payfoneConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `appClientId` (string):  Console display name: "App Client ID".
-* `baseUrl` (string):  Console display name: "Prove Base URL".
-* `clientId` (string):  Console display name: "Client ID".
-* `password` (string):  Console display name: "Password".
-* `simulatorMode` (boolean):  Console display name: "Simulator Mode?".
-* `simulatorPhoneNumber` (string):  Console display name: "Simulator Phone Number".
+* `appClientId` (string): Console display name: "App Client ID".
+* `baseUrl` (string): Console display name: "Prove Base URL".
+* `clientId` (string): Console display name: "Client ID".
+* `password` (string): Console display name: "Password".
+* `simulatorMode` (boolean): Console display name: "Simulator Mode?".
+* `simulatorPhoneNumber` (string): Console display name: "Simulator Phone Number".
 * `skCallbackBaseUrl` (string): Use this url as the callback base URL. Console display name: "Callback Base URL".
-* `username` (string):  Console display name: "Username".
+* `username` (string): Console display name: "Username".
 
 
 Example:
@@ -4546,14 +4546,14 @@ resource "pingone_davinci_connector_instance" "payfoneConnector" {
   }
   name = "My awesome payfoneConnector"
   properties = jsonencode({
-    "appClientId" = var.payfoneconnector_property_app_client_id
-    "baseUrl" = var.payfoneconnector_property_base_url
-    "clientId" = var.payfoneconnector_property_client_id
-    "password" = var.payfoneconnector_property_password
-    "simulatorMode" = var.payfoneconnector_property_simulator_mode
+    "appClientId"          = var.payfoneconnector_property_app_client_id
+    "baseUrl"              = var.payfoneconnector_property_base_url
+    "clientId"             = var.payfoneconnector_property_client_id
+    "password"             = var.payfoneconnector_property_password
+    "simulatorMode"        = var.payfoneconnector_property_simulator_mode
     "simulatorPhoneNumber" = var.payfoneconnector_property_simulator_phone_number
-    "skCallbackBaseUrl" = var.payfoneconnector_property_sk_callback_base_url
-    "username" = var.payfoneconnector_property_username
+    "skCallbackBaseUrl"    = var.payfoneconnector_property_sk_callback_base_url
+    "username"             = var.payfoneconnector_property_username
   })
 }
 ```
@@ -4565,11 +4565,11 @@ Connector ID (`connector.id` in the resource): `proveConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `baseUrl` (string):  Console display name: "Prove Base URL".
-* `clientId` (string):  Console display name: "Prove Client ID".
-* `grantType` (string):  Console display name: "Prove Grant Type".
-* `password` (string):  Console display name: "Prove Password".
-* `username` (string):  Console display name: "Prove Username".
+* `baseUrl` (string): Console display name: "Prove Base URL".
+* `clientId` (string): Console display name: "Prove Client ID".
+* `grantType` (string): Console display name: "Prove Grant Type".
+* `password` (string): Console display name: "Prove Password".
+* `username` (string): Console display name: "Prove Username".
 
 
 Example:
@@ -4582,11 +4582,11 @@ resource "pingone_davinci_connector_instance" "proveConnector" {
   }
   name = "My awesome proveConnector"
   properties = jsonencode({
-    "baseUrl" = var.proveconnector_property_base_url
-    "clientId" = var.proveconnector_property_client_id
+    "baseUrl"   = var.proveconnector_property_base_url
+    "clientId"  = var.proveconnector_property_client_id
     "grantType" = var.proveconnector_property_grant_type
-    "password" = var.proveconnector_property_password
-    "username" = var.proveconnector_property_username
+    "password"  = var.proveconnector_property_password
+    "username"  = var.proveconnector_property_username
   })
 }
 ```
@@ -4613,9 +4613,9 @@ resource "pingone_davinci_connector_instance" "rsaConnector" {
   }
   name = "My awesome rsaConnector"
   properties = jsonencode({
-    "accessId" = var.rsaconnector_property_access_id
+    "accessId"  = var.rsaconnector_property_access_id
     "accessKey" = var.rsaconnector_property_access_key
-    "baseUrl" = var.rsaconnector_property_base_url
+    "baseUrl"   = var.rsaconnector_property_base_url
   })
 }
 ```
@@ -4644,11 +4644,11 @@ resource "pingone_davinci_connector_instance" "inveridConnector" {
   }
   name = "My awesome inveridConnector"
   properties = jsonencode({
-    "getApiKey" = var.inveridconnector_property_get_api_key
-    "host" = var.inveridconnector_property_host
-    "postApiKey" = var.inveridconnector_property_post_api_key
+    "getApiKey"    = var.inveridconnector_property_get_api_key
+    "host"         = var.inveridconnector_property_host
+    "postApiKey"   = var.inveridconnector_property_post_api_key
     "skWebhookUri" = var.inveridconnector_property_sk_webhook_uri
-    "timeToLive" = var.inveridconnector_property_time_to_live
+    "timeToLive"   = var.inveridconnector_property_time_to_live
   })
 }
 ```
@@ -4680,7 +4680,7 @@ Connector ID (`connector.id` in the resource): `samlIdpConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `saml` (json):  Console display name: "SAML Parameters".
+* `saml` (json): Console display name: "SAML Parameters".
 
 
 Example:
@@ -4720,7 +4720,7 @@ resource "pingone_davinci_connector_instance" "connector-oai-sapidentityapis" {
   name = "My awesome connector-oai-sapidentityapis"
   properties = jsonencode({
     "authApiKey" = var.connector-oai-sapidentityapis_property_auth_api_key
-    "basePath" = var.connector-oai-sapidentityapis_property_base_path
+    "basePath"   = var.connector-oai-sapidentityapis_property_base_path
   })
 }
 ```
@@ -4746,7 +4746,7 @@ resource "pingone_davinci_connector_instance" "seonConnector" {
   }
   name = "My awesome seonConnector"
   properties = jsonencode({
-    "baseURL" = var.base_url
+    "baseURL"    = var.base_url
     "licenseKey" = var.seonconnector_property_license_key
   })
 }
@@ -4761,10 +4761,10 @@ Properties (used under the `properties` block in the resource as a key in the JS
 
 * `hostname` (string): Example: smtp-relay.gmail.com. Console display name: "SMTP Server/Host".
 * `name` (string): Optional hostname of the client, used for identifying to the server, defaults to hostname of the machine. Console display name: "Client Name".
-* `password` (string):  Console display name: "Password".
+* `password` (string): Console display name: "Password".
 * `port` (number): Example: 25. Console display name: "SMTP Port".
-* `secureFlag` (boolean):  Console display name: "Secure Flag?".
-* `username` (string):  Console display name: "Username".
+* `secureFlag` (boolean): Console display name: "Secure Flag?".
+* `username` (string): Console display name: "Username".
 
 
 Example:
@@ -4777,12 +4777,12 @@ resource "pingone_davinci_connector_instance" "smtpConnector" {
   }
   name = "My awesome smtpConnector"
   properties = jsonencode({
-    "hostname" = var.smtpconnector_property_hostname
-    "name" = var.smtpconnector_property_name
-    "password" = var.smtpconnector_property_password
-    "port" = var.smtpconnector_property_port
+    "hostname"   = var.smtpconnector_property_hostname
+    "name"       = var.smtpconnector_property_name
+    "password"   = var.smtpconnector_property_password
+    "port"       = var.smtpconnector_property_port
     "secureFlag" = var.smtpconnector_property_secure_flag
-    "username" = var.smtpconnector_property_username
+    "username"   = var.smtpconnector_property_username
   })
 }
 ```
@@ -4809,9 +4809,9 @@ resource "pingone_davinci_connector_instance" "connectorIdentityNow" {
   }
   name = "My awesome connectorIdentityNow"
   properties = jsonencode({
-    "clientId" = var.connectoridentitynow_property_client_id
+    "clientId"     = var.connectoridentitynow_property_client_id
     "clientSecret" = var.connectoridentitynow_property_client_secret
-    "tenant" = var.connectoridentitynow_property_tenant
+    "tenant"       = var.connectoridentitynow_property_tenant
   })
 }
 ```
@@ -4841,10 +4841,10 @@ resource "pingone_davinci_connector_instance" "salesforceConnector" {
   name = "My awesome salesforceConnector"
   properties = jsonencode({
     "adminUsername" = var.salesforceconnector_property_admin_username
-    "consumerKey" = var.salesforceconnector_property_consumer_key
-    "domainName" = var.salesforceconnector_property_domain_name
-    "environment" = var.salesforceconnector_property_environment
-    "privateKey" = var.salesforceconnector_property_private_key
+    "consumerKey"   = var.salesforceconnector_property_consumer_key
+    "domainName"    = var.salesforceconnector_property_domain_name
+    "environment"   = var.salesforceconnector_property_environment
+    "privateKey"    = var.salesforceconnector_property_private_key
   })
 }
 ```
@@ -4874,10 +4874,10 @@ resource "pingone_davinci_connector_instance" "connectorSalesforceMarketingCloud
   name = "My awesome connectorSalesforceMarketingCloud"
   properties = jsonencode({
     "SalesforceMarketingCloudURL" = var.salesforce_marketing_cloud_url
-    "accountId" = var.connectorsalesforcemarketingcloud_property_account_id
-    "clientId" = var.connectorsalesforcemarketingcloud_property_client_id
-    "clientSecret" = var.connectorsalesforcemarketingcloud_property_client_secret
-    "scope" = var.connectorsalesforcemarketingcloud_property_scope
+    "accountId"                   = var.connectorsalesforcemarketingcloud_property_account_id
+    "clientId"                    = var.connectorsalesforcemarketingcloud_property_client_id
+    "clientSecret"                = var.connectorsalesforcemarketingcloud_property_client_secret
+    "scope"                       = var.connectorsalesforcemarketingcloud_property_scope
   })
 }
 ```
@@ -4905,8 +4905,8 @@ resource "pingone_davinci_connector_instance" "connectorSaviyntFlow" {
   }
   name = "My awesome connectorSaviyntFlow"
   properties = jsonencode({
-    "domainName" = var.connectorsaviyntflow_property_domain_name
-    "path" = var.connectorsaviyntflow_property_path
+    "domainName"      = var.connectorsaviyntflow_property_domain_name
+    "path"            = var.connectorsaviyntflow_property_path
     "saviyntPassword" = var.connectorsaviyntflow_property_saviynt_password
     "saviyntUserName" = var.connectorsaviyntflow_property_saviynt_user_name
   })
@@ -4954,7 +4954,7 @@ resource "pingone_davinci_connector_instance" "securIdConnector" {
   }
   name = "My awesome securIdConnector"
   properties = jsonencode({
-    "apiUrl" = var.securidconnector_property_api_url
+    "apiUrl"    = var.securidconnector_property_api_url
     "clientKey" = var.securidconnector_property_client_key
   })
 }
@@ -4982,7 +4982,7 @@ resource "pingone_davinci_connector_instance" "connectorSecuronix" {
   name = "My awesome connectorSecuronix"
   properties = jsonencode({
     "domainName" = var.connectorsecuronix_property_domain_name
-    "token" = var.connectorsecuronix_property_token
+    "token"      = var.connectorsecuronix_property_token
   })
 }
 ```
@@ -5008,7 +5008,7 @@ resource "pingone_davinci_connector_instance" "connectorSegment" {
   }
   name = "My awesome connectorSegment"
   properties = jsonencode({
-    "version" = var.connectorsegment_property_version
+    "version"  = var.connectorsegment_property_version
     "writeKey" = var.connectorsegment_property_write_key
   })
 }
@@ -5022,8 +5022,8 @@ Connector ID (`connector.id` in the resource): `sentilinkConnector`
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
 * `account` (string): Account ID of SentiLink. Console display name: "Account ID".
-* `apiUrl` (string):  Console display name: "API URL".
-* `javascriptCdnUrl` (string):  Console display name: "Javascript CDN URL".
+* `apiUrl` (string): Console display name: "API URL".
+* `javascriptCdnUrl` (string): Console display name: "Javascript CDN URL".
 * `token` (string): Token ID for SentiLink account. Console display name: "Token ID".
 
 
@@ -5037,10 +5037,10 @@ resource "pingone_davinci_connector_instance" "sentilinkConnector" {
   }
   name = "My awesome sentilinkConnector"
   properties = jsonencode({
-    "account" = var.sentilinkconnector_property_account
-    "apiUrl" = var.sentilinkconnector_property_api_url
+    "account"          = var.sentilinkconnector_property_account
+    "apiUrl"           = var.sentilinkconnector_property_api_url
     "javascriptCdnUrl" = var.sentilinkconnector_property_javascript_cdn_url
-    "token" = var.sentilinkconnector_property_token
+    "token"            = var.sentilinkconnector_property_token
   })
 }
 ```
@@ -5068,8 +5068,8 @@ resource "pingone_davinci_connector_instance" "servicenowConnector" {
   name = "My awesome servicenowConnector"
   properties = jsonencode({
     "adminUsername" = var.servicenowconnector_property_admin_username
-    "apiUrl" = var.servicenowconnector_property_api_url
-    "password" = var.servicenowconnector_property_password
+    "apiUrl"        = var.servicenowconnector_property_api_url
+    "password"      = var.servicenowconnector_property_password
   })
 }
 ```
@@ -5098,11 +5098,11 @@ resource "pingone_davinci_connector_instance" "connectorShopify" {
   }
   name = "My awesome connectorShopify"
   properties = jsonencode({
-    "accessToken" = var.connectorshopify_property_access_token
-    "apiVersion" = var.connectorshopify_property_api_version
-    "multipassSecret" = var.connectorshopify_property_multipass_secret
+    "accessToken"          = var.connectorshopify_property_access_token
+    "apiVersion"           = var.connectorshopify_property_api_version
+    "multipassSecret"      = var.connectorshopify_property_multipass_secret
     "multipassStoreDomain" = var.connectorshopify_property_multipass_store_domain
-    "yourStoreName" = var.connectorshopify_property_your_store_name
+    "yourStoreName"        = var.connectorshopify_property_your_store_name
   })
 }
 ```
@@ -5139,7 +5139,7 @@ Connector ID (`connector.id` in the resource): `connectorSignicat`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -5179,9 +5179,9 @@ resource "pingone_davinci_connector_instance" "silverfortConnector" {
   }
   name = "My awesome silverfortConnector"
   properties = jsonencode({
-    "apiKey" = var.silverfortconnector_property_api_key
+    "apiKey"        = var.silverfortconnector_property_api_key
     "appUserSecret" = var.silverfortconnector_property_app_user_secret
-    "consoleApi" = var.silverfortconnector_property_console_api
+    "consoleApi"    = var.silverfortconnector_property_console_api
   })
 }
 ```
@@ -5210,7 +5210,7 @@ resource "pingone_davinci_connector_instance" "sinchConnector" {
   properties = jsonencode({
     "acceptLanguage" = var.sinchconnector_property_accept_language
     "applicationKey" = var.sinchconnector_property_application_key
-    "secretKey" = var.sinchconnector_property_secret_key
+    "secretKey"      = var.sinchconnector_property_secret_key
   })
 }
 ```
@@ -5222,7 +5222,7 @@ Connector ID (`connector.id` in the resource): `singpassLoginConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -5247,7 +5247,7 @@ Connector ID (`connector.id` in the resource): `slackConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `oauth2` (json):  Console display name: "Oauth2 Parameters".
+* `oauth2` (json): Console display name: "Oauth2 Parameters".
 
 
 Example:
@@ -5287,9 +5287,9 @@ resource "pingone_davinci_connector_instance" "connectorSmarty" {
   }
   name = "My awesome connectorSmarty"
   properties = jsonencode({
-    "authId" = var.connectorsmarty_property_auth_id
+    "authId"    = var.connectorsmarty_property_auth_id
     "authToken" = var.connectorsmarty_property_auth_token
-    "license" = var.connectorsmarty_property_license
+    "license"   = var.connectorsmarty_property_license
   })
 }
 ```
@@ -5318,10 +5318,10 @@ resource "pingone_davinci_connector_instance" "socureConnector" {
   }
   name = "My awesome socureConnector"
   properties = jsonencode({
-    "apiKey" = var.socureconnector_property_api_key
-    "baseUrl" = var.socureconnector_property_base_url
+    "apiKey"       = var.socureconnector_property_api_key
+    "baseUrl"      = var.socureconnector_property_base_url
     "customApiUrl" = var.socureconnector_property_custom_api_url
-    "sdkKey" = var.socureconnector_property_sdk_key
+    "sdkKey"       = var.socureconnector_property_sdk_key
     "skWebhookUri" = var.socureconnector_property_sk_webhook_uri
   })
 }
@@ -5350,8 +5350,8 @@ resource "pingone_davinci_connector_instance" "splunkConnector" {
   name = "My awesome splunkConnector"
   properties = jsonencode({
     "apiUrl" = var.splunkconnector_property_api_url
-    "port" = var.splunkconnector_property_port
-    "token" = var.splunkconnector_property_token
+    "port"   = var.splunkconnector_property_port
+    "token"  = var.splunkconnector_property_token
   })
 }
 ```
@@ -5363,7 +5363,7 @@ Connector ID (`connector.id` in the resource): `connectorSpotify`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `oauth2` (json):  Console display name: "Oauth2 Parameters".
+* `oauth2` (json): Console display name: "Oauth2 Parameters".
 
 
 Example:
@@ -5448,9 +5448,9 @@ resource "pingone_davinci_connector_instance" "tmtConnector" {
   }
   name = "My awesome tmtConnector"
   properties = jsonencode({
-    "apiKey" = var.tmtconnector_property_api_key
+    "apiKey"    = var.tmtconnector_property_api_key
     "apiSecret" = var.tmtconnector_property_api_secret
-    "apiUrl" = var.tmtconnector_property_api_url
+    "apiUrl"    = var.tmtconnector_property_api_url
   })
 }
 ```
@@ -5492,22 +5492,22 @@ resource "pingone_davinci_connector_instance" "connectorTableau" {
   name = "My awesome connectorTableau"
   properties = jsonencode({
     "addFlowPermissionsRequestBody" = var.connectortableau_property_add_flow_permissions_request_body
-    "addUsertoSiteRequestBody" = var.connectortableau_property_add_userto_site_request_body
-    "apiVersion" = var.connectortableau_property_api_version
-    "authId" = var.connectortableau_property_auth_id
-    "createScheduleBody" = var.connectortableau_property_create_schedule_body
-    "datasourceId" = var.connectortableau_property_datasource_id
-    "flowId" = var.connectortableau_property_flow_id
-    "groupId" = var.connectortableau_property_group_id
-    "jobId" = var.connectortableau_property_job_id
-    "scheduleId" = var.connectortableau_property_schedule_id
-    "serverUrl" = var.connectortableau_property_server_url
-    "siteId" = var.connectortableau_property_site_id
-    "taskId" = var.connectortableau_property_task_id
-    "updateScheduleRequestBody" = var.connectortableau_property_update_schedule_request_body
-    "updateUserRequestBody" = var.connectortableau_property_update_user_request_body
-    "userId" = var.connectortableau_property_user_id
-    "workbookId" = var.connectortableau_property_workbook_id
+    "addUsertoSiteRequestBody"      = var.connectortableau_property_add_userto_site_request_body
+    "apiVersion"                    = var.connectortableau_property_api_version
+    "authId"                        = var.connectortableau_property_auth_id
+    "createScheduleBody"            = var.connectortableau_property_create_schedule_body
+    "datasourceId"                  = var.connectortableau_property_datasource_id
+    "flowId"                        = var.connectortableau_property_flow_id
+    "groupId"                       = var.connectortableau_property_group_id
+    "jobId"                         = var.connectortableau_property_job_id
+    "scheduleId"                    = var.connectortableau_property_schedule_id
+    "serverUrl"                     = var.connectortableau_property_server_url
+    "siteId"                        = var.connectortableau_property_site_id
+    "taskId"                        = var.connectortableau_property_task_id
+    "updateScheduleRequestBody"     = var.connectortableau_property_update_schedule_request_body
+    "updateUserRequestBody"         = var.connectortableau_property_update_user_request_body
+    "userId"                        = var.connectortableau_property_user_id
+    "workbookId"                    = var.connectortableau_property_workbook_id
   })
 }
 ```
@@ -5534,7 +5534,7 @@ resource "pingone_davinci_connector_instance" "connector-oai-talendim" {
   name = "My awesome connector-oai-talendim"
   properties = jsonencode({
     "authBearerToken" = var.connector-oai-talendim_property_auth_bearer_token
-    "basePath" = var.connector-oai-talendim_property_base_path
+    "basePath"        = var.connector-oai-talendim_property_base_path
   })
 }
 ```
@@ -5561,7 +5561,7 @@ resource "pingone_davinci_connector_instance" "connector-oai-talendscim" {
   name = "My awesome connector-oai-talendscim"
   properties = jsonencode({
     "authBearerToken" = var.connector-oai-talendscim_property_auth_bearer_token
-    "basePath" = var.connector-oai-talendscim_property_base_path
+    "basePath"        = var.connector-oai-talendscim_property_base_path
   })
 }
 ```
@@ -5593,20 +5593,20 @@ Connector ID (`connector.id` in the resource): `telesignConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `authDescription` (string):  Console display name: "Authentication Description".
-* `connectorName` (string):  Console display name: "Connector Name".
-* `description` (string):  Console display name: "Description".
-* `details1` (string):  Console display name: "Credentials Details 1".
-* `details2` (string):  Console display name: "Credentials Details 2".
-* `iconUrl` (string):  Console display name: "Icon URL".
-* `iconUrlPng` (string):  Console display name: "Icon URL in PNG".
-* `password` (string):  Console display name: "Password".
-* `providerName` (string):  Console display name: "Provider Name".
-* `showCredAddedOn` (boolean):  Console display name: "Show Credentials Added On?".
-* `showCredAddedVia` (boolean):  Console display name: "Show Credentials Added through ?".
-* `title` (string):  Console display name: "Title".
-* `toolTip` (string):  Console display name: "Tooltip".
-* `username` (string):  Console display name: "Username".
+* `authDescription` (string): Console display name: "Authentication Description".
+* `connectorName` (string): Console display name: "Connector Name".
+* `description` (string): Console display name: "Description".
+* `details1` (string): Console display name: "Credentials Details 1".
+* `details2` (string): Console display name: "Credentials Details 2".
+* `iconUrl` (string): Console display name: "Icon URL".
+* `iconUrlPng` (string): Console display name: "Icon URL in PNG".
+* `password` (string): Console display name: "Password".
+* `providerName` (string): Console display name: "Provider Name".
+* `showCredAddedOn` (boolean): Console display name: "Show Credentials Added On?".
+* `showCredAddedVia` (boolean): Console display name: "Show Credentials Added through ?".
+* `title` (string): Console display name: "Title".
+* `toolTip` (string): Console display name: "Tooltip".
+* `username` (string): Console display name: "Username".
 
 
 Example:
@@ -5619,20 +5619,20 @@ resource "pingone_davinci_connector_instance" "telesignConnector" {
   }
   name = "My awesome telesignConnector"
   properties = jsonencode({
-    "authDescription" = var.telesignconnector_property_auth_description
-    "connectorName" = var.telesignconnector_property_connector_name
-    "description" = var.telesignconnector_property_description
-    "details1" = var.telesignconnector_property_details1
-    "details2" = var.telesignconnector_property_details2
-    "iconUrl" = var.telesignconnector_property_icon_url
-    "iconUrlPng" = var.telesignconnector_property_icon_url_png
-    "password" = var.telesignconnector_property_password
-    "providerName" = var.telesignconnector_property_provider_name
-    "showCredAddedOn" = var.telesignconnector_property_show_cred_added_on
+    "authDescription"  = var.telesignconnector_property_auth_description
+    "connectorName"    = var.telesignconnector_property_connector_name
+    "description"      = var.telesignconnector_property_description
+    "details1"         = var.telesignconnector_property_details1
+    "details2"         = var.telesignconnector_property_details2
+    "iconUrl"          = var.telesignconnector_property_icon_url
+    "iconUrlPng"       = var.telesignconnector_property_icon_url_png
+    "password"         = var.telesignconnector_property_password
+    "providerName"     = var.telesignconnector_property_provider_name
+    "showCredAddedOn"  = var.telesignconnector_property_show_cred_added_on
     "showCredAddedVia" = var.telesignconnector_property_show_cred_added_via
-    "title" = var.telesignconnector_property_title
-    "toolTip" = var.telesignconnector_property_tool_tip
-    "username" = var.telesignconnector_property_username
+    "title"            = var.telesignconnector_property_title
+    "toolTip"          = var.telesignconnector_property_tool_tip
+    "username"         = var.telesignconnector_property_username
   })
 }
 ```
@@ -5681,9 +5681,9 @@ resource "pingone_davinci_connector_instance" "tutloxpConnector" {
   }
   name = "My awesome tutloxpConnector"
   properties = jsonencode({
-    "apiUrl" = var.tutloxpconnector_property_api_url
+    "apiUrl"   = var.tutloxpconnector_property_api_url
     "dppaCode" = var.tutloxpconnector_property_dppa_code
-    "glbCode" = var.tutloxpconnector_property_glb_code
+    "glbCode"  = var.tutloxpconnector_property_glb_code
     "password" = var.tutloxpconnector_property_password
     "username" = var.tutloxpconnector_property_username
   })
@@ -5730,27 +5730,27 @@ resource "pingone_davinci_connector_instance" "transunionConnector" {
   }
   name = "My awesome transunionConnector"
   properties = jsonencode({
-    "apiUrl" = var.transunionconnector_property_api_url
-    "docVerificationPassword" = var.transunionconnector_property_doc_verification_password
+    "apiUrl"                   = var.transunionconnector_property_api_url
+    "docVerificationPassword"  = var.transunionconnector_property_doc_verification_password
     "docVerificationPublicKey" = var.transunionconnector_property_doc_verification_public_key
-    "docVerificationSecret" = var.transunionconnector_property_doc_verification_secret
-    "docVerificationSiteId" = var.transunionconnector_property_doc_verification_site_id
-    "docVerificationUsername" = var.transunionconnector_property_doc_verification_username
-    "idVerificationPassword" = var.transunionconnector_property_id_verification_password
-    "idVerificationPublicKey" = var.transunionconnector_property_id_verification_public_key
-    "idVerificationSecret" = var.transunionconnector_property_id_verification_secret
-    "idVerificationSiteId" = var.transunionconnector_property_id_verification_site_id
-    "idVerificationUsername" = var.transunionconnector_property_id_verification_username
-    "kbaPassword" = var.transunionconnector_property_kba_password
-    "kbaPublicKey" = var.transunionconnector_property_kba_public_key
-    "kbaSecret" = var.transunionconnector_property_kba_secret
-    "kbaSiteId" = var.transunionconnector_property_kba_site_id
-    "kbaUsername" = var.transunionconnector_property_kba_username
-    "otpPassword" = var.transunionconnector_property_otp_password
-    "otpPublicKey" = var.transunionconnector_property_otp_public_key
-    "otpSecret" = var.transunionconnector_property_otp_secret
-    "otpSiteId" = var.transunionconnector_property_otp_site_id
-    "otpUsername" = var.transunionconnector_property_otp_username
+    "docVerificationSecret"    = var.transunionconnector_property_doc_verification_secret
+    "docVerificationSiteId"    = var.transunionconnector_property_doc_verification_site_id
+    "docVerificationUsername"  = var.transunionconnector_property_doc_verification_username
+    "idVerificationPassword"   = var.transunionconnector_property_id_verification_password
+    "idVerificationPublicKey"  = var.transunionconnector_property_id_verification_public_key
+    "idVerificationSecret"     = var.transunionconnector_property_id_verification_secret
+    "idVerificationSiteId"     = var.transunionconnector_property_id_verification_site_id
+    "idVerificationUsername"   = var.transunionconnector_property_id_verification_username
+    "kbaPassword"              = var.transunionconnector_property_kba_password
+    "kbaPublicKey"             = var.transunionconnector_property_kba_public_key
+    "kbaSecret"                = var.transunionconnector_property_kba_secret
+    "kbaSiteId"                = var.transunionconnector_property_kba_site_id
+    "kbaUsername"              = var.transunionconnector_property_kba_username
+    "otpPassword"              = var.transunionconnector_property_otp_password
+    "otpPublicKey"             = var.transunionconnector_property_otp_public_key
+    "otpSecret"                = var.transunionconnector_property_otp_secret
+    "otpSiteId"                = var.transunionconnector_property_otp_site_id
+    "otpUsername"              = var.transunionconnector_property_otp_username
   })
 }
 ```
@@ -5801,7 +5801,7 @@ resource "pingone_davinci_connector_instance" "connectorTrulioo" {
   }
   name = "My awesome connectorTrulioo"
   properties = jsonencode({
-    "clientID" = var.connectortrulioo_property_client_i_d
+    "clientID"     = var.connectortrulioo_property_client_i_d
     "clientSecret" = var.connectortrulioo_property_client_secret
   })
 }
@@ -5814,22 +5814,22 @@ Connector ID (`connector.id` in the resource): `twilioConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `accountSid` (string):  Console display name: "Account Sid".
-* `authDescription` (string):  Console display name: "Authentication Description".
-* `authMessageTemplate` (string):  Console display name: "Text Message Template (Authentication)".
-* `authToken` (string):  Console display name: "Auth Token".
-* `connectorName` (string):  Console display name: "Connector Name".
-* `description` (string):  Console display name: "Description".
-* `details1` (string):  Console display name: "Credentials Details 1".
-* `details2` (string):  Console display name: "Credentials Details 2".
-* `iconUrl` (string):  Console display name: "Icon URL".
-* `iconUrlPng` (string):  Console display name: "Icon URL in PNG".
-* `registerMessageTemplate` (string):  Console display name: "Text Message Template (Registration)".
-* `senderPhoneNumber` (string):  Console display name: "Sender Phone Number".
-* `showCredAddedOn` (boolean):  Console display name: "Show Credentials Added On?".
-* `showCredAddedVia` (boolean):  Console display name: "Show Credentials Added through ?".
-* `title` (string):  Console display name: "Title".
-* `toolTip` (string):  Console display name: "Tooltip".
+* `accountSid` (string): Console display name: "Account Sid".
+* `authDescription` (string): Console display name: "Authentication Description".
+* `authMessageTemplate` (string): Console display name: "Text Message Template (Authentication)".
+* `authToken` (string): Console display name: "Auth Token".
+* `connectorName` (string): Console display name: "Connector Name".
+* `description` (string): Console display name: "Description".
+* `details1` (string): Console display name: "Credentials Details 1".
+* `details2` (string): Console display name: "Credentials Details 2".
+* `iconUrl` (string): Console display name: "Icon URL".
+* `iconUrlPng` (string): Console display name: "Icon URL in PNG".
+* `registerMessageTemplate` (string): Console display name: "Text Message Template (Registration)".
+* `senderPhoneNumber` (string): Console display name: "Sender Phone Number".
+* `showCredAddedOn` (boolean): Console display name: "Show Credentials Added On?".
+* `showCredAddedVia` (boolean): Console display name: "Show Credentials Added through ?".
+* `title` (string): Console display name: "Title".
+* `toolTip` (string): Console display name: "Tooltip".
 
 
 Example:
@@ -5842,22 +5842,22 @@ resource "pingone_davinci_connector_instance" "twilioConnector" {
   }
   name = "My awesome twilioConnector"
   properties = jsonencode({
-    "accountSid" = var.twilioconnector_property_account_sid
-    "authDescription" = var.twilioconnector_property_auth_description
-    "authMessageTemplate" = var.twilioconnector_property_auth_message_template
-    "authToken" = var.twilioconnector_property_auth_token
-    "connectorName" = var.twilioconnector_property_connector_name
-    "description" = var.twilioconnector_property_description
-    "details1" = var.twilioconnector_property_details1
-    "details2" = var.twilioconnector_property_details2
-    "iconUrl" = var.twilioconnector_property_icon_url
-    "iconUrlPng" = var.twilioconnector_property_icon_url_png
+    "accountSid"              = var.twilioconnector_property_account_sid
+    "authDescription"         = var.twilioconnector_property_auth_description
+    "authMessageTemplate"     = var.twilioconnector_property_auth_message_template
+    "authToken"               = var.twilioconnector_property_auth_token
+    "connectorName"           = var.twilioconnector_property_connector_name
+    "description"             = var.twilioconnector_property_description
+    "details1"                = var.twilioconnector_property_details1
+    "details2"                = var.twilioconnector_property_details2
+    "iconUrl"                 = var.twilioconnector_property_icon_url
+    "iconUrlPng"              = var.twilioconnector_property_icon_url_png
     "registerMessageTemplate" = var.twilioconnector_property_register_message_template
-    "senderPhoneNumber" = var.twilioconnector_property_sender_phone_number
-    "showCredAddedOn" = var.twilioconnector_property_show_cred_added_on
-    "showCredAddedVia" = var.twilioconnector_property_show_cred_added_via
-    "title" = var.twilioconnector_property_title
-    "toolTip" = var.twilioconnector_property_tool_tip
+    "senderPhoneNumber"       = var.twilioconnector_property_sender_phone_number
+    "showCredAddedOn"         = var.twilioconnector_property_show_cred_added_on
+    "showCredAddedVia"        = var.twilioconnector_property_show_cred_added_via
+    "title"                   = var.twilioconnector_property_title
+    "toolTip"                 = var.twilioconnector_property_tool_tip
   })
 }
 ```
@@ -5869,7 +5869,7 @@ Connector ID (`connector.id` in the resource): `typingdnaConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -5894,17 +5894,17 @@ Connector ID (`connector.id` in the resource): `unifyIdConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `accountId` (string):  Console display name: "Account ID".
-* `apiKey` (string):  Console display name: "API Key".
-* `connectorName` (string):  Console display name: "Connector Name".
-* `details1` (string):  Console display name: "Credentials Details 1".
-* `details2` (string):  Console display name: "Credentials Details 2".
-* `iconUrl` (string):  Console display name: "Icon URL".
-* `iconUrlPng` (string):  Console display name: "Icon URL in PNG".
-* `sdkToken` (string):  Console display name: "SDK Token".
-* `showCredAddedOn` (boolean):  Console display name: "Show Credentials Added On?".
-* `showCredAddedVia` (boolean):  Console display name: "Show Credentials Added through ?".
-* `toolTip` (string):  Console display name: "Tooltip".
+* `accountId` (string): Console display name: "Account ID".
+* `apiKey` (string): Console display name: "API Key".
+* `connectorName` (string): Console display name: "Connector Name".
+* `details1` (string): Console display name: "Credentials Details 1".
+* `details2` (string): Console display name: "Credentials Details 2".
+* `iconUrl` (string): Console display name: "Icon URL".
+* `iconUrlPng` (string): Console display name: "Icon URL in PNG".
+* `sdkToken` (string): Console display name: "SDK Token".
+* `showCredAddedOn` (boolean): Console display name: "Show Credentials Added On?".
+* `showCredAddedVia` (boolean): Console display name: "Show Credentials Added through ?".
+* `toolTip` (string): Console display name: "Tooltip".
 
 
 Example:
@@ -5917,17 +5917,17 @@ resource "pingone_davinci_connector_instance" "unifyIdConnector" {
   }
   name = "My awesome unifyIdConnector"
   properties = jsonencode({
-    "accountId" = var.unifyidconnector_property_account_id
-    "apiKey" = var.unifyidconnector_property_api_key
-    "connectorName" = var.unifyidconnector_property_connector_name
-    "details1" = var.unifyidconnector_property_details1
-    "details2" = var.unifyidconnector_property_details2
-    "iconUrl" = var.unifyidconnector_property_icon_url
-    "iconUrlPng" = var.unifyidconnector_property_icon_url_png
-    "sdkToken" = var.unifyidconnector_property_sdk_token
-    "showCredAddedOn" = var.unifyidconnector_property_show_cred_added_on
+    "accountId"        = var.unifyidconnector_property_account_id
+    "apiKey"           = var.unifyidconnector_property_api_key
+    "connectorName"    = var.unifyidconnector_property_connector_name
+    "details1"         = var.unifyidconnector_property_details1
+    "details2"         = var.unifyidconnector_property_details2
+    "iconUrl"          = var.unifyidconnector_property_icon_url
+    "iconUrlPng"       = var.unifyidconnector_property_icon_url_png
+    "sdkToken"         = var.unifyidconnector_property_sdk_token
+    "showCredAddedOn"  = var.unifyidconnector_property_show_cred_added_on
     "showCredAddedVia" = var.unifyidconnector_property_show_cred_added_via
-    "toolTip" = var.unifyidconnector_property_tool_tip
+    "toolTip"          = var.unifyidconnector_property_tool_tip
   })
 }
 ```
@@ -5940,17 +5940,17 @@ Connector ID (`connector.id` in the resource): `userPolicyConnector`
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
 * `passwordExpiryInDays` (number): Choose 0 for never expire. Console display name: "Expires in the specified number of days".
-* `passwordExpiryNotification` (boolean):  Console display name: "Notify user before password expires".
-* `passwordLengthMax` (number):  Console display name: "Maximum Password Length".
-* `passwordLengthMin` (number):  Console display name: "Minimum Password Length".
-* `passwordLockoutAttempts` (number):  Console display name: "Number of failed login attempts before account is locked".
+* `passwordExpiryNotification` (boolean): Console display name: "Notify user before password expires".
+* `passwordLengthMax` (number): Console display name: "Maximum Password Length".
+* `passwordLengthMin` (number): Console display name: "Minimum Password Length".
+* `passwordLockoutAttempts` (number): Console display name: "Number of failed login attempts before account is locked".
 * `passwordPreviousXPasswords` (number): Choose 0 if any previous passwords are allowed. This is not recommended. Console display name: "Number of unique user passwords associated with a user".
 * `passwordRequireLowercase` (boolean): Should the password contain lowercase characters?. Console display name: "Require Lowercase Characters".
 * `passwordRequireNumbers` (boolean): Should the password contain numbers?. Console display name: "Require Numbers".
 * `passwordRequireSpecial` (boolean): Should the password contain special character?. Console display name: "Require Special Characters".
 * `passwordRequireUppercase` (boolean): Should the password contain uppercase characters?. Console display name: "Require Uppercase Characters".
 * `passwordSpacesOk` (boolean): Are spaces allowed in the password?. Console display name: "Spaces Accepted".
-* `passwordsEnabled` (boolean):  Console display name: "Passwords Feature Enabled?".
+* `passwordsEnabled` (boolean): Console display name: "Passwords Feature Enabled?".
 * `temporaryPasswordExpiryInDays` (number): If an administrator sets a temporary password, choose how long before it expires. Console display name: "Temporary password expires in the specified number of days".
 
 
@@ -5964,18 +5964,18 @@ resource "pingone_davinci_connector_instance" "userPolicyConnector" {
   }
   name = "My awesome userPolicyConnector"
   properties = jsonencode({
-    "passwordExpiryInDays" = var.userpolicyconnector_property_password_expiry_in_days
-    "passwordExpiryNotification" = var.userpolicyconnector_property_password_expiry_notification
-    "passwordLengthMax" = var.userpolicyconnector_property_password_length_max
-    "passwordLengthMin" = var.userpolicyconnector_property_password_length_min
-    "passwordLockoutAttempts" = var.userpolicyconnector_property_password_lockout_attempts
-    "passwordPreviousXPasswords" = var.userpolicyconnector_property_password_previous_x_passwords
-    "passwordRequireLowercase" = var.userpolicyconnector_property_password_require_lowercase
-    "passwordRequireNumbers" = var.userpolicyconnector_property_password_require_numbers
-    "passwordRequireSpecial" = var.userpolicyconnector_property_password_require_special
-    "passwordRequireUppercase" = var.userpolicyconnector_property_password_require_uppercase
-    "passwordSpacesOk" = var.userpolicyconnector_property_password_spaces_ok
-    "passwordsEnabled" = var.userpolicyconnector_property_passwords_enabled
+    "passwordExpiryInDays"          = var.userpolicyconnector_property_password_expiry_in_days
+    "passwordExpiryNotification"    = var.userpolicyconnector_property_password_expiry_notification
+    "passwordLengthMax"             = var.userpolicyconnector_property_password_length_max
+    "passwordLengthMin"             = var.userpolicyconnector_property_password_length_min
+    "passwordLockoutAttempts"       = var.userpolicyconnector_property_password_lockout_attempts
+    "passwordPreviousXPasswords"    = var.userpolicyconnector_property_password_previous_x_passwords
+    "passwordRequireLowercase"      = var.userpolicyconnector_property_password_require_lowercase
+    "passwordRequireNumbers"        = var.userpolicyconnector_property_password_require_numbers
+    "passwordRequireSpecial"        = var.userpolicyconnector_property_password_require_special
+    "passwordRequireUppercase"      = var.userpolicyconnector_property_password_require_uppercase
+    "passwordSpacesOk"              = var.userpolicyconnector_property_password_spaces_ok
+    "passwordsEnabled"              = var.userpolicyconnector_property_passwords_enabled
     "temporaryPasswordExpiryInDays" = var.userpolicyconnector_property_temporary_password_expiry_in_days
   })
 }
@@ -5988,7 +5988,7 @@ Connector ID (`connector.id` in the resource): `skUserPool`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAttributes` (json):  
+* `customAttributes` (json): Console display name: "".
 
 
 Example:
@@ -6002,64 +6002,64 @@ resource "pingone_davinci_connector_instance" "skUserPool" {
   name = "My awesome skUserPool"
   properties = jsonencode({
     "customAttributes" = jsonencode({
-				"type" : "array",
-				"preferredControlType" : "tableViewAttributes",
-				"sections" : [
-				  "connectorAttributes"
-				],
-				"value" : [
-				  {
-					"name" : "username",
-					"description" : "Username",
-					"type" : "string",
-					"value" : null,
-					"minLength" : "1",
-					"maxLength" : "300",
-					"required" : true,
-					"attributeType" : "sk"
-				  },
-				  {
-					"name" : "firstName",
-					"description" : "First Name",
-					"type" : "string",
-					"value" : null,
-					"minLength" : "1",
-					"maxLength" : "100",
-					"required" : false,
-					"attributeType" : "sk"
-				  },
-				  {
-					"name" : "lastName",
-					"description" : "Last Name",
-					"type" : "string",
-					"value" : null,
-					"minLength" : "1",
-					"maxLength" : "100",
-					"required" : false,
-					"attributeType" : "sk"
-				  },
-				  {
-					"name" : "name",
-					"description" : "Display Name",
-					"type" : "string",
-					"value" : null,
-					"minLength" : "1",
-					"maxLength" : "250",
-					"required" : false,
-					"attributeType" : "sk"
-				  },
-				  {
-					"name" : "email",
-					"description" : "Email",
-					"type" : "string",
-					"value" : null,
-					"minLength" : "1",
-					"maxLength" : "250",
-					"required" : false,
-					"attributeType" : "sk"
-					}
-				]
-			})
+      "type" : "array",
+      "preferredControlType" : "tableViewAttributes",
+      "sections" : [
+        "connectorAttributes"
+      ],
+      "value" : [
+        {
+          "name" : "username",
+          "description" : "Username",
+          "type" : "string",
+          "value" : null,
+          "minLength" : "1",
+          "maxLength" : "300",
+          "required" : true,
+          "attributeType" : "sk"
+        },
+        {
+          "name" : "firstName",
+          "description" : "First Name",
+          "type" : "string",
+          "value" : null,
+          "minLength" : "1",
+          "maxLength" : "100",
+          "required" : false,
+          "attributeType" : "sk"
+        },
+        {
+          "name" : "lastName",
+          "description" : "Last Name",
+          "type" : "string",
+          "value" : null,
+          "minLength" : "1",
+          "maxLength" : "100",
+          "required" : false,
+          "attributeType" : "sk"
+        },
+        {
+          "name" : "name",
+          "description" : "Display Name",
+          "type" : "string",
+          "value" : null,
+          "minLength" : "1",
+          "maxLength" : "250",
+          "required" : false,
+          "attributeType" : "sk"
+        },
+        {
+          "name" : "email",
+          "description" : "Email",
+          "type" : "string",
+          "value" : null,
+          "minLength" : "1",
+          "maxLength" : "250",
+          "required" : false,
+          "attributeType" : "sk"
+        }
+      ]
+    })
   })
 }
 ```
@@ -6071,7 +6071,7 @@ Connector ID (`connector.id` in the resource): `connectorValidsoft`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -6131,7 +6131,7 @@ resource "pingone_davinci_connector_instance" "connector-oai-venafi" {
   name = "My awesome connector-oai-venafi"
   properties = jsonencode({
     "authApiKey" = var.connector-oai-venafi_property_auth_api_key
-    "basePath" = var.connector-oai-venafi_property_base_path
+    "basePath"   = var.connector-oai-venafi_property_base_path
   })
 }
 ```
@@ -6158,7 +6158,7 @@ resource "pingone_davinci_connector_instance" "connectorVericlouds" {
   name = "My awesome connectorVericlouds"
   properties = jsonencode({
     "apiSecret" = var.connectorvericlouds_property_api_secret
-    "apikey" = var.connectorvericlouds_property_apikey
+    "apikey"    = var.connectorvericlouds_property_apikey
   })
 }
 ```
@@ -6186,8 +6186,8 @@ resource "pingone_davinci_connector_instance" "veriffConnector" {
   name = "My awesome veriffConnector"
   properties = jsonencode({
     "access_token" = var.veriffconnector_property_access_token
-    "baseUrl" = var.veriffconnector_property_base_url
-    "password" = var.veriffconnector_property_password
+    "baseUrl"      = var.veriffconnector_property_base_url
+    "password"     = var.veriffconnector_property_password
   })
 }
 ```
@@ -6238,7 +6238,7 @@ resource "pingone_davinci_connector_instance" "mailchainConnector" {
   }
   name = "My awesome mailchainConnector"
   properties = jsonencode({
-    "apiKey" = var.mailchainconnector_property_api_key
+    "apiKey"  = var.mailchainconnector_property_api_key
     "version" = var.mailchainconnector_property_version
   })
 }
@@ -6293,11 +6293,11 @@ resource "pingone_davinci_connector_instance" "connectorWhatsAppBusiness" {
   }
   name = "My awesome connectorWhatsAppBusiness"
   properties = jsonencode({
-    "accessToken" = var.connectorwhatsappbusiness_property_access_token
-    "appSecret" = var.connectorwhatsappbusiness_property_app_secret
+    "accessToken"  = var.connectorwhatsappbusiness_property_access_token
+    "appSecret"    = var.connectorwhatsappbusiness_property_app_secret
     "skWebhookUri" = var.connectorwhatsappbusiness_property_sk_webhook_uri
-    "verifyToken" = var.connectorwhatsappbusiness_property_verify_token
-    "version" = var.connectorwhatsappbusiness_property_version
+    "verifyToken"  = var.connectorwhatsappbusiness_property_verify_token
+    "version"      = var.connectorwhatsappbusiness_property_version
   })
 }
 ```
@@ -6309,7 +6309,7 @@ Connector ID (`connector.id` in the resource): `connectorWinmagic`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `openId` (json):  Console display name: "OpenId Parameters".
+* `openId` (json): Console display name: "OpenId Parameters".
 
 
 Example:
@@ -6350,10 +6350,10 @@ resource "pingone_davinci_connector_instance" "wireWheelConnector" {
   }
   name = "My awesome wireWheelConnector"
   properties = jsonencode({
-    "baseURL" = var.base_url
-    "clientId" = var.wirewheelconnector_property_client_id
+    "baseURL"      = var.base_url
+    "clientId"     = var.wirewheelconnector_property_client_id
     "clientSecret" = var.wirewheelconnector_property_client_secret
-    "issuerId" = var.wirewheelconnector_property_issuer_id
+    "issuerId"     = var.wirewheelconnector_property_issuer_id
   })
 }
 ```
@@ -6365,7 +6365,7 @@ Connector ID (`connector.id` in the resource): `twitterIdpConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -6390,7 +6390,7 @@ Connector ID (`connector.id` in the resource): `yotiConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -6430,9 +6430,9 @@ resource "pingone_davinci_connector_instance" "connectorZendesk" {
   }
   name = "My awesome connectorZendesk"
   properties = jsonencode({
-    "apiToken" = var.connectorzendesk_property_api_token
+    "apiToken"      = var.connectorzendesk_property_api_token
     "emailUsername" = var.connectorzendesk_property_email_username
-    "subdomain" = var.connectorzendesk_property_subdomain
+    "subdomain"     = var.connectorzendesk_property_subdomain
   })
 }
 ```
@@ -6444,9 +6444,9 @@ Connector ID (`connector.id` in the resource): `zoopConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `agencyId` (string):  Console display name: "Zoop Agency ID".
-* `apiKey` (string):  Console display name: "Zoop API Key".
-* `apiUrl` (string):  Console display name: "Zoop API URL".
+* `agencyId` (string): Console display name: "Zoop Agency ID".
+* `apiKey` (string): Console display name: "Zoop API Key".
+* `apiUrl` (string): Console display name: "Zoop API URL".
 
 
 Example:
@@ -6460,8 +6460,8 @@ resource "pingone_davinci_connector_instance" "zoopConnector" {
   name = "My awesome zoopConnector"
   properties = jsonencode({
     "agencyId" = var.zoopconnector_property_agency_id
-    "apiKey" = var.zoopconnector_property_api_key
-    "apiUrl" = var.zoopconnector_property_api_url
+    "apiKey"   = var.zoopconnector_property_api_key
+    "apiUrl"   = var.zoopconnector_property_api_url
   })
 }
 ```
@@ -6490,9 +6490,9 @@ resource "pingone_davinci_connector_instance" "connectorZscaler" {
   }
   name = "My awesome connectorZscaler"
   properties = jsonencode({
-    "basePath" = var.connectorzscaler_property_base_path
-    "baseURL" = var.base_url
-    "zscalerAPIkey" = var.zscaler_api_key
+    "basePath"        = var.connectorzscaler_property_base_path
+    "baseURL"         = var.base_url
+    "zscalerAPIkey"   = var.zscaler_api_key
     "zscalerPassword" = var.connectorzscaler_property_zscaler_password
     "zscalerUsername" = var.connectorzscaler_property_zscaler_username
   })
@@ -6506,35 +6506,35 @@ Connector ID (`connector.id` in the resource): `iproovConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `allowLandscape` (boolean):  Console display name: "Allow Landscape".
-* `apiKey` (string):  Console display name: "API Key".
-* `authDescription` (string):  Console display name: "Authentication Description".
-* `baseUrl` (string):  Console display name: "Base URL".
+* `allowLandscape` (boolean): Console display name: "Allow Landscape".
+* `apiKey` (string): Console display name: "API Key".
+* `authDescription` (string): Console display name: "Authentication Description".
+* `baseUrl` (string): Console display name: "Base URL".
 * `color1` (string): Ex. #000000. Console display name: "Loading Tint Color".
 * `color2` (string): Ex. #000000. Console display name: "Not Ready Tint Color".
 * `color3` (string): Ex. #000000. Console display name: "Ready Tint Color".
 * `color4` (string): Ex. #000000. Console display name: "Liveness Tint Color".
-* `connectorName` (string):  Console display name: "Connector Name".
+* `connectorName` (string): Console display name: "Connector Name".
 * `customTitle` (string): Specify a custom title to be shown. Defaults to show an iProov-generated message. Set to empty string "" to hide the message entirely.  Console display name: "Custom Title".
-* `description` (string):  Console display name: "Description".
-* `details1` (string):  Console display name: "Credentials Details 1".
-* `details2` (string):  Console display name: "Credentials Details 2".
-* `enableCameraSelector` (boolean):  Console display name: "Enable Camera Selector".
-* `iconUrl` (string):  Console display name: "Icon URL".
-* `iconUrlPng` (string):  Console display name: "Icon URL in PNG".
-* `javascriptCSSUrl` (string):  Console display name: "CSS URL".
-* `javascriptCdnUrl` (string):  Console display name: "Javascript CDN URL".
-* `kioskMode` (boolean):  Console display name: "Kiosk Mode".
+* `description` (string): Console display name: "Description".
+* `details1` (string): Console display name: "Credentials Details 1".
+* `details2` (string): Console display name: "Credentials Details 2".
+* `enableCameraSelector` (boolean): Console display name: "Enable Camera Selector".
+* `iconUrl` (string): Console display name: "Icon URL".
+* `iconUrlPng` (string): Console display name: "Icon URL in PNG".
+* `javascriptCSSUrl` (string): Console display name: "CSS URL".
+* `javascriptCdnUrl` (string): Console display name: "Javascript CDN URL".
+* `kioskMode` (boolean): Console display name: "Kiosk Mode".
 * `logo` (string): You can use a custom logo by simply passing a relative link, absolute path or data URI to your logo. If you do not want a logo to show pass the logo attribute as null. Console display name: "Logo".
-* `password` (string):  Console display name: "Password".
-* `secret` (string):  Console display name: "Secret".
-* `showCountdown` (boolean):  Console display name: "Show Countdown".
-* `showCredAddedOn` (boolean):  Console display name: "Show Credentials Added On?".
-* `showCredAddedVia` (boolean):  Console display name: "Show Credentials Added through ?".
-* `startScreenTitle` (string):  Console display name: "Start Screen Title".
-* `title` (string):  Console display name: "Title".
-* `toolTip` (string):  Console display name: "Tooltip".
-* `username` (string):  Console display name: "Username".
+* `password` (string): Console display name: "Password".
+* `secret` (string): Console display name: "Secret".
+* `showCountdown` (boolean): Console display name: "Show Countdown".
+* `showCredAddedOn` (boolean): Console display name: "Show Credentials Added On?".
+* `showCredAddedVia` (boolean): Console display name: "Show Credentials Added through ?".
+* `startScreenTitle` (string): Console display name: "Start Screen Title".
+* `title` (string): Console display name: "Title".
+* `toolTip` (string): Console display name: "Tooltip".
+* `username` (string): Console display name: "Username".
 
 
 Example:
@@ -6547,35 +6547,35 @@ resource "pingone_davinci_connector_instance" "iproovConnector" {
   }
   name = "My awesome iproovConnector"
   properties = jsonencode({
-    "allowLandscape" = var.iproovconnector_property_allow_landscape
-    "apiKey" = var.iproovconnector_property_api_key
-    "authDescription" = var.iproovconnector_property_auth_description
-    "baseUrl" = var.iproovconnector_property_base_url
-    "color1" = var.iproovconnector_property_color1
-    "color2" = var.iproovconnector_property_color2
-    "color3" = var.iproovconnector_property_color3
-    "color4" = var.iproovconnector_property_color4
-    "connectorName" = var.iproovconnector_property_connector_name
-    "customTitle" = var.iproovconnector_property_custom_title
-    "description" = var.iproovconnector_property_description
-    "details1" = var.iproovconnector_property_details1
-    "details2" = var.iproovconnector_property_details2
+    "allowLandscape"       = var.iproovconnector_property_allow_landscape
+    "apiKey"               = var.iproovconnector_property_api_key
+    "authDescription"      = var.iproovconnector_property_auth_description
+    "baseUrl"              = var.iproovconnector_property_base_url
+    "color1"               = var.iproovconnector_property_color1
+    "color2"               = var.iproovconnector_property_color2
+    "color3"               = var.iproovconnector_property_color3
+    "color4"               = var.iproovconnector_property_color4
+    "connectorName"        = var.iproovconnector_property_connector_name
+    "customTitle"          = var.iproovconnector_property_custom_title
+    "description"          = var.iproovconnector_property_description
+    "details1"             = var.iproovconnector_property_details1
+    "details2"             = var.iproovconnector_property_details2
     "enableCameraSelector" = var.iproovconnector_property_enable_camera_selector
-    "iconUrl" = var.iproovconnector_property_icon_url
-    "iconUrlPng" = var.iproovconnector_property_icon_url_png
-    "javascriptCSSUrl" = var.javascript_css_url
-    "javascriptCdnUrl" = var.iproovconnector_property_javascript_cdn_url
-    "kioskMode" = var.iproovconnector_property_kiosk_mode
-    "logo" = var.iproovconnector_property_logo
-    "password" = var.iproovconnector_property_password
-    "secret" = var.iproovconnector_property_secret
-    "showCountdown" = var.iproovconnector_property_show_countdown
-    "showCredAddedOn" = var.iproovconnector_property_show_cred_added_on
-    "showCredAddedVia" = var.iproovconnector_property_show_cred_added_via
-    "startScreenTitle" = var.iproovconnector_property_start_screen_title
-    "title" = var.iproovconnector_property_title
-    "toolTip" = var.iproovconnector_property_tool_tip
-    "username" = var.iproovconnector_property_username
+    "iconUrl"              = var.iproovconnector_property_icon_url
+    "iconUrlPng"           = var.iproovconnector_property_icon_url_png
+    "javascriptCSSUrl"     = var.javascript_css_url
+    "javascriptCdnUrl"     = var.iproovconnector_property_javascript_cdn_url
+    "kioskMode"            = var.iproovconnector_property_kiosk_mode
+    "logo"                 = var.iproovconnector_property_logo
+    "password"             = var.iproovconnector_property_password
+    "secret"               = var.iproovconnector_property_secret
+    "showCountdown"        = var.iproovconnector_property_show_countdown
+    "showCredAddedOn"      = var.iproovconnector_property_show_cred_added_on
+    "showCredAddedVia"     = var.iproovconnector_property_show_cred_added_via
+    "startScreenTitle"     = var.iproovconnector_property_start_screen_title
+    "title"                = var.iproovconnector_property_title
+    "toolTip"              = var.iproovconnector_property_tool_tip
+    "username"             = var.iproovconnector_property_username
   })
 }
 ```
@@ -6616,7 +6616,7 @@ Connector ID (`connector.id` in the resource): `connectorSvipe`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:
@@ -6641,12 +6641,12 @@ Connector ID (`connector.id` in the resource): `iovationConnector`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `apiUrl` (string):  Console display name: "API Server URL".
+* `apiUrl` (string): Console display name: "API Server URL".
 * `javascriptCdnUrl` (string): iovation loader javascript CDN. Console display name: "iovation loader Javascript CDN URL".
 * `subKey` (string): This will be an iovation assigned value that tracks requests from your site. This is primarily used for debugging and troubleshooting purposes. Console display name: "Sub Key".
-* `subscriberAccount` (string):  Console display name: "Subscriber Account".
-* `subscriberId` (string):  Console display name: "Subscriber ID".
-* `subscriberPasscode` (string):  Console display name: "Subscriber Passcode".
+* `subscriberAccount` (string): Console display name: "Subscriber Account".
+* `subscriberId` (string): Console display name: "Subscriber ID".
+* `subscriberPasscode` (string): Console display name: "Subscriber Passcode".
 * `version` (string): This is the version of the script to load. The value should either correspond to a specific version you wish to use, or one of the following aliases to get the latest version of the code: general5 - the latest stable version of the javascript, early5 - the latest available version of the javascript. Console display name: "Version".
 
 
@@ -6660,13 +6660,13 @@ resource "pingone_davinci_connector_instance" "iovationConnector" {
   }
   name = "My awesome iovationConnector"
   properties = jsonencode({
-    "apiUrl" = var.iovationconnector_property_api_url
-    "javascriptCdnUrl" = var.iovationconnector_property_javascript_cdn_url
-    "subKey" = var.iovationconnector_property_sub_key
-    "subscriberAccount" = var.iovationconnector_property_subscriber_account
-    "subscriberId" = var.iovationconnector_property_subscriber_id
+    "apiUrl"             = var.iovationconnector_property_api_url
+    "javascriptCdnUrl"   = var.iovationconnector_property_javascript_cdn_url
+    "subKey"             = var.iovationconnector_property_sub_key
+    "subscriberAccount"  = var.iovationconnector_property_subscriber_account
+    "subscriberId"       = var.iovationconnector_property_subscriber_id
     "subscriberPasscode" = var.iovationconnector_property_subscriber_passcode
-    "version" = var.iovationconnector_property_version
+    "version"            = var.iovationconnector_property_version
   })
 }
 ```
@@ -6743,7 +6743,7 @@ resource "pingone_davinci_connector_instance" "connectorIPStack" {
   name = "My awesome connectorIPStack"
   properties = jsonencode({
     "allowInsecureIPStackConnection" = var.allow_insecure_ip_stack_connection
-    "apiKey" = var.connectoripstack_property_api_key
+    "apiKey"                         = var.connectoripstack_property_api_key
   })
 }
 ```
@@ -6770,9 +6770,9 @@ resource "pingone_davinci_connector_instance" "mparticleConnector" {
   }
   name = "My awesome mparticleConnector"
   properties = jsonencode({
-    "clientID" = var.mparticleconnector_property_client_i_d
+    "clientID"     = var.mparticleconnector_property_client_i_d
     "clientSecret" = var.mparticleconnector_property_client_secret
-    "pod" = var.mparticleconnector_property_pod
+    "pod"          = var.mparticleconnector_property_pod
   })
 }
 ```
@@ -6798,7 +6798,7 @@ resource "pingone_davinci_connector_instance" "neoeyedConnector" {
   }
   name = "My awesome neoeyedConnector"
   properties = jsonencode({
-    "appKey" = var.neoeyedconnector_property_app_key
+    "appKey"           = var.neoeyedconnector_property_app_key
     "javascriptCdnUrl" = var.neoeyedconnector_property_javascript_cdn_url
   })
 }
@@ -6831,7 +6831,7 @@ Connector ID (`connector.id` in the resource): `connectorTruid`
 
 Properties (used under the `properties` block in the resource as a key in the JSON object):
 
-* `customAuth` (json):  Console display name: "Custom Parameters".
+* `customAuth` (json): Console display name: "Custom Parameters".
 
 
 Example:

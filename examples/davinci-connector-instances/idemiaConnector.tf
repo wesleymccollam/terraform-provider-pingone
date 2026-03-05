@@ -6,7 +6,7 @@ resource "pingone_davinci_connector_instance" "idemiaConnector" {
   }
   name = "My awesome idemiaConnector"
   properties = jsonencode({
-    "apikey" = var.idemiaconnector_property_apikey
+    "apikey"  = var.idemiaconnector_property_apikey
     "baseUrl" = var.idemiaconnector_property_base_url
   })
 }

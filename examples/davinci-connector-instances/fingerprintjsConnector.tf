@@ -6,8 +6,8 @@ resource "pingone_davinci_connector_instance" "fingerprintjsConnector" {
   }
   name = "My awesome fingerprintjsConnector"
   properties = jsonencode({
-    "apiToken" = var.fingerprintjsconnector_property_api_token
+    "apiToken"         = var.fingerprintjsconnector_property_api_token
     "javascriptCdnUrl" = var.fingerprintjsconnector_property_javascript_cdn_url
-    "token" = var.fingerprintjsconnector_property_token
+    "token"            = var.fingerprintjsconnector_property_token
   })
 }

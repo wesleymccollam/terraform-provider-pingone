@@ -6,7 +6,7 @@ resource "pingone_davinci_connector_instance" "mailchainConnector" {
   }
   name = "My awesome mailchainConnector"
   properties = jsonencode({
-    "apiKey" = var.mailchainconnector_property_api_key
+    "apiKey"  = var.mailchainconnector_property_api_key
     "version" = var.mailchainconnector_property_version
   })
 }
