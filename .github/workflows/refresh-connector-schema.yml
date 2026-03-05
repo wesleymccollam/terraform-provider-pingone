@@ -70,9 +70,6 @@ jobs:
           git add .
           git commit -m "Update connector schema"
           git push
-
-      - uses: hashicorp/setup-terraform@v3
-        if: steps.check_changes.outputs.CONTENT_CHANGED == 'true'
       
       - run: make generate
         if: steps.check_changes.outputs.CONTENT_CHANGED == 'true'
