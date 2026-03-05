@@ -147,6 +147,8 @@ func readConnectors(input []byte) ([]connectorDocData, error) {
 			connectorList[i].ConnectorName = "No name"
 		}
 
+		connectorList[i].ConnectorName = sanitizeForTemplate(connectorList[i].ConnectorName)
+
 		if connectorList[i].RawProperties != nil {
 			connectorProperties := make([]connectorDocPropertyData, 0)
 			for propertyName, property := range connectorList[i].RawProperties {
@@ -168,6 +170,8 @@ func readConnectors(input []byte) ([]connectorDocData, error) {
 					description = v
 				}
 
+				description = sanitizeForTemplate(description)
+
 				if strings.TrimSpace(description) != "" && !strings.HasSuffix(strings.TrimSpace(description), ".") {
 					description = fmt.Sprintf("%s.", description)
 				}
@@ -181,6 +185,8 @@ func readConnectors(input []byte) ([]connectorDocData, error) {
 				if v, ok := propertyMap["displayName"].(string); ok {
 					displayName = v
 				}
+
+				displayName = sanitizeForTemplate(displayName)
 
 				connectorProperty := connectorDocPropertyData{
 					Name:               propertyName,
@@ -250,4 +256,11 @@ func camelToSnake(camel string) string {
 
 	// Return the contents of the buffer as a string
 	return buf.String()
+}
+
+func sanitizeForTemplate(input string) string {
+	// Replaces "{{" with "{{ "{{" }}" and "}}" with "{{ "}}" }}"
+	output := strings.ReplaceAll(input, "{{", "{{ \"{{\" }}")
+	output = strings.ReplaceAll(output, "}}", "{{ \"}}\" }}")
+	return output
 }
