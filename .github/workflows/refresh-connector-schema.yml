@@ -25,19 +25,7 @@ jobs:
           PINGCLI_PINGONE_ENVIRONMENT_ID: ${{ secrets.PINGONE_PROD_NA_FF_ENVIRONMENT_ID }}
           PINGCLI_PINGONE_REGION_CODE: NA
         run: |
-          pingcli request \
-            --service pingone \
-            --http-method GET \
-            --pingone-authentication-type client_credentials \
-            --output-format json \
-            "environments/${{ secrets.PINGONE_PROD_NA_FF_ENVIRONMENT_ID }}/connectors" \
-          | sed -n '/^{/,$p' \
-          | jq '.response._embedded.connectors | unique_by(.id) | map({"name": .name, "connectorId": .id, "connectorCategories": (.connectorCategories // []), "properties": (.properties // {})}) | sort_by(.connectorId)' > tools/dvgenerate/internal/connector-schema.json
-
-          if [ ! -s tools/dvgenerate/internal/connector-schema.json ]; then
-            echo "Error: Generated connector schema is empty or missing."
-            exit 1
-          fi
+          .github/workflows/connector_schema/generate_schema.sh
         continue-on-error: false
 
       - uses: hashicorp/setup-terraform@v3
