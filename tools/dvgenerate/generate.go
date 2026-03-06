@@ -268,7 +268,7 @@ func sanitizeForTemplate(input string) string {
 	// Use placeholders to avoid double replacement
 	output := strings.ReplaceAll(input, "{{", "___OPEN_BRACE___")
 	output = strings.ReplaceAll(output, "}}", "___CLOSE_BRACE___")
-	
+
 	output = strings.ReplaceAll(output, "___OPEN_BRACE___", "{{ \"{{\" }}")
 	output = strings.ReplaceAll(output, "___CLOSE_BRACE___", "{{ \"}}\" }}")
 	return output

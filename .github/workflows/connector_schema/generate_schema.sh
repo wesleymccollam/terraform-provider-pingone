@@ -46,7 +46,7 @@ done < base_connectors.jsonl
 
 rm conn.tmp.json props.tmp.json
 
-jq -s 'unique_by(.connectorId) | sort_by(.connectorId)' expanded_connectors.jsonl > tools/dvgenerate/internal/connector-schema.json
+jq -S -s 'unique_by(.connectorId) | sort_by(.connectorId)' expanded_connectors.jsonl > tools/dvgenerate/internal/connector-schema.json
 rm base_connectors.jsonl expanded_connectors.jsonl
 
 if [ ! -s tools/dvgenerate/internal/connector-schema.json ]; then
