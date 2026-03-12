@@ -28,6 +28,9 @@ jobs:
           .github/workflows/connector_schema/generate_schema.sh
         continue-on-error: false
 
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@v3
+
       - name: Generate Terraform Provider Documentation
         run: |
           make generateconnectorref
@@ -63,9 +66,6 @@ jobs:
           git add .
           git commit -m "Update connector schema"
           git push
-      
-      - uses: hashicorp/setup-terraform@v3
-        if: steps.check_changes.outputs.CONTENT_CHANGED == 'true'
       
       - run: cd tools && go install github.com/hashicorp/terraform-plugin-docs/cmd/tfplugindocs
         if: steps.check_changes.outputs.CONTENT_CHANGED == 'true'
