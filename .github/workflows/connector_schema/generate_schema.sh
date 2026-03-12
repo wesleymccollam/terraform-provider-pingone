@@ -46,10 +46,19 @@ done < base_connectors.jsonl
 
 rm conn.tmp.json props.tmp.json
 
-jq -S -s 'unique_by(.connectorId) | sort_by(.connectorId)' expanded_connectors.jsonl > tools/dvgenerate/internal/connector-schema.json
-rm base_connectors.jsonl expanded_connectors.jsonl
+jq -S -s 'unique_by(.connectorId) | sort_by(.connectorId)' expanded_connectors.jsonl > generated_schema.tmp.json
 
-if [ ! -s tools/dvgenerate/internal/connector-schema.json ]; then
-  echo "Error: Generated connector schema is empty or missing."
+if [ ! -s generated_schema.tmp.json ]; then
+  echo "Error: Generated connector schema is empty."
+  rm generated_schema.tmp.json
   exit 1
 fi
+
+if cmp -s generated_schema.tmp.json tools/dvgenerate/internal/connector-schema.json; then
+  echo "No changes in connector schema."
+  rm generated_schema.tmp.json
+else
+  echo "Connector schema updated."
+  mv generated_schema.tmp.json tools/dvgenerate/internal/connector-schema.json
+fi
+rm base_connectors.jsonl expanded_connectors.jsonl
