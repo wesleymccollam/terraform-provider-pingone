@@ -37,11 +37,11 @@ jobs:
       - name: Check for changes
         id: check_changes
         run: |
-          git add .
-          if git diff --staged --compact-summary --exit-code; then
+          if [[ -z $(git status -s) ]]; then
             echo "No changes detected"
           else
             echo "Changes detected"
+            git status -s
             echo "CONTENT_CHANGED=true" >> $GITHUB_OUTPUT
           fi
         continue-on-error: false
