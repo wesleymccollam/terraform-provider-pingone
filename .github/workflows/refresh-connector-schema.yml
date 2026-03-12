@@ -28,11 +28,15 @@ jobs:
           .github/workflows/connector_schema/generate_schema.sh
         continue-on-error: false
 
+      - name: Generate Terraform Provider Documentation
+        run: |
+          make generateconnectorref
+
       - name: Check for changes
         id: check_changes
         run: |
-          git add -N .
-          if git diff --compact-summary --exit-code; then
+          git add .
+          if git diff --staged --compact-summary --exit-code; then
             echo "No changes detected"
           else
             echo "Changes detected"
