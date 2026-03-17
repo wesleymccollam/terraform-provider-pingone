@@ -23,7 +23,7 @@ jobs:
           PINGCLI_PINGONE_ENVIRONMENT_ID: ${{ secrets.PINGONE_PROD_NA_FF_ENVIRONMENT_ID }}
           PINGCLI_PINGONE_REGION_CODE: NA
         run: |
-          .github/workflows/scriptsgenerate_schema.sh
+          .github/workflows/scripts/generate_schema.sh
         continue-on-error: false
 
       - name: Install Terraform
