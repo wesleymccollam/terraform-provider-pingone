@@ -65,6 +65,10 @@ jobs:
           git commit -m "Update connector schema"
           git push
       
+      - run: cd tools && go install github.com/hashicorp/terraform-plugin-docs/cmd/tfplugindocs
+        if: steps.check_changes.outputs.CONTENT_CHANGED == 'true'
+      - run: cd tools && go install github.com/katbyte/terrafmt
+        if: steps.check_changes.outputs.CONTENT_CHANGED == 'true'
       - run: make generate
         if: steps.check_changes.outputs.CONTENT_CHANGED == 'true'
 
